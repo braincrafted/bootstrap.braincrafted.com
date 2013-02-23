@@ -39,25 +39,28 @@ assetic:
     assets:
         bootstrap_css:
             inputs:
-                - %kernel.root_dir%/../vendor/braincrafted/bootstrap-bundle/Braincrafted/BootstrapBundle/Resources/bootstrap/less/bootstrap.less
-                - %kernel.root_dir%/../vendor/braincrafted/bootstrap-bundle/Braincrafted/BootstrapBundle/Resources/bootstrap/less/responsive.less
+                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/less/bootstrap.less
+                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/less/responsive.less
+            filters:
+                - less
+                - cssrewrite
             output: bundles/braincraftedbootstrap/css/bootstrap.css
         bootstrap_js:
             inputs:
-                - %kernel.root_dir%/../vendor/braincrafted/bootstrap-bundle/Braincrafted/BootstrapBundle/Resources/bootstrap/js/bootstrap-transition.js
-                - %kernel.root_dir%/../vendor/braincrafted/bootstrap-bundle/Braincrafted/BootstrapBundle/Resources/bootstrap/js/bootstrap-alert.js
-                - %kernel.root_dir%/../vendor/braincrafted/bootstrap-bundle/Braincrafted/BootstrapBundle/Resources/bootstrap/js/bootstrap-button.js
-                - %kernel.root_dir%/../vendor/braincrafted/bootstrap-bundle/Braincrafted/BootstrapBundle/Resources/bootstrap/js/bootstrap-carousel.js
-                - %kernel.root_dir%/../vendor/braincrafted/bootstrap-bundle/Braincrafted/BootstrapBundle/Resources/bootstrap/js/bootstrap-collapse.js
-                - %kernel.root_dir%/../vendor/braincrafted/bootstrap-bundle/Braincrafted/BootstrapBundle/Resources/bootstrap/js/bootstrap-dropdown.js
-                - %kernel.root_dir%/../vendor/braincrafted/bootstrap-bundle/Braincrafted/BootstrapBundle/Resources/bootstrap/js/bootstrap-modal.js
-                - %kernel.root_dir%/../vendor/braincrafted/bootstrap-bundle/Braincrafted/BootstrapBundle/Resources/bootstrap/js/bootstrap-tooltip.js
-                - %kernel.root_dir%/../vendor/braincrafted/bootstrap-bundle/Braincrafted/BootstrapBundle/Resources/bootstrap/js/bootstrap-popover.js
-                - %kernel.root_dir%/../vendor/braincrafted/bootstrap-bundle/Braincrafted/BootstrapBundle/Resources/bootstrap/js/bootstrap-scrollspy.js
-                - %kernel.root_dir%/../vendor/braincrafted/bootstrap-bundle/Braincrafted/BootstrapBundle/Resources/bootstrap/js/bootstrap-tab.js
-                - %kernel.root_dir%/../vendor/braincrafted/bootstrap-bundle/Braincrafted/BootstrapBundle/Resources/bootstrap/js/bootstrap-typeahead.js
-                - %kernel.root_dir%/../vendor/braincrafted/bootstrap-bundle/Braincrafted/BootstrapBundle/Resources/bootstrap/js/bootstrap-affix.js
-            output: bundles/braincraftedbootstrap/js/bootstrap.js
+                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-transition.js
+                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-alert.js
+                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-button.js
+                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-carousel.js
+                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-collapse.js
+                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-dropdown.js
+                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-modal.js
+                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-tooltip.js
+                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-popover.js
+                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-scrollspy.js
+                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-tab.js
+                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-typeahead.js
+                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-affix.js
+            output: bundles/braincraftedbootstrap/css/bootstrap.js
 
 # Doctrine Configuration
 doctrine:
