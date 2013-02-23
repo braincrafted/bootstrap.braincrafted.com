@@ -44,7 +44,7 @@ assetic:
             filters:
                 - less
                 - cssrewrite
-            output: bundles/braincraftedbootstrap/css/bootstrap.css
+            output: bundles/braincraftedbootstrap/css/bootstrap.compiled.css
         bootstrap_js:
             inputs:
                 - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-transition.js
@@ -60,7 +60,7 @@ assetic:
                 - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-tab.js
                 - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-typeahead.js
                 - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-affix.js
-            output: bundles/braincraftedbootstrap/css/bootstrap.js
+            output: bundles/braincraftedbootstrap/js/bootstrap.compiled.js
 
 # Doctrine Configuration
 doctrine:
