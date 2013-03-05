@@ -39,28 +39,32 @@ assetic:
     assets:
         bootstrap_css:
             inputs:
-                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/less/bootstrap.less
-                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/less/responsive.less
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/less/bootstrap.less
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/less/responsive.less
             filters:
                 - less
                 - cssrewrite
-            output: bundles/braincraftedbootstrap/css/bootstrap.compiled.css
+            output: css/bootstrap.css
+        jquery:
+            inputs:
+                - %kernel.root_dir%/../vendor/jquery/jquery/jquery-1.9.1.js
+            output: js/jquery.js
         bootstrap_js:
             inputs:
-                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-transition.js
-                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-alert.js
-                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-button.js
-                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-carousel.js
-                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-collapse.js
-                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-dropdown.js
-                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-modal.js
-                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-tooltip.js
-                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-popover.js
-                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-scrollspy.js
-                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-tab.js
-                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-typeahead.js
-                - %kernel.root_dir%/../web/bundles/braincraftedbootstrap/js/bootstrap-affix.js
-            output: bundles/braincraftedbootstrap/js/bootstrap.compiled.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-transition.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-alert.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-button.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-carousel.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-collapse.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-dropdown.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-modal.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-tooltip.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-popover.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-scrollspy.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-tab.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-typeahead.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-affix.js
+            output: js/bootstrap.js
 
 # Doctrine Configuration
 doctrine:
