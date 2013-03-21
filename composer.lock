@@ -1,19 +1,19 @@
 {
-    "hash": "cd2c89da0c7e342708e284a48e37404c",
+    "hash": "31957c5b70d2c1b8c570c21d007056d3",
     "packages": [
         {
             "name": "braincrafted/bootstrap-bundle",
-            "version": "dev-master",
+            "version": "dev-develop",
             "target-dir": "Braincrafted/BootstrapBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/braincrafted/bootstrap-bundle.git",
-                "reference": "v1.3.1"
+                "reference": "cc76a41dd414e58e00ce0842dacd6c815abbc170"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/braincrafted/bootstrap-bundle/zipball/v1.3.1",
-                "reference": "v1.3.1",
+                "url": "https://api.github.com/repos/braincrafted/bootstrap-bundle/zipball/cc76a41dd414e58e00ce0842dacd6c815abbc170",
+                "reference": "cc76a41dd414e58e00ce0842dacd6c815abbc170",
                 "shasum": ""
             },
             "require": {
@@ -52,28 +52,28 @@
                 "bootstrap"
             ],
             "support": {
-                "source": "https://github.com/braincrafted/bootstrap-bundle/tree/v1.3.1",
+                "source": "https://github.com/braincrafted/bootstrap-bundle/tree/develop",
                 "issues": "https://github.com/braincrafted/bootstrap-bundle/issues"
             },
-            "time": "2013-03-08 21:14:47"
+            "time": "2013-03-08 21:14:53"
         },
         {
             "name": "braincrafted/bootstrap-demo-bundle",
-            "version": "dev-master",
+            "version": "dev-develop",
             "target-dir": "Braincrafted/BootstrapDemoBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/braincrafted/bootstrap-demo-bundle.git",
-                "reference": "v1.3.2"
+                "reference": "426d3a4856a1937cdc481f4a107d15f89955ce1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/braincrafted/bootstrap-demo-bundle/zipball/v1.3.2",
-                "reference": "v1.3.2",
+                "url": "https://api.github.com/repos/braincrafted/bootstrap-demo-bundle/zipball/426d3a4856a1937cdc481f4a107d15f89955ce1e",
+                "reference": "426d3a4856a1937cdc481f4a107d15f89955ce1e",
                 "shasum": ""
             },
             "require": {
-                "braincrafted/bootstrap-bundle": "dev-master",
+                "braincrafted/bootstrap-bundle": "dev-develop",
                 "php": ">=5.3.3"
             },
             "require-dev": {
@@ -109,10 +109,10 @@
                 "bootstrap"
             ],
             "support": {
-                "source": "https://github.com/braincrafted/bootstrap-demo-bundle/tree/v1.3.2",
+                "source": "https://github.com/braincrafted/bootstrap-demo-bundle/tree/develop",
                 "issues": "https://github.com/braincrafted/bootstrap-demo-bundle/issues"
             },
-            "time": "2013-03-09 15:54:44"
+            "time": "2013-03-21 12:53:25"
         },
         {
             "name": "dflydev/markdown",
