@@ -16,61 +16,11 @@ framework:
     trust_proxy_headers: false # Should Request object should trust proxy headers (X_FORWARDED_FOR/HTTP_CLIENT_IP)
     session:         ~
 
-# Twig Configuration
-twig:
-    debug:            %kernel.debug%
-    strict_variables: %kernel.debug%
-    form:
-        resources:
-            - "BcBootstrapBundle:Form:form_div_layout.html.twig"
-
 # Assetic Configuration
 assetic:
-    debug:          %kernel.debug%
-    use_controller: false
-    bundles:        [ ]
     filters:
         less:
             node:       /usr/local/bin/node
             node_paths: [/usr/local/lib/node_modules]
             apply_to:   "\.less$"
         cssrewrite: ~
-    assets:
-        bootstrap_css:
-            inputs:
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/less/bootstrap.less
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/less/responsive.less
-            filters:
-                - less
-                - cssrewrite
-            output: css/bootstrap.css
-        jquery:
-            inputs:
-                - %kernel.root_dir%/../vendor/jquery/jquery/jquery-1.9.1.js
-            output: js/jquery.js
-        bootstrap_js:
-            inputs:
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-transition.js
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-alert.js
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-button.js
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-carousel.js
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-collapse.js
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-dropdown.js
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-modal.js
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-tooltip.js
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-popover.js
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-scrollspy.js
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-tab.js
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-typeahead.js
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-affix.js
-            output: js/bootstrap.js
-
-knp_menu:
-   twig:
-       template: "BcBootstrapBundle:Menu:menu.html.twig"
-   templating: false
-   default_renderer: twig
-
-knp_paginator:
-    template:
-        pagination: "BcBootstrapBundle:Pagination:pagination.html.twig"

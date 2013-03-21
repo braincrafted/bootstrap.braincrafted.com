@@ -40,7 +40,7 @@
           <div class="page-header">
             <h1>1. Installation</h1>
           </div>
-          <p class="lead">Before installing Twitter Bootstrap for Symfony2 you need to have a working installation of Symfony 2.1 at hand. </p>
+          <p class="lead">Before installing Twitter Bootstrap for Symfony2 you need to have a working installation of Symfony 2.2.* at hand. </p>
 
           <div class="row-fluid">
             <div class="span8">
@@ -64,7 +64,7 @@
           <div class="row-fluid">
             <div class="span12">
               <h2>Activate</h2>
-              <p>You have to add <code>BraincraftedBootstrapBundle</code> to your <code>AppKernel.php</code>:</p>
+              <p>You have to add <code>BcBootstrapBundle</code> to your <code>AppKernel.php</code>:</p>
 <pre class="prettyprint linenums">
 # app/AppKernel.php
 ...
@@ -74,7 +74,7 @@ class AppKernel extends Kernel
     {
         $bundles = array(
             ...
-            new Braincrafted\BootstrapBundle\BraincraftedBootstrapBundle()
+            new Bc\Bundle\BootstrapBundle\BcBootstrapBundle()
         );
         ...
         return $bundles;
@@ -156,35 +156,6 @@ assetic:
             node_paths: [/usr/local/lib/node_modules]
             apply_to:   "\.less$"
         cssrewrite: ~
-    assets:
-        bootstrap_css:
-            inputs:
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/less/bootstrap.less
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/less/responsive.less
-            filters:
-                - less
-                - cssrewrite
-            output: css/bootstrap.css
-        bootstrap_js:
-            inputs:
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-transition.js
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-alert.js
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-button.js
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-carousel.js
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-collapse.js
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-dropdown.js
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-modal.js
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-tooltip.js
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-popover.js
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-scrollspy.js
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-tab.js
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-typeahead.js
-                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-affix.js
-            output: js/bootstrap.js
-        jquery:
-            inputs:
-                - %kernel.root_dir%/../vendor/jquery/jquery/jquery-1.9.1.js
-            output: js/jquery.js
 ...
 </pre>
               <p>You also need to place the icons in your <code>web</code> folder. You can either copy the icons (they are located in <code>vendor/twitter/bootstrap/img</code>) or you symlink them into your <code>web</code> folder:
@@ -226,30 +197,85 @@ $ ln -s ../../vendor/twitter/bootstrap/img img
           <div class="page-header">
             <h1>3. Configuration</h1>
           </div>
-          <p class="lead">After you installed BootstrapBundle using Composer you have to add some lines to your apps <code>config.yml</code> and start using it right away</p>
+          <p class="lead">BootstrapBundle supports a lot of functionality out of the box. However, if you want to adapt the bundle to your needs you can do this by modifying your <code>config.yml</code>.</p>
+
+          <div class="row-fluid">
+            <div class="span12">
+              <h2>BootstrapBundle</h2>
+              <p>BootstrapBundle automatically configures Assetic for you. You can change the default path to the Twitter Bootstrap asset files and jQuery
+<pre class="prettyprint linenums">
+# app/config.yml
+bc_bootstrap:
+    assets_dir:  %kernel.root_dir%/../vendor/twitter/bootstrap
+    jquery_path: %kernel.root_dir%/../vendor/jquery/jquery/jquery-1.9.1.js
+</pre>
+            </div>
+          </div>
+
+          <div class="row-fluid">
+            <div class="span12">
+              <h2>Assetic</h2>
+              <p>When you have AsseticBundle installed BootstrapBundle will automatically configure the assets from Twitter Bootstrap for you. If you want to change the configuration you can do this by overwritting the Assetic configuration.</p>
+              <p>This is the default of Assetic:</p>
+<pre class="prettyprint linenums">
+# app/config.yml
+assetic:
+    ...
+    assets:
+        bootstrap_css:
+            inputs:
+                - %kernelbc_bootstrap.assets_dir%/less/bootstrap.less
+                - %kernelbc_bootstrap.assets_dir%/less/responsive.less
+            filters:
+                - less
+                - cssrewrite
+            output: css/bootstrap.css
+        bootstrap_js:
+            inputs:
+                - %bc_bootstrap.assets_dir%/js/bootstrap-transition.js
+                - %bc_bootstrap.assets_dir%/js/bootstrap-alert.js
+                - %bc_bootstrap.assets_dir%/js/bootstrap-button.js
+                - %bc_bootstrap.assets_dir%/js/bootstrap-carousel.js
+                - %bc_bootstrap.assets_dir%/js/bootstrap-collapse.js
+                - %bc_bootstrap.assets_dir%/js/bootstrap-dropdown.js
+                - %bc_bootstrap.assets_dir%/js/bootstrap-modal.js
+                - %bc_bootstrap.assets_dir%/js/bootstrap-tooltip.js
+                - %bc_bootstrap.assets_dir%/js/bootstrap-popover.js
+                - %bc_bootstrap.assets_dir%/js/bootstrap-scrollspy.js
+                - %bc_bootstrap.assets_dir%/js/bootstrap-tab.js
+                - %bc_bootstrap.assets_dir%/js/bootstrap-typeahead.js
+                - %bc_bootstrap.assets_dir%/js/bootstrap-affix.js
+            output: js/bootstrap.js
+        jquery:
+            inputs:
+                - %bc_bootstrap.jquery_path%
+            output: js/jquery.js
+</pre>
+            </div>
+          </div>
 
           <div class="row-fluid">
             <div class="span12">
               <h2>Form theme</h2>
-              <p>BootstrapBundle can automatically style every form in your application with Twitter Bootstrap. You just need to tell Twig to use the theme that comes with the bundle.</p>
+              <p>BootstrapBundle automatically styles every form in your application with Twitter Bootstrap. If you want to use a different form theme than the one provided by BootstrapBundle, you can change your Twig configuration</p>
 <pre class="prettyprint linenums">
 # app/config.yml
 twig:
     form:
         resources:
-            - "BraincraftedBootstrapBundle:Form:form_div_layout.html.twig"
+            - "AcmeBundle:Form:form_div_layout.html.twig"
 </pre>
             </div>
           </div>
           <div class="row-fluid">
             <div class="span12">
               <h2>KnpMenu theme</h2>
-              <p>If you want to use KnpMenu to display menus in the Twitter Bootstrap style you have to tell KnpMenu to use the theme provided by BootstrapBundle.</p>
+              <p>If you have KnpMenuBundle installed BootstrapBunde will automatically configure it to use the menu theme provided by BootstrapBundle. You can change this in your <code>config.yml</code>:</p>
 <pre class="prettyprint linenums">
 # app/config.yml
 knp_menu:
    twig:
-       template: "BraincraftedBootstrapBundle:Menu:menu.html.twig"
+       template: "AcmeBundle:Menu:menu.html.twig"
 </pre>
             </div>
           </div>
@@ -257,12 +283,12 @@ knp_menu:
           <div class="row-fluid">
             <div class="span12">
               <h2>KnpPaginator theme</h2>
-              <p>If you want to use KnpMenu to display menus in the Twitter Bootstrap style you have to tell KnpMenu to use the theme provided by BootstrapBundle.</p>
+              <p>KnpPaginatorBundle is also automatically detected by BootstrapBundle. If you want to use another theme you can do this in <code>config.yml</code>:</p>
 <pre class="prettyprint linenums">
 # app/config.yml
 knp_paginator:
     template:
-        pagination: BraincraftedBootstrapBundle:Pagination:pagination.html.twig
+        pagination: AcmeBundle:Pagination:pagination.html.twig
 </pre>
             </div>
           </div>
@@ -280,28 +306,35 @@ knp_paginator:
           <p class="lead">Within the download you'll find the following file structure and contents.</p>
           <p>Once downloaded, unzip the compressed folder to see the structure of (the compiled) Bootstrap Bundle. You'll see something like this:</p>
 <pre class="prettyprint">
-  Braincrafted/
-  ├── BootstrapBundle/
-  │   ├── DependencyInjection
-  │   │   ├── BraincraftedBootstrapExtension.php
-  │   │   ├── Configuration.php
-  │   ├── Resources
-  │   │   ├── config
-  │   │   │   ├── services.yml
-  │   │   ├── views
-  │   │   │   ├── Form
-  │   │   │   │   ├── form_div_layout.html.twig
-  │   │   │   ├── Menu
-  │   │   │   │   ├── menu.html.twig
-  │   │   │   ├── _html5shiv.html.twig
-  │   ├── Twig
-  │   │   ├── BootstrapIconExtension.php
-  │   ├── Voter
-  │   │   ├── RequestRegexVoter.php
-  │   │   ├── RequestVoter.php
-  │   ├── BraincraftedBootstrapBundle.php
-  │   ├── composer.json
-  └── └── README.md
+  Bc/
+  └── Bundle/
+      └── BootstrapBundle/
+          ├── DependencyInjection
+          │   ├── BcBootstrapExtension.php
+          │   ├── Configuration.php
+          ├── Resources
+          │   ├── config
+          │   │   ├── services.yml
+          │   ├── views
+          │   │   ├── Form
+          │   │   │   ├── form_div_layout.html.twig
+          │   │   ├── Menu
+          │   │   │   ├── menu.html.twig
+          │   │   ├── Pagination
+          │   │   │   ├── pagination.html.twig
+          │   │   └── _html5shiv.html.twig
+          ├── Tests
+          │   ├── Twig
+          │   │   ├── BootstrapBadgeExtensionTest.php
+          │   │   ├── BootstrapIconExtensionTest.php
+          │   │   └── BootstrapLabelExtensionTest.php
+          ├── Twig
+          │   ├── BootstrapBadgeExtension.php
+          │   ├── BootstrapIconExtension.php
+          │   └── BootstrapLabelExtension.php
+          ├── BcBootstrapBundle.php
+          ├── composer.json
+          └── README.md
 </pre>
           <p>The Bootstrap for Symfony2 bundle only contains the compiled and not minified versions of the CSS and Javascript files. We recommend using Assetic to minify the files. If you want to compile your own version of Twitter for Bootstrap you can do this. Just look at the content of <code>_javascripts.html.twig</code> and <code>_stylesheets.html.twig</code>, copy the content into your bundle and replace the CSS and JavaScript files with your own. The image files are compressed using <a href="http://imageoptim.com/">ImageOptim</a>, a Mac app for compressing PNGs.</p>
           <p>Please note that all JavaScript plugins require jQuery to be included. jQuery is included in this bundle, however we recommend loading it from Google CDN and using the included version only as backup.</p>
