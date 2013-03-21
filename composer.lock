@@ -8,17 +8,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/braincrafted/bootstrap-bundle.git",
-                "reference": "v1.2.0"
+                "reference": "v1.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/braincrafted/bootstrap-bundle/zipball/v1.2.0",
-                "reference": "v1.2.0",
+                "url": "https://api.github.com/repos/braincrafted/bootstrap-bundle/zipball/v1.3.1",
+                "reference": "v1.3.1",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3",
-                "twig/extensions": "dev-master"
+                "php": ">=5.3.3"
             },
             "require-dev": {
                 "knplabs/knp-markdown-bundle": "dev-master",
@@ -29,7 +28,8 @@
             "suggest": {
                 "knplabs/knp-menu": "Required to use KnpMenuBundle.",
                 "knplabs/knp-menu-bundle": "BraincraftedBootstrapBundle styles the menus provided by KnpMenuBundle.",
-                "knplabs/knp-paginator-bundle": "BraincraftedBootstrapBundle styles the pagination provided by KnpPaginatorBundle."
+                "knplabs/knp-paginator-bundle": "BraincraftedBootstrapBundle styles the pagination provided by KnpPaginatorBundle.",
+                "twitter/bootstrap": "Twitter Bootstrap provides the assets (images, CSS and JS)"
             },
             "type": "symfony-bundle",
             "autoload": {
@@ -52,10 +52,10 @@
                 "bootstrap"
             ],
             "support": {
-                "source": "https://github.com/braincrafted/bootstrap-bundle/tree/v1.2.0",
+                "source": "https://github.com/braincrafted/bootstrap-bundle/tree/v1.3.1",
                 "issues": "https://github.com/braincrafted/bootstrap-bundle/issues"
             },
-            "time": "2013-02-24 18:14:21"
+            "time": "2013-03-08 21:14:47"
         },
         {
             "name": "braincrafted/bootstrap-demo-bundle",
@@ -64,18 +64,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/braincrafted/bootstrap-demo-bundle.git",
-                "reference": "v1.2.0"
+                "reference": "v1.3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/braincrafted/bootstrap-demo-bundle/zipball/v1.2.0",
-                "reference": "v1.2.0",
+                "url": "https://api.github.com/repos/braincrafted/bootstrap-demo-bundle/zipball/v1.3.2",
+                "reference": "v1.3.2",
                 "shasum": ""
             },
             "require": {
                 "braincrafted/bootstrap-bundle": "dev-master",
-                "php": ">=5.3.3",
-                "twig/extensions": "dev-master"
+                "php": ">=5.3.3"
             },
             "require-dev": {
                 "knplabs/knp-markdown-bundle": "dev-master",
@@ -86,7 +85,8 @@
             "suggest": {
                 "knplabs/knp-menu": "Required to use KnpMenuBundle.",
                 "knplabs/knp-menu-bundle": "BraincraftedBootstrapBundle styles the menus provided by KnpMenuBundle.",
-                "knplabs/knp-paginator-bundle": "BraincraftedBootstrapBundle styles the pagination provided by KnpPaginatorBundle."
+                "knplabs/knp-paginator-bundle": "BraincraftedBootstrapBundle styles the pagination provided by KnpPaginatorBundle.",
+                "twitter/bootstrap": "Get Stylesheets, JavaScripts and icons directly from Bootstrap."
             },
             "type": "symfony-bundle",
             "autoload": {
@@ -109,10 +109,10 @@
                 "bootstrap"
             ],
             "support": {
-                "source": "https://github.com/braincrafted/bootstrap-demo-bundle/tree/v1.2.0",
+                "source": "https://github.com/braincrafted/bootstrap-demo-bundle/tree/v1.3.2",
                 "issues": "https://github.com/braincrafted/bootstrap-demo-bundle/issues"
             },
-            "time": "2013-02-24 18:13:55"
+            "time": "2013-03-09 15:54:44"
         },
         {
             "name": "dflydev/markdown",
@@ -1004,12 +1004,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpMenuBundle.git",
-                "reference": "bfaa9f1a74ee590c5e6460a3139b268fce1f1885"
+                "reference": "8f84c396927809e885f7a17ef3737358c001d78f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpMenuBundle/zipball/bfaa9f1a74ee590c5e6460a3139b268fce1f1885",
-                "reference": "bfaa9f1a74ee590c5e6460a3139b268fce1f1885",
+                "url": "https://api.github.com/repos/KnpLabs/KnpMenuBundle/zipball/8f84c396927809e885f7a17ef3737358c001d78f",
+                "reference": "8f84c396927809e885f7a17ef3737358c001d78f",
                 "shasum": ""
             },
             "require": {
@@ -1049,7 +1049,7 @@
             "keywords": [
                 "menu"
             ],
-            "time": "2012-12-29 08:47:58"
+            "time": "2013-03-18 17:08:00"
         },
         {
             "name": "knplabs/knp-paginator-bundle",
@@ -1058,12 +1058,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpPaginatorBundle.git",
-                "reference": "v2.3.2"
+                "reference": "ae880a6a8adc2a41b14dcebf0a4e9dc142a3a772"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpPaginatorBundle/zipball/v2.3.2",
-                "reference": "v2.3.2",
+                "url": "https://api.github.com/repos/KnpLabs/KnpPaginatorBundle/zipball/ae880a6a8adc2a41b14dcebf0a4e9dc142a3a772",
+                "reference": "ae880a6a8adc2a41b14dcebf0a4e9dc142a3a772",
                 "shasum": ""
             },
             "require": {
@@ -1108,7 +1108,7 @@
                 "pagination",
                 "paginator"
             ],
-            "time": "2013-02-18 17:29:20"
+            "time": "2013-03-14 07:27:40"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -1801,12 +1801,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig-extensions.git",
-                "reference": "921799aaf05f88af749d72912d6b154dfeb9a03e"
+                "reference": "v1.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig-extensions/zipball/921799aaf05f88af749d72912d6b154dfeb9a03e",
-                "reference": "921799aaf05f88af749d72912d6b154dfeb9a03e",
+                "url": "https://api.github.com/repos/fabpot/Twig-extensions/zipball/v1.0.0",
+                "reference": "v1.0.0",
                 "shasum": ""
             },
             "require": {
