@@ -22,8 +22,8 @@ class AppKernel extends Kernel
             new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
-            new Braincrafted\BootstrapBundle\BraincraftedBootstrapBundle(),
-            new Braincrafted\BootstrapDemoBundle\BraincraftedBootstrapDemoBundle(),
+            new Bc\Bundle\BootstrapBundle\BcBootstrapBundle(),
+            new Bc\Bundle\BootstrapDemoBundle\BcBootstrapDemoBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

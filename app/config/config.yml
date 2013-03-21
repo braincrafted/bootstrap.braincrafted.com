@@ -1,11 +1,10 @@
 imports:
-    - { resource: parameters.yml }
     - { resource: security.yml }
 
 framework:
     #esi:             ~
     #translator:      { fallback: %locale% }
-    secret:          %secret%
+    secret:          detfarcniarb
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
         strict_requirements: %kernel.debug%
@@ -13,7 +12,7 @@ framework:
     csrf_protection: true
     validation:      { enable_annotations: true }
     templating:      { engines: ['twig'] } #assets_version: SomeVersionScheme
-    default_locale:  %locale%
+    default_locale:  en
     trust_proxy_headers: false # Should Request object should trust proxy headers (X_FORWARDED_FOR/HTTP_CLIENT_IP)
     session:         ~
 
@@ -23,7 +22,7 @@ twig:
     strict_variables: %kernel.debug%
     form:
         resources:
-            - "BraincraftedBootstrapBundle:Form:form_div_layout.html.twig"
+            - "BcBootstrapBundle:Form:form_div_layout.html.twig"
 
 # Assetic Configuration
 assetic:
@@ -66,35 +65,12 @@ assetic:
                 - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-affix.js
             output: js/bootstrap.js
 
-# Doctrine Configuration
-doctrine:
-    dbal:
-        driver:   %database_driver%
-        host:     %database_host%
-        port:     %database_port%
-        dbname:   %database_name%
-        user:     %database_user%
-        password: %database_password%
-        charset:  UTF8
-
-    orm:
-        auto_generate_proxy_classes: %kernel.debug%
-        auto_mapping: true
-
-# Swiftmailer Configuration
-swiftmailer:
-    transport: %mailer_transport%
-    host:      %mailer_host%
-    username:  %mailer_user%
-    password:  %mailer_password%
-    spool:     { type: memory }
-
 knp_menu:
    twig:
-       template: "BraincraftedBootstrapBundle:Menu:menu.html.twig"
+       template: "BcBootstrapBundle:Menu:menu.html.twig"
    templating: false
    default_renderer: twig
 
 knp_paginator:
     template:
-        pagination: BraincraftedBootstrapBundle:Pagination:pagination.html.twig
+        pagination: "BcBootstrapBundle:Pagination:pagination.html.twig"

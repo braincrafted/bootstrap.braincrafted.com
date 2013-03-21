@@ -1,19 +1,19 @@
 {
-    "hash": "31957c5b70d2c1b8c570c21d007056d3",
+    "hash": "e8e41aa6f1868e867b4886a8b9623646",
     "packages": [
         {
             "name": "braincrafted/bootstrap-bundle",
             "version": "dev-develop",
-            "target-dir": "Braincrafted/BootstrapBundle",
+            "target-dir": "Bc/Bundle/BootstrapBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/braincrafted/bootstrap-bundle.git",
-                "reference": "cc76a41dd414e58e00ce0842dacd6c815abbc170"
+                "reference": "a60b3ac25e942eccc5bf3100a3c8c43e26da1e6e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/braincrafted/bootstrap-bundle/zipball/cc76a41dd414e58e00ce0842dacd6c815abbc170",
-                "reference": "cc76a41dd414e58e00ce0842dacd6c815abbc170",
+                "url": "https://api.github.com/repos/braincrafted/bootstrap-bundle/zipball/a60b3ac25e942eccc5bf3100a3c8c43e26da1e6e",
+                "reference": "a60b3ac25e942eccc5bf3100a3c8c43e26da1e6e",
                 "shasum": ""
             },
             "require": {
@@ -34,7 +34,7 @@
             "type": "symfony-bundle",
             "autoload": {
                 "psr-0": {
-                    "Braincrafted\\BootstrapBundle": ""
+                    "Bc\\Bundle\\BootstrapBundle": ""
                 }
             },
             "license": [
@@ -55,88 +55,26 @@
                 "source": "https://github.com/braincrafted/bootstrap-bundle/tree/develop",
                 "issues": "https://github.com/braincrafted/bootstrap-bundle/issues"
             },
-            "time": "2013-03-08 21:14:53"
-        },
-        {
-            "name": "braincrafted/bootstrap-demo-bundle",
-            "version": "dev-develop",
-            "target-dir": "Braincrafted/BootstrapDemoBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/braincrafted/bootstrap-demo-bundle.git",
-                "reference": "426d3a4856a1937cdc481f4a107d15f89955ce1e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/braincrafted/bootstrap-demo-bundle/zipball/426d3a4856a1937cdc481f4a107d15f89955ce1e",
-                "reference": "426d3a4856a1937cdc481f4a107d15f89955ce1e",
-                "shasum": ""
-            },
-            "require": {
-                "braincrafted/bootstrap-bundle": "dev-develop",
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "knplabs/knp-markdown-bundle": "dev-master",
-                "knplabs/knp-menu": "dev-master",
-                "knplabs/knp-menu-bundle": "dev-master",
-                "knplabs/knp-paginator-bundle": "dev-master"
-            },
-            "suggest": {
-                "knplabs/knp-menu": "Required to use KnpMenuBundle.",
-                "knplabs/knp-menu-bundle": "BraincraftedBootstrapBundle styles the menus provided by KnpMenuBundle.",
-                "knplabs/knp-paginator-bundle": "BraincraftedBootstrapBundle styles the pagination provided by KnpPaginatorBundle.",
-                "twitter/bootstrap": "Get Stylesheets, JavaScripts and icons directly from Bootstrap."
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-0": {
-                    "Braincrafted\\BootstrapDemoBundle": ""
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Florian Eckerstorfer",
-                    "email": "florian@theroadtojoy.at",
-                    "homepage": "http://florianeckerstorfer.com"
-                }
-            ],
-            "description": "BraincraftedBootstrapDemoBundle",
-            "keywords": [
-                "bootstrap"
-            ],
-            "support": {
-                "source": "https://github.com/braincrafted/bootstrap-demo-bundle/tree/develop",
-                "issues": "https://github.com/braincrafted/bootstrap-demo-bundle/issues"
-            },
-            "time": "2013-03-21 12:53:25"
+            "time": "2013-03-21 13:30:33"
         },
         {
             "name": "dflydev/markdown",
-            "version": "dev-master",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dflydev/dflydev-markdown.git",
-                "reference": "11f8faa2d17f717a038b4d372abd22a6ac4a15dc"
+                "reference": "v1.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dflydev/dflydev-markdown/zipball/11f8faa2d17f717a038b4d372abd22a6ac4a15dc",
-                "reference": "11f8faa2d17f717a038b4d372abd22a6ac4a15dc",
+                "url": "https://github.com/dflydev/dflydev-markdown/zipball/v1.0.2",
+                "reference": "v1.0.2",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
             "autoload": {
                 "psr-0": {
                     "dflydev\\markdown": "src"
@@ -144,7 +82,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD-3-Clause"
+                "New BSD License"
             ],
             "authors": [
                 {
@@ -171,20 +109,20 @@
             "keywords": [
                 "markdown"
             ],
-            "time": "2012-07-15 16:31:27"
+            "time": "2012-01-15 19:36:37"
         },
         {
             "name": "doctrine/common",
-            "version": "2.3.x-dev",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/doctrine/common.git",
-                "reference": "bb0aebbf234db52df476a2b473d434745b34221c"
+                "url": "https://github.com/doctrine/common",
+                "reference": "2.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/bb0aebbf234db52df476a2b473d434745b34221c",
-                "reference": "bb0aebbf234db52df476a2b473d434745b34221c",
+                "url": "https://github.com/doctrine/common/zipball/2.3.0",
+                "reference": "2.3.0",
                 "shasum": ""
             },
             "require": {
@@ -207,7 +145,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/"
                 },
@@ -227,7 +165,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -240,20 +178,20 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2012-09-20 05:55:18"
+            "time": "2012-09-19 22:55:18"
         },
         {
             "name": "doctrine/dbal",
-            "version": "2.3.x-dev",
+            "version": "2.3.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/doctrine/dbal.git",
-                "reference": "fd45c6f6baa618d871f3201fabe76df5043abb1e"
+                "url": "https://github.com/doctrine/dbal",
+                "reference": "2.3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/fd45c6f6baa618d871f3201fabe76df5043abb1e",
-                "reference": "fd45c6f6baa618d871f3201fabe76df5043abb1e",
+                "url": "https://github.com/doctrine/dbal/archive/2.3.2.zip",
+                "reference": "2.3.2",
                 "shasum": ""
             },
             "require": {
@@ -303,7 +241,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2013-01-20 11:50:36"
+            "time": "2013-01-07 20:03:43"
         },
         {
             "name": "doctrine/doctrine-bundle",
@@ -377,16 +315,16 @@
         },
         {
             "name": "doctrine/orm",
-            "version": "2.3.x-dev",
+            "version": "2.3.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "304acf0a1af15ebe049231b84a7630c75ecbe62d"
+                "url": "git://github.com/doctrine/doctrine2.git",
+                "reference": "2.3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/304acf0a1af15ebe049231b84a7630c75ecbe62d",
-                "reference": "304acf0a1af15ebe049231b84a7630c75ecbe62d",
+                "url": "https://github.com/doctrine/doctrine2/archive/2.3.2.zip",
+                "reference": "2.3.2",
                 "shasum": ""
             },
             "require": {
@@ -443,20 +381,20 @@
                 "database",
                 "orm"
             ],
-            "time": "2013-02-21 18:03:42"
+            "time": "2013-01-07 20:05:04"
         },
         {
             "name": "jdorn/sql-formatter",
-            "version": "dev-master",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jdorn/sql-formatter.git",
-                "reference": "2efc4bb4f6f154d67125d313b1412926fe9d70ee"
+                "url": "git://github.com/jdorn/sql-formatter.git",
+                "reference": "v1.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jdorn/sql-formatter/zipball/2efc4bb4f6f154d67125d313b1412926fe9d70ee",
-                "reference": "2efc4bb4f6f154d67125d313b1412926fe9d70ee",
+                "url": "https://github.com/jdorn/sql-formatter/archive/v1.2.0.zip",
+                "reference": "v1.2.0",
                 "shasum": ""
             },
             "require": {
@@ -490,7 +428,7 @@
                 "highlight",
                 "sql"
             ],
-            "time": "2013-03-03 19:18:19"
+            "time": "2012-12-22 21:46:50"
         },
         {
             "name": "jms/aop-bundle",
@@ -567,7 +505,7 @@
                 {
                     "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -683,7 +621,7 @@
                 {
                     "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -815,7 +753,7 @@
         },
         {
             "name": "knplabs/knp-components",
-            "version": "dev-master",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/knp-components.git",
@@ -1112,16 +1050,16 @@
         },
         {
             "name": "kriswallsmith/assetic",
-            "version": "dev-master",
+            "version": "v1.1.0-alpha4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "df03baa337ae1c87803a7b1a76a393f8a59813f3"
+                "reference": "v1.1.0-alpha4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/df03baa337ae1c87803a7b1a76a393f8a59813f3",
-                "reference": "df03baa337ae1c87803a7b1a76a393f8a59813f3",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/v1.1.0-alpha4",
+                "reference": "v1.1.0-alpha4",
                 "shasum": ""
             },
             "require": {
@@ -1522,17 +1460,17 @@
         },
         {
             "name": "symfony/assetic-bundle",
-            "version": "dev-master",
+            "version": "v2.1.2",
             "target-dir": "Symfony/Bundle/AsseticBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/AsseticBundle.git",
-                "reference": "6985b26ba44f12a3804af8beb53f6b6e49da5b04"
+                "reference": "v2.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/AsseticBundle/zipball/6985b26ba44f12a3804af8beb53f6b6e49da5b04",
-                "reference": "6985b26ba44f12a3804af8beb53f6b6e49da5b04",
+                "url": "https://api.github.com/repos/symfony/AsseticBundle/zipball/v2.1.2",
+                "reference": "v2.1.2",
                 "shasum": ""
             },
             "require": {
@@ -1581,7 +1519,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2013-02-24 18:21:16"
+            "time": "2013-02-23 22:29:21"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -1844,16 +1782,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "dev-master",
+            "version": "v1.12.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/fabpot/Twig.git",
-                "reference": "39d94faabcea7d60b90c2996d51e1b6691ab39d2"
+                "url": "git://github.com/fabpot/Twig.git",
+                "reference": "v1.12.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/39d94faabcea7d60b90c2996d51e1b6691ab39d2",
-                "reference": "39d94faabcea7d60b90c2996d51e1b6691ab39d2",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/v1.12.2",
+                "reference": "v1.12.2",
                 "shasum": ""
             },
             "require": {
@@ -1889,7 +1827,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2013-02-28 14:08:49"
+            "time": "2013-02-09 18:21:53"
         },
         {
             "name": "twitter/bootstrap",
@@ -1932,8 +1870,7 @@
         "knplabs/knp-menu-bundle": 20,
         "knplabs/knp-markdown-bundle": 20,
         "knplabs/knp-paginator-bundle": 20,
-        "braincrafted/bootstrap-bundle": 20,
-        "braincrafted/bootstrap-demo-bundle": 20
+        "braincrafted/bootstrap-bundle": 20
     },
     "platform": {
         "php": ">=5.3.3"

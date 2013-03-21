@@ -45,7 +45,6 @@
         "knplabs/knp-markdown-bundle":          "dev-master",
         "knplabs/knp-paginator-bundle":         "dev-master",
         "braincrafted/bootstrap-bundle":        "dev-develop",
-        "braincrafted/bootstrap-demo-bundle":   "dev-develop",
         "twitter/bootstrap":                    "2.3.*",
         "jquery/jquery":                        "1.9.*"
     },
