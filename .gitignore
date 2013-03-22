@@ -17,5 +17,5 @@ app/config/parameters.yml
 .tags
 .tags_sorted_by_file
 
-Composer
+# Composer
 composer.phar
