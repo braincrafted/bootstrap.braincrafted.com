@@ -10,10 +10,6 @@
             "url": "https://github.com/braincrafted/bootstrap-bundle"
         },
         {
-            "type": "vcs",
-            "url": "https://github.com/braincrafted/bootstrap-demo-bundle"
-        },
-        {
             "type": "package",
             "package": {
                 "name": "jquery/jquery",

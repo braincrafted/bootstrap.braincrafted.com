@@ -1,5 +1,5 @@
 {
-    "hash": "e8e41aa6f1868e867b4886a8b9623646",
+    "hash": "75fbc274f88113e242fe95bf5e1325c4",
     "packages": [
         {
             "name": "braincrafted/bootstrap-bundle",
@@ -8,12 +8,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/braincrafted/bootstrap-bundle.git",
-                "reference": "a60b3ac25e942eccc5bf3100a3c8c43e26da1e6e"
+                "reference": "0fb033896ed388efe10d09ae09143e00c69d3118"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/braincrafted/bootstrap-bundle/zipball/a60b3ac25e942eccc5bf3100a3c8c43e26da1e6e",
-                "reference": "a60b3ac25e942eccc5bf3100a3c8c43e26da1e6e",
+                "url": "https://api.github.com/repos/braincrafted/bootstrap-bundle/zipball/0fb033896ed388efe10d09ae09143e00c69d3118",
+                "reference": "0fb033896ed388efe10d09ae09143e00c69d3118",
                 "shasum": ""
             },
             "require": {
@@ -55,7 +55,7 @@
                 "source": "https://github.com/braincrafted/bootstrap-bundle/tree/develop",
                 "issues": "https://github.com/braincrafted/bootstrap-bundle/issues"
             },
-            "time": "2013-03-21 13:30:33"
+            "time": "2013-03-22 07:59:31"
         },
         {
             "name": "dflydev/markdown",
@@ -215,7 +215,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/"
                 },
