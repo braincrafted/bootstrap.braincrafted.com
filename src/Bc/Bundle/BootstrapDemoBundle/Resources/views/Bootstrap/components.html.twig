@@ -1880,6 +1880,11 @@ $this->get('bc_bootstrap.flash')->info('Heads up! This alert needs your attentio
 {{ "{% include 'BcBootstrapBundle::flash.html.twig' %}" }}
 </pre>
 
+        <p>If the user should be able to dismiss the alert messages, you can pass the <code>close</code> variable to the template:</p>
+<pre class="prettyprint linenums">
+{{ "{% include 'BcBootstrapBundle::flash.html.twig' with { 'close': true } %}" }}
+</pre>
+
         </section>
 
 
