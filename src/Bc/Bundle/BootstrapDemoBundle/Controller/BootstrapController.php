@@ -132,7 +132,7 @@ class BootstrapController extends Controller
         $request = $this->getRequest();
 
         $city = new City();
-	$city->setCitizens(array("Adam", "Eve"));
+        $city->setCitizens(array("Adam", "Eve"));
         $cityForm = $this->createForm(new CityType(), $city);
 
         if ($request->getMethod() == 'POST') {

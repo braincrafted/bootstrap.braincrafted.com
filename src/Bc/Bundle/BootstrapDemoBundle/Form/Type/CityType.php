@@ -44,14 +44,19 @@ class CityType extends AbstractType
             'multiple' => false,
             'expanded' => true
         ));
-	$builder->add('citizens', 'collection', array(
-	    'type'      => 'text',
-	    'allow_add' => true,
-	    'options'   => array(
-		'required'  => false,
-		'attr'      => array('class' => 'citizen-field')
-	    ),
-	));
+        $builder->add('citizens', 'collection', array(
+            'type'      => 'text',
+            'allow_add' => true,
+            'options'   => array(
+                'required'  => false,
+                'attr'      => array('class' => 'citizen-field')
+            ),
+        ));
+        $builder->add('accept', 'choice', array(
+            'choices'   => array('yes'),
+            'multiple'  => true,
+            'expanded'  => true
+        ));
     }
 
     /**

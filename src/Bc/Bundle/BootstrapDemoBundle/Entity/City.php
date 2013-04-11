@@ -56,6 +56,12 @@ class City
     protected $citizens = array();
 
     /**
+     * @var boolean
+     * @Assert\NotBlank()
+     */
+    protected $accept;
+
+    /**
      * Sets the name
      *
      * @param string $name The name
@@ -137,12 +143,23 @@ class City
 
     public function setCitizens($citizens)
     {
-	$this->citizens = $citizens;
-	return $this;
+        $this->citizens = $citizens;
+        return $this;
     }
 
     public function getCitizens()
     {
-	return $this->citizens;
+        return $this->citizens;
+    }
+
+    public function setAccept($accept)
+    {
+        $this->accept = $accept;
+        return $this;
+    }
+
+    public function getAccept()
+    {
+        return $this->accept;
     }
 }
