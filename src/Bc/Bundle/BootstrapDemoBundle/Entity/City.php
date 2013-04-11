@@ -52,6 +52,9 @@ class City
      */
     protected $newsletter;
 
+    /** @var array */
+    protected $citizens = array();
+
     /**
      * Sets the name
      *
@@ -130,5 +133,16 @@ class City
     public function getNewsletter()
     {
         return $this->newsletter;
+    }
+
+    public function setCitizens($citizens)
+    {
+	$this->citizens = $citizens;
+	return $this;
+    }
+
+    public function getCitizens()
+    {
+	return $this->citizens;
     }
 }
