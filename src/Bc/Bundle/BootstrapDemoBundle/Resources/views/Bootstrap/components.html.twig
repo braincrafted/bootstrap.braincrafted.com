@@ -1845,6 +1845,46 @@ public function dropdownNavbar(FactoryInterface $factory, array $options)
 &lt;/div&gt;
 </pre>
 
+
+          <hr class="bs-docs-separator">
+
+
+          <h2>FlashMessage service for Symfony2</h2>
+          <p>You can easily use these alert boxes with Symfony2 flash messages. If you havn't worked with flash messages in Symfony yet, please read the <a href="http://symfony.com/doc/current/book/controller.html#flash-messages">documentation</a>.</p>
+
+          <p>The <code>FlashMessage</code> of BcBootstrapBundle can be accessed using the DIC with the key <code>bc_bootstrap.flash</code>.</p>
+
+          <h3>Alert</h3>
+<pre class="prettyprint linenums">
+$this->get('bc_bootstrap.flash')->alert('Warning! Best check yo self, you're not looking too good.');
+</pre>
+
+          <h3>Error or dange</h3>
+<pre class="prettyprint linenums">
+$this->get('bc_bootstrap.flash')->error('Oh snap! Change a few things up and try submitting again.');
+</pre>
+
+          <h3>Success</h3>
+<pre class="prettyprint linenums">
+$this->get('bc_bootstrap.flash')->success('Well done! You successfully read this important alert message.');
+</pre>
+
+          <h3>Information</h3>
+<pre class="prettyprint linenums">
+$this->get('bc_bootstrap.flash')->info('Heads up! This alert needs your attention, but it's not super important.');
+</pre>
+
+          <p>BcBootstrapBundle also makes it easy to show these alerts in a Twig template:</p>
+
+<pre class="prettyprint linenums">
+{{ "{% include 'BcBootstrapBundle::flash.html.twig' %}" }}
+</pre>
+
+        <p>If the user should be able to dismiss the alert messages, you can pass the <code>close</code> variable to the template:</p>
+<pre class="prettyprint linenums">
+{{ "{% include 'BcBootstrapBundle::flash.html.twig' with { 'close': true } %}" }}
+</pre>
+
         </section>
 
 
