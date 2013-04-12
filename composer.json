@@ -10,10 +10,6 @@
             "url": "https://github.com/braincrafted/bootstrap-bundle"
         },
         {
-            "type": "vcs",
-            "url": "https://github.com/braincrafted/bootstrap-demo-bundle"
-        },
-        {
             "type": "package",
             "package": {
                 "name": "jquery/jquery",
@@ -44,8 +40,7 @@
         "knplabs/knp-menu-bundle":              "dev-master",
         "knplabs/knp-markdown-bundle":          "dev-master",
         "knplabs/knp-paginator-bundle":         "dev-master",
-        "braincrafted/bootstrap-bundle":        "dev-master",
-        "braincrafted/bootstrap-demo-bundle":   "dev-master",
+        "braincrafted/bootstrap-bundle":        "dev-develop",
         "twitter/bootstrap":                    "2.3.*",
         "jquery/jquery":                        "1.9.*"
     },
