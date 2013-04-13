@@ -44,6 +44,9 @@
         "twitter/bootstrap":                    "2.3.*",
         "jquery/jquery":                        "1.9.*"
     },
+    "require-dev": {
+        "leafo/lessphp": "dev-master"
+    },
     "scripts": {
         "post-install-cmd": [
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
