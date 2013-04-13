@@ -52,11 +52,7 @@ class CityType extends AbstractType
                 'attr'      => array('class' => 'citizen-field')
             ),
         ));
-        $builder->add('accept', 'choice', array(
-            'choices'   => array('yes'),
-            'multiple'  => true,
-            'expanded'  => true
-        ));
+        $builder->add('accept', 'checkbox', array());
     }
 
     /**

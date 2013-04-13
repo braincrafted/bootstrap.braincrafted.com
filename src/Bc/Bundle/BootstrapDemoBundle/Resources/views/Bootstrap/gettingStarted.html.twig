@@ -172,6 +172,18 @@ assetic:
         cssrewrite: ~
 </pre>
 
+              <p>You can also tell BcBootstrapBundle to not include the CSS code for responsive layouts:</p>
+<pre class="prettyprint linenums">
+bc_bootstrap:
+  include_responsive: false
+</pre>
+
+              <p>It is also possible to deactivate Less completley:</p>
+<pre class="prettyprint linenums">
+bc_bootstrap:
+  less_filter: none
+</pre>
+
               <p>You also need to place the icons in your <code>web</code> folder. You can either copy the icons (they are located in <code>vendor/twitter/bootstrap/img</code>) or you symlink them into your <code>web</code> folder:
 <pre class="prettyprint linenums">
 $ mkdir -p web/img
