@@ -40,9 +40,12 @@
         "knplabs/knp-menu-bundle":              "dev-master",
         "knplabs/knp-markdown-bundle":          "dev-master",
         "knplabs/knp-paginator-bundle":         "dev-master",
-        "braincrafted/bootstrap-bundle":        "dev-develop",
+        "braincrafted/bootstrap-bundle":        "dev-master",
         "twitter/bootstrap":                    "2.3.*",
         "jquery/jquery":                        "1.9.*"
+    },
+    "require-dev": {
+        "leafo/lessphp": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

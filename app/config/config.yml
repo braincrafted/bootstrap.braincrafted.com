@@ -16,9 +16,15 @@ framework:
     trust_proxy_headers: false # Should Request object should trust proxy headers (X_FORWARDED_FOR/HTTP_CLIENT_IP)
     session:         ~
 
+bc_bootstrap:
+    less_filter: less
+
 # Assetic Configuration
 assetic:
     filters:
+        # lessphp:
+        #     file: %kernel.root_dir%/../vendor/leafo/lessphp/lessc.inc.php
+        #     apply_to:   "\.less$"
         less:
             node:       /usr/local/bin/node
             node_paths: [/usr/local/lib/node_modules]
