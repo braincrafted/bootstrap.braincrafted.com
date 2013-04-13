@@ -158,6 +158,20 @@ assetic:
         cssrewrite: ~
 ...
 </pre>
+              <p>If you want to use LessPHP to compile the Bootstrap LESS files, you need to change your configuration to this:
+<pre class="prettyprint linenums">
+bc_bootstrap:
+    less_filter: less
+
+# Assetic Configuration
+assetic:
+    filters:
+        lessphp:
+            file: %kernel.root_dir%/../vendor/leafo/lessphp/lessc.inc.php
+            apply_to:   "\.less$"
+        cssrewrite: ~
+</pre>
+
               <p>You also need to place the icons in your <code>web</code> folder. You can either copy the icons (they are located in <code>vendor/twitter/bootstrap/img</code>) or you symlink them into your <code>web</code> folder:
 <pre class="prettyprint linenums">
 $ mkdir -p web/img
