@@ -238,31 +238,31 @@ assetic:
     assets:
         bootstrap_css:
             inputs:
-                - %kernelbc_bootstrap.assets_dir%/less/bootstrap.less
-                - %kernelbc_bootstrap.assets_dir%/less/responsive.less
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/less/bootstrap.less
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/less/responsive.less
             filters:
                 - less
                 - cssrewrite
             output: css/bootstrap.css
         bootstrap_js:
             inputs:
-                - %bc_bootstrap.assets_dir%/js/bootstrap-transition.js
-                - %bc_bootstrap.assets_dir%/js/bootstrap-alert.js
-                - %bc_bootstrap.assets_dir%/js/bootstrap-button.js
-                - %bc_bootstrap.assets_dir%/js/bootstrap-carousel.js
-                - %bc_bootstrap.assets_dir%/js/bootstrap-collapse.js
-                - %bc_bootstrap.assets_dir%/js/bootstrap-dropdown.js
-                - %bc_bootstrap.assets_dir%/js/bootstrap-modal.js
-                - %bc_bootstrap.assets_dir%/js/bootstrap-tooltip.js
-                - %bc_bootstrap.assets_dir%/js/bootstrap-popover.js
-                - %bc_bootstrap.assets_dir%/js/bootstrap-scrollspy.js
-                - %bc_bootstrap.assets_dir%/js/bootstrap-tab.js
-                - %bc_bootstrap.assets_dir%/js/bootstrap-typeahead.js
-                - %bc_bootstrap.assets_dir%/js/bootstrap-affix.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-transition.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-alert.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-button.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-carousel.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-collapse.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-dropdown.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-modal.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-tooltip.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-popover.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-scrollspy.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-tab.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-typeahead.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-affix.js
             output: js/bootstrap.js
         jquery:
             inputs:
-                - %bc_bootstrap.jquery_path%
+                - %kernel.root_dir%/../vendor/jquery/jquery/jquery-1.9.1.js
             output: js/jquery.js
 </pre>
             </div>
