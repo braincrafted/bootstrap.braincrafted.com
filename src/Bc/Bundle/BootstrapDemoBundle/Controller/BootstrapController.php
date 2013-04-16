@@ -102,6 +102,34 @@ class BootstrapController extends Controller
     }
 
     /**
+     * The form components action.
+     *
+     * @return \Symfony\Component\HttpFoundation\Response The response
+     */
+    public function formComponentsAction()
+    {
+        $defaultStylesForm     = $this->createForm(new DefaultStylesFormType());
+        $controlStatesForm     = $this->createForm(new ControlStatesFormType());
+        $supportedFormControls = $this->createForm(new SupportedFormControlsType());
+        $extendingControlsForm = $this->createForm(
+            new ExtendingControlsFormType()
+        );
+        $horizontalForm        = $this->createForm(new HorizontalFormType());
+        $inlineForm            = $this->createForm(new InlineFormType());
+        $searchForm            = $this->createForm(new SearchFormType());
+
+        return $this->render('BcBootstrapDemoBundle:Bootstrap:formComponents.html.twig', array(
+            'defaultStylesForm'     => $defaultStylesForm->createView(),
+            'controlStatesForm'     => $controlStatesForm->createView(),
+            'supportedFormControls' => $supportedFormControls->createView(),
+            'extendingControlsForm' => $extendingControlsForm->createView(),
+            'horizontalForm'        => $horizontalForm->createView(),
+            'inlineForm'            => $inlineForm->createView(),
+            'searchForm'            => $searchForm->createView()
+        ));
+    }
+
+    /**
      * The javascript action.
      *
      * @return \Symfony\Component\HttpFoundation\Response The response

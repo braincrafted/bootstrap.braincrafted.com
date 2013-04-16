@@ -1,0 +1,861 @@
+{% extends 'BcBootstrapDemoBundle::layout.html.twig' %}
+
+{% block title %}Form Components · BcBootstrapBundle{% endblock %}
+
+{% block body %}
+
+<!-- Subhead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+    <div class="container">
+        <h1>Form Components</h1>
+        <p class="lead">Automatic styling of Symfony2 form widgets.</p>
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="row">
+
+        <!-- Docs nav
+        ================================================== -->
+        <div class="span3 bs-docs-sidebar">
+            <ul class="nav nav-list bs-docs-sidenav">
+                <li><a href="#default-styles">{{ 'chevron-right'|icon }} Default Styles</a></li>
+                <li><a href="#optional-layouts">{{ 'chevron-right'|icon }} Optional Layouts</a></li>
+                <li><a href="#supported-form-controls">{{ 'chevron-right'|icon }} Supported Form Controls</a></li>
+                <li><a href="#extending-form-controls">{{ 'chevron-right'|icon }} Extending Form Controls</a></li>
+                <li><a href="#form-control-states">{{ 'chevron-right'|icon }} Form Control States</a></li>
+            </ul>
+        </div>
+
+        <div class="span9">
+
+            <!-- Forms
+            ================================================== -->
+            <section id="default-styles">
+                <div class="page-header">
+                    <h1>Default styles</h1>
+                </div>
+
+                <p>Individual form controls receive styling, but without any required base class on the <code>&lt;form&gt;</code> or large changes in markup. Results in stacked, left-aligned labels on top of form controls.</p>
+
+                <form class="bs-docs-example">
+                    <legend>Legend</legend>
+                    {{ form_widget(defaultStylesForm) }}
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+<pre class="prettyprint linenums">
+&lt;form&gt;
+  &lt;legend&gt;Legend&lt;/legend&gt;
+  {{ '{{ form_widget(defaultStylesForm) }}' }}
+  &lt;button type="submit" class="btn"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+</pre>
+<pre class="prettyprint linenums">
+// src/Braincrafted/BootstrapDemoBundle/Form/Type/DefaultStylesFormType.php
+namespace Braincrafted\BootstrapDemoBundle\Form\Type;
+
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+
+class DefaultStylesFormType extends AbstractType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder->add('labelName', 'text', array(
+            'label'         => 'Label name',
+            'required'      => false,
+            'attr'  => array(
+                'placeholder'   => 'Type something...',
+                'help_block'    => 'Example block-level help text here.'
+            ),
+        ));
+        $builder->add('checkMeOut', 'checkbox', array(
+            'label'     => 'Check me out'
+        ));
+    }
+
+    public function getName()
+    {
+        return 'default_styles_form';
+    }
+}
+
+</pre>
+
+            </section>
+
+            <section id="optional-layouts">
+
+                <div class="page-header">
+                    <h1>Optional layouts</h1>
+                </div>
+
+                <p>Included with Bootstrap are three optional form layouts for common use cases.</p>
+
+                <h2>Search form</h2>
+                <p>Add <code>.form-search</code> to the form and use the type <code>search</code> for an extra-rounded text input.</p>
+
+                <form class="bs-docs-example form-search">
+                    {{ form_widget(searchForm, {'form_type': 'search'}) }}
+                    <button type="submit" class="btn">Search</button>
+                </form>
+<pre class="prettyprint linenums">
+&lt;form class="form-search"&gt;
+  {{ "{{ form_widget(searchForm, { 'form_type': 'search' }) }}" }}
+  &lt;button type="submit" class="btn"&gt;Search&lt;/button&gt;
+&lt;/form&gt;
+</pre>
+<pre class="prettyprint linenums">
+// src/Braincrafted/BootstrapDemoBundle/Form/Type/SearchFormType.php
+namespace Braincrafted\BootstrapDemoBundle\Form\Type;
+
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+
+class SearchFormType extends AbstractType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder->add('searchQuery', 'search', array(
+            'required'  => false,
+            'attr'      => array('class'=> 'input-medium')
+        ));
+    }
+
+    public function getName()
+    {
+        return 'search_form';
+    }
+}
+
+</pre>
+
+
+                <h2>Inline form</h2>
+                <p>Add <code>.form-inline</code> for left-aligned labels and inline-block controls for a compact layout.</p>
+
+                <form class="form-inline">
+                    {{ form_widget(inlineForm, {'form_type': 'inline'}) }}
+                    <button type="submit" class="btn">Sign in</button>
+                </form>
+<pre class="prettyprint linenums">
+&lt;form class="bs-docs-example form-inline"&gt;
+  {{ "{{ form_widget(inlineForm, {'form_type': 'inline'}) }}" }}
+  &lt;button type="submit" class="btn"&gt;Sign in&lt;/button&gt;
+&lt;/form&gt;
+</pre>
+<pre class="prettyprint linenums">
+// src/Braincrafted/BootstrapDemoBundle/Form/Type/InlineFormType.php
+namespace Braincrafted\BootstrapDemoBundle\Form\Type;
+
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+
+class InlineFormType extends AbstractType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder->add('email', 'email', array(
+            'required'      => false,
+            'attr'  => array(
+                'placeholder'   => 'Email',
+                'class'         => 'input-small'
+            )
+        ));
+        $builder->add('password', 'password', array(
+            'required'  => false,
+            'attr'      => array(
+                'placeholder'   => 'Password',
+                'class'         => 'input-small'
+            )
+        ));
+        $builder->add('rememberMe', 'checkbox', array(
+            'label'     => 'Remember me'
+        ));
+    }
+
+    public function getName()
+    {
+        return 'inline_form';
+    }
+}
+
+</pre>
+
+
+                <h2>Horizontal form</h2>
+                <p>Right align labels and float them to the left to make them appear on the same line as controls. Requires the most markup changes from a default form:</p>
+                <ul>
+                    <li>Add <code>.form-horizontal</code> to the form</li>
+                    <li>Wrap labels and controls in <code>.control-group</code></li>
+                    <li>Add <code>.control-label</code> to the label</li>
+                    <li>Wrap any associated controls in <code>.controls</code> for proper alignment</li>
+                </ul>
+
+                <form class="bs-docs-example form-horizontal">
+                    <legend>Legend</legend>
+                    {{ form_widget(horizontalForm, {'form_type': 'horizontal'}) }}
+
+                    <div class="control-group">
+                        <div class="controls">
+                            <button type="submit" class="btn">Sign in</button>
+                        </div>
+                    </div>
+                </form>
+<pre class="prettyprint linenums">
+&lt;form class="form-horizontal"&gt;
+  &lt;legend&gt;Legend&lt;/legend&gt;
+  {{ "{{ form_widget(horizontalForm, {'form_type': 'horizontal'}) }}" }}
+  &lt;div class="control-group"&gt;
+    &lt;div class="controls"&gt;
+      &lt;button type="submit" class="btn"&gt;Sign in&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+<pre class="prettyprint linenums">
+// src/Braincrafted/BootstrapDemoBundle/Form/Type/HorizontalFormType.php
+namespace Braincrafted\BootstrapDemoBundle\Form\Type;
+
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+
+class HorizontalFormType extends AbstractType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder->add('email', 'text', array(
+            'label' => 'Email',
+            'attr'  => array('placeholder' => 'Email')
+        ));
+        $builder->add('password', 'password', array(
+            'label' => 'Password',
+            'attr'  => array('placeholder' => 'Password')
+        ));
+        $builder->add('checkbox', 'checkbox', array('label' => 'Remember me'));
+    }
+
+    public function getName()
+    {
+        return 'horizontal_form';
+    }
+}
+
+</pre>
+
+
+            </section>
+
+            <section id="supported-form-controls">
+
+                <div class="page-header">
+                    <h1>Supported form controls</h1>
+                </div>
+
+                <p>Examples of standard form controls supported in an example form layout.</p>
+
+
+                <h2>Inputs</h2>
+
+                <p>Most common form control, text-based input fields. Includes support for all HTML5 types: text, password, datetime, datetime-local, date, month, time, week, number, email, url, search, tel, and color.</p>
+                <p>Requires the use of a specified <code>type</code> at all times.</p>
+
+                <form class="bs-docs-example form-inline">
+                    {{ form_widget(supportedFormControls.text1) }}
+                </form>
+<pre class="prettyprint linenums">
+$builder->add('text1', 'text', array(
+    'attr' => array('placeholder' => 'Text input')
+));
+</pre>
+
+
+                <h2>Textarea</h2>
+
+                <p>Form control which supports multiple lines of text. Change <code>rows</code> attribute as necessary.</p>
+                <form class="bs-docs-example form-inline">
+                    {{ form_widget(supportedFormControls.text2) }}
+                </form>
+<pre class="prettyprint linenums">
+$builder->add('text2', 'textarea', array(
+    'attr' => array('rows' => 3)
+));
+</pre>
+
+
+                <h2>Date</h2>
+
+                <p>Form control which supports selecting a date.</p>
+
+                <form class="bs-docs-example form-inline">
+                    {{ form_widget(supportedFormControls.date1) }}
+                </form>
+<pre class="prettyprint linenums">
+$builder->add('date1', 'date');
+</pre>
+
+                <form class="bs-docs-example form-inline">
+                    {{ form_widget(supportedFormControls.date2) }}
+                </form>
+<pre class="prettyprint linenums">
+$builder->add('date2', 'date', array('widget' => 'single_text'));
+</pre>
+
+
+                <h2>Time</h2>
+
+                <p>Form control which supports selecting a time.</p>
+
+                <form class="bs-docs-example form-inline">
+                    {{ form_widget(supportedFormControls.time1) }}
+                </form>
+<pre class="prettyprint linenums">
+$builder->add('time1', 'time');
+</pre>
+
+                <form class="bs-docs-example form-inline">
+                    {{ form_widget(supportedFormControls.time2) }}
+                </form>
+<pre class="prettyprint linenums">
+$builder->add('time2', 'time', array('widget' => 'single_text'));
+</pre>
+
+
+                <h2>DateTime</h2>
+
+                <p>Form control which supports selecting a date and a time.</p>
+                <form class="bs-docs-example form-inline">
+                    {{ form_widget(supportedFormControls.datetime1) }}
+                </form>
+<pre class="prettyprint linenums">
+$builder->add('datetime1', 'datetime');
+</pre>
+
+                <form class="bs-docs-example form-inline">
+                    {{ form_widget(supportedFormControls.datetime2) }}
+                </form>
+<pre class="prettyprint linenums">
+$builder->add(
+    'datetime2',
+    'datetime',
+    array(
+        'date_widget'   => 'single_text',
+        'time_widget'   => 'single_text',
+        'attr'          => array(
+            'date' => array(
+                'placeholder' => 'Start date'
+            ),
+            'time' => array(
+                'placeholder' => 'Start time'
+            )
+        )
+    )
+);
+</pre>
+
+
+                <h2>Checkboxes and radios</h2>
+
+                <p>Checkboxes are for selecting one or several options in a list while radios are for selecting one option from many.</p>
+
+                <h3>Default (stacked)</h3>
+                <form class="bs-docs-example">
+                    {{ form_widget(supportedFormControls.checkbox1) }}
+                    <br>
+                    {{ form_widget(supportedFormControls.radio1) }}
+                </form>
+<pre class="prettyprint linenums">
+$builder->add('checkbox1', 'choices', array(
+    'multiple'  => true,
+    'expanded'  => true,
+    'choices'   => array(
+        'Option one is this and that—be sure to include why it\'s great'
+    )
+));
+
+$builder->add('radio1', 'choice', array(
+    'expanded'  => true,
+    'choices'   => array(
+        'Option one is this and that—be sure to include why it\'s great',
+        'Option two can be something else and selecting it will deselect option one'
+    )
+));
+</pre>
+
+                <h3>Inline checkboxes</h3>
+                <p>Add the <code>.inline</code> class to a series of checkboxes or radios for controls appear on the same line.</p>
+                <form class="bs-docs-example">
+                    {{ form_widget(supportedFormControls.inlineCheckboxes) }}
+                </form>
+<pre class="prettyprint linenums">
+$builder->add('inlineCheckboxes', 'choice', array(
+    'multiple'  => true,
+    'expanded'  => true,
+    'choices'   => array(1, 2, 3),
+    'attr'      => array('inline' => true)
+));
+</pre>
+
+
+                <h2>Selects</h2>
+
+                <p>Use the default option or specify a <code>multiple="multiple"</code> to show multiple options at once.</p>
+                <form class="bs-docs-example">
+                    {{ form_widget(supportedFormControls.select1) }}
+                    <br>
+                    {{ form_widget(supportedFormControls.select2) }}
+                </form>
+<pre class="prettyprint linenums">
+$builder->add('select1', 'choice', array(
+    'choices' => array(1, 2, 3, 4, 5)
+));
+$builder->add('select2', 'choice', array(
+    'choices'   => array(1, 2, 3, 4, 5),
+    'multiple'  => true
+));
+</pre>
+
+            </section>
+
+            <section id="extending-form-controls">
+
+                <div class="page-header">
+                    <h1>Extending form controls</h1>
+                </div>
+
+                <p>Adding on top of existing browser controls, Bootstrap includes other useful form components.</p>
+
+                <h2>Prepended and appended inputs</h2>
+                <p>Add text or buttons before or after any text-based input. Do note that <code>select</code> elements are not supported here.</p>
+
+                <h3>Default options</h3>
+                <p>Wrap an <code>.add-on</code> and an <code>input</code> with one of two classes to prepend or append text to an input.</p>
+                <form class="bs-docs-example">
+                    {{ form_widget(extendingControlsForm.prependedInput) }}
+                    <br>
+                    {{ form_widget(extendingControlsForm.appendedInput) }}
+                </form>
+<pre class="prettyprint linenums">
+{{ '{{ form_widget(extendingControlsForm.prependedInput) }}' }}
+{{ '{{ form_widget(extendingControlsForm.appendedInput) }}' }}
+</pre>
+<pre class="prettyprint linenums">
+$builder->add('prependedInput', 'text', array(
+    'attr' => array(
+        'class'             => 'span2',
+        'placeholder'       => 'Username',
+        'prepend_input'     => '@'
+    )
+));
+$builder->add('appendedInput', 'text', array(
+    'attr' => array(
+        'class'         => 'span2',
+        'append_input'  => '.00'
+    )
+));
+</pre>
+
+                <h3>Combined</h3>
+                <p>Use both classes and two instances of <code>.add-on</code> to prepend and append an input.</p>
+
+                <form class="bs-docs-example form-inline">
+                    {{ form_widget(extendingControlsForm.appendedPrependedInput) }}
+                </form>
+<pre class="prettyprint linenums">
+{{ '{{ form_widget(extendingControlsForm.appendedPrependedInput) }}' }}
+</pre>
+<pre class="prettyprint linenums">
+$builder->add('appendedPrependedInput', 'text', array(
+    'attr'      => array(
+        'class'         => 'span2',
+        'prepend_input' => '$',
+        'append_input'  => '.00'
+    )
+));
+</pre>
+
+
+                <h3>Buttons instead of text</h3>
+
+                <p>Instead of a <code>&lt;span&gt;</code> with text, use a <code>.btn</code> to attach a button (or two) to an input.</p>
+                <form class="bs-docs-example">
+                    <div class="input-append">
+                        {{ form_widget(extendingControlsForm.appendedInputButton) }}
+                        <button class="btn" type="button">Go!</button>
+                    </div>
+                    <br>
+                    <div class="input-append">
+                        {{ form_widget(extendingControlsForm.twoAppendedInputButtons) }}
+                        <button class="btn" type="button">Search</button>
+                        <button class="btn" type="button">Options</button>
+                    </div>
+                </form>
+<pre class="prettyprint linenums">
+&lt;div class="input-append"&gt;
+  {{ '{{ form_widget(extendingControlsForm.appendedInputButton) }}' }}
+  &lt;button class="btn" type="button"&gt;Go!&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="input-append"&gt;
+  {{ '{{ form_widget(extendingControlsForm.twoAppendedInputButtons) }}' }}
+  &lt;button class="btn" type="button"&gt;Search&lt;/button&gt;
+  &lt;button class="btn" type="button"&gt;Options&lt;/button&gt;
+&lt;/div&gt;
+</pre>
+<pre class="prettyprint linenums">
+$builder->add('appendedInputButton', 'text', array(
+    'attr' => array('class' => 'span2')
+));
+$builder->add('appendedInputButtons', 'text', array(
+    'attr' => array('class' => 'span2')
+));
+</pre>
+
+                <h3>Search form</h3>
+                <form class="bs-docs-example form-search">
+                <div class="input-append">
+                    {{ form_widget(extendingControlsForm.searchButtonAppend) }}
+                    <button type="submit" class="btn">Search</button>
+                </div>
+                <div class="input-prepend">
+                    <button type="submit" class="btn">Search</button>
+                    {{ form_widget(extendingControlsForm.searchButtonPrepend) }}
+                </div>
+                </form>
+<pre class="prettyprint linenums">
+&lt;form class="form-search"&gt;
+  &lt;div class="input-append"&gt;
+    {{ '{{ form_widget(extendingControlsForm.searchButtonAppend) }}' }}
+    &lt;button type="submit" class="btn"&gt;Search&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="input-prepend"&gt;
+    &lt;button type="submit" class="btn"&gt;Search&lt;/button&gt;
+    {{ '{{ form_widget(extendingControlsForm.searchButtonPrepend) }}' }}
+  &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+<pre class="prettyprint linenums">
+$builder->add('searchButtonAppend', 'search', array(
+    'attr' => array('class' => 'span2')
+));
+$builder->add('searchButtonPrepend', 'search', array(
+    'attr' => array('class' => 'span2')
+));
+</pre>
+
+                <h2>Control sizing</h2>
+                <p>Use relative sizing classes like <code>.input-large</code> or match your inputs to the grid column sizes using <code>.span*</code> classes.</p>
+
+                <h3>Relative sizing</h3>
+                <form class="bs-docs-example" style="padding-bottom: 15px;">
+                    <div class="controls docs-input-sizes">
+                        {{ form_widget(extendingControlsForm.inputMini) }}
+                        {{ form_widget(extendingControlsForm.inputSmall) }}
+                        {{ form_widget(extendingControlsForm.inputMedium) }}
+                        {{ form_widget(extendingControlsForm.inputLarge) }}
+                        {{ form_widget(extendingControlsForm.inputXLarge) }}
+                        {{ form_widget(extendingControlsForm.inputXXLarge) }}
+                    </div>
+                </form>
+<pre class="prettyprint linenums">
+{{ '{{ form_widget(extendingControlsForm.inputMini) }}' }}
+{{ '{{ form_widget(extendingControlsForm.inputSmall) }}' }}
+{{ '{{ form_widget(extendingControlsForm.inputMedium) }}' }}
+{{ '{{ form_widget(extendingControlsForm.inputLarge) }}' }}
+{{ '{{ form_widget(extendingControlsForm.inputXLarge) }}' }}
+{{ '{{ form_widget(extendingControlsForm.inputXXLarge) }}' }}
+</pre>
+<pre class="prettyprint linenums">
+$builder->add('inputMini', 'text', array(
+    'attr' => array(
+        'class'         => 'input-mini',
+        'placeholder'   => '.input-mini'
+    )
+));
+$builder->add('inputSmall', 'text', array(
+    'attr' => array(
+        'class'         => 'input-small',
+        'placeholder'   => '.input-small'
+    )
+));
+$builder->add('inputMedium', 'text', array(
+    'attr' => array(
+        'class'         => 'input-medium',
+        'placeholder'   => '.input-medium'
+    )
+));
+$builder->add('inputLarge', 'text', array(
+    'attr' => array(
+        'class'         => 'input-large',
+        'placeholder'   => '.input-large'
+    )
+));
+$builder->add('inputXLarge', 'text', array(
+    'attr' => array(
+        'class'         => 'input-xlarge',
+        'placeholder'   => '.input-xlarge'
+    )
+));
+$builder->add('inputXXLarge', 'text', array(
+    'attr' => array(
+        'class'         => 'input-xxlarge',
+        'placeholder'   => '.input-xxlarge'
+    )
+));
+</pre>
+
+                <h3>Grid sizing</h3>
+                <p>Use <code>.span1</code> to <code>.span12</code> for inputs that match the same sizes of the grid columns.</p>
+                <form class="bs-docs-example" style="padding-bottom: 15px;">
+                    <div class="controls docs-input-sizes">
+                        {{ form_widget(extendingControlsForm.span1Input) }}
+                        {{ form_widget(extendingControlsForm.span2Input) }}
+                        {{ form_widget(extendingControlsForm.span3Input) }}
+                        {{ form_widget(extendingControlsForm.span1Select) }}
+                        {{ form_widget(extendingControlsForm.span2Select) }}
+                        {{ form_widget(extendingControlsForm.span3Select) }}
+                    </div>
+                </form>
+<pre class="prettyprint linenums">
+{{ '{{ form_widget(extendingControlsForm.span1Input) }}' }}
+{{ '{{ form_widget(extendingControlsForm.span2Input) }}' }}
+{{ '{{ form_widget(extendingControlsForm.span3Input) }}' }}
+{{ '{{ form_widget(extendingControlsForm.span1Select) }}' }}
+{{ '{{ form_widget(extendingControlsForm.span2Select) }}' }}
+{{ '{{ form_widget(extendingControlsForm.span3Select) }}' }}
+</pre>
+<pre class="prettyprint linenums">
+$builder->add('span1Input', 'text', array(
+    'attr' => array(
+        'class'         => 'span1',
+        'placeholder'   => '.span1'
+    )
+));
+$builder->add('span2Input', 'text', array(
+    'attr' => array(
+        'class'         => 'span2',
+        'placeholder'   => '.span2'
+    )
+));
+$builder->add('span3Input', 'text', array(
+    'attr' => array(
+        'class'         => 'span3',
+        'placeholder'   => '.span3'
+    )
+));
+$builder->add('span1Select', 'choice', array(
+    'choices'   => array(1, 2, 3, 4, 5),
+    'attr'      => array('class' => 'span1')
+));
+$builder->add('span2Select', 'choice', array(
+    'choices'   => array(1, 2, 3, 4, 5),
+    'attr'      => array('class' => 'span2')
+));
+$builder->add('span3Select', 'choice', array(
+    'choices'   => array(1, 2, 3, 4, 5),
+    'attr'      => array('class' => 'span3')
+));
+</pre>
+
+                <p>For multiple grid inputs per line, <strong>use the <code>.controls-row</code> modifier class for proper spacing</strong>. It floats the inputs to collapse white-space, sets the proper margins, and the clears the float.</p>
+
+                <form class="bs-docs-example" style="padding-bottom: 15px;">
+                    <div class="controls">
+                        {{ form_widget(extendingControlsForm.span5Input) }}
+                    </div>
+                    <div class="controls controls-row">
+                        {{ form_widget(extendingControlsForm.span4Input) }}
+                        {{ form_widget(extendingControlsForm.span1Input2) }}
+                    </div>
+                    <div class="controls controls-row">
+                        {{ form_widget(extendingControlsForm.span3Input2) }}
+                        {{ form_widget(extendingControlsForm.span2Input2) }}
+                    </div>
+                    <div class="controls controls-row">
+                        {{ form_widget(extendingControlsForm.span2Input3) }}
+                        {{ form_widget(extendingControlsForm.span3Input3) }}
+                    </div>
+                    <div class="controls controls-row">
+                        {{ form_widget(extendingControlsForm.span1Input3) }}
+                        {{ form_widget(extendingControlsForm.span4Input2) }}
+                    </div>
+                </form>
+<pre class="prettyprint linenums">
+&lt;div class="controls"&gt;
+  {{ '{{ form_widget(extendingControlsForm.span5Input) }}' }}
+&lt;/div&gt;
+&lt;div class="controls controls-row"&gt;
+  {{ '{{ form_widget(extendingControlsForm.span4Input) }}' }}
+  {{ '{{ form_widget(extendingControlsForm.span1Input) }}' }}
+&lt;/div&gt;
+...
+</pre>
+
+
+                <h2>Uneditable inputs</h2>
+
+                <p>Present data in a form that's not editable without using actual form markup.</p>
+
+                <form class="bs-docs-example">
+                    <span class="input-xlarge uneditable-input">Some value here</span>
+                </form>
+<pre class="prettyprint linenums">
+&lt;span class="input-xlarge uneditable-input"&gt;Some value here&lt;/span&gt;
+</pre>
+
+                <h2>Form actions</h2>
+
+                <p>End a form with a group of actions (buttons). When placed within a <code>.form-horizontal</code>, the buttons will automatically indent to line up with the form controls.</p>
+
+                <form class="bs-docs-example">
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn">Cancel</button>
+                    </div>
+                </form>
+<pre class="prettyprint linenums">
+&lt;div class="form-actions"&gt;
+  &lt;button type="submit" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+  &lt;button type="button" class="btn"&gt;Cancel&lt;/button&gt;
+&lt;/div&gt;
+</pre>
+
+
+                <h2>Help text</h2>
+
+                <p>Inline and block level support for help text that appears around form controls.</p>
+
+                <h3>Inline help</h3>
+                <form class="bs-docs-example form-inline">
+                    {{ form_widget(extendingControlsForm.helpInput) }}
+                </form>
+<pre class="prettyprint linenums">
+{{ '{{ form_widget(extendingControlsForm.helpInput) }}' }}
+</pre>
+<pre class="prettyprint linenums">
+$builder->add('helpInput', 'text', array(
+    'attr'  => array('help'  => 'Inline help text')
+));
+</pre>
+
+                <h3>Block help</h3>
+                <form class="bs-docs-example form-inline">
+                    {{ form_widget(extendingControlsForm.helpBlockInput) }}
+                </form>
+<pre class="prettyprint linenums">
+{{ '{{ form_widget(extendingControlsForm.helpBlockInput) }}' }}
+</pre>
+<pre class="prettyprint linenums">
+$builder->add('helpBlockInput', 'text', array(
+    'attr'  => array(
+        'help_block' => 'A longer block of help text that breaks onto a new line and may extend beyond one line.'
+    )
+));
+</pre>
+
+
+            </section>
+
+            <section id="form-control-states">
+
+                <div class="page-header">
+                    <h1>Form control states</h1>
+                </div>
+
+                <p>Provide feedback to users or visitors with basic feedback states on form controls and labels.</p>
+
+
+                <h2>Input focus</h2>
+
+                <p>We remove the default <code>outline</code> styles on some form controls and apply a <code>box-shadow</code> in its place for <code>:focus</code>.</p>
+                <form class="bs-docs-example form-inline">
+                <input class="input-xlarge focused" id="focusedInput" type="text" value="This is focused...">
+                </form>
+<pre class="prettyprint linenums">
+&lt;input class="input-xlarge" id="focusedInput" type="text" value="This is focused..."&gt;
+</pre>
+
+
+                <h2>Disabled inputs</h2>
+
+                <p>Add the <code>disabled</code> attribute on an input to prevent user input and trigger a slightly different look.</p>
+                <form class="bs-docs-example form-inline">
+                    {{ form_widget(extendingControlsForm.disabledInput) }}
+                </form>
+<pre class="prettyprint linenums">
+{{ '{{ form_widget(extendingControlsForm.disabledInput) }}' }}
+</pre>
+<pre class="prettyprint linenums">
+$builder->add('disabledInput', 'text', array(
+    'disabled'  => true,
+    'attr'      => array('placeholder' => 'Disabled input here...')
+))
+</pre>
+
+                <h2>Validation states</h2>
+                <p>Bootstrap includes validation styles for error, warning, info, and success messages. To use, add the appropriate class to the surrounding <code>.control-group</code>.</p>
+
+                <form class="bs-docs-example form-horizontal">
+                    <div class="control-group warning">
+                        <label class="control-label" for="inputWarning">Input with warning</label>
+                        <div class="controls">
+                            <input type="text" id="inputWarning">
+                            <span class="help-inline">Something may have gone wrong</span>
+                        </div>
+                    </div>
+                    <div class="control-group error">
+                        <label class="control-label" for="inputError">Input with error</label>
+                        <div class="controls">
+                            <input type="text" id="inputError">
+                            <span class="help-inline">Please correct the error</span>
+                        </div>
+                    </div>
+                    <div class="control-group info">
+                        <label class="control-label" for="inputError">Input with info</label>
+                        <div class="controls">
+                            <input type="text" id="inputError">
+                            <span class="help-inline">Username is taken</span>
+                        </div>
+                    </div>
+                    <div class="control-group success">
+                        <label class="control-label" for="inputSuccess">Input with success</label>
+                        <div class="controls">
+                            <input type="text" id="inputSuccess">
+                            <span class="help-inline">Woohoo!</span>
+                        </div>
+                    </div>
+                </form>
+<pre class="prettyprint linenums">
+&lt;div class="control-group warning"&gt;
+  &lt;label class="control-label" for="inputWarning"&gt;Input with warning&lt;/label&gt;
+  &lt;div class="controls"&gt;
+    &lt;input type="text" id="inputWarning"&gt;
+    &lt;span class="help-inline"&gt;Something may have gone wrong&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="control-group error"&gt;
+  &lt;label class="control-label" for="inputError"&gt;Input with error&lt;/label&gt;
+  &lt;div class="controls"&gt;
+    &lt;input type="text" id="inputError"&gt;
+    &lt;span class="help-inline"&gt;Please correct the error&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="control-group success"&gt;
+  &lt;label class="control-label" for="inputSuccess"&gt;Input with success&lt;/label&gt;
+  &lt;div class="controls"&gt;
+    &lt;input type="text" id="inputSuccess"&gt;
+    &lt;span class="help-inline"&gt;Woohoo!&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+            </section>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
