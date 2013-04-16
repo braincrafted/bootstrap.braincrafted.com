@@ -1037,6 +1037,69 @@ $builder->add('text2', 'textarea', array(
 ));
 </pre>
 
+          <h3>Date</h3>
+          <p>Form control which supports selecting a date.</p>
+          <form class="bs-docs-example form-inline">
+            {{ form_widget(supportedFormControls.date1) }}
+          </form>
+<pre class="prettyprint linenums">
+$builder->add('date1', 'date');
+</pre>
+
+          <form class="bs-docs-example form-inline">
+            {{ form_widget(supportedFormControls.date2) }}
+          </form>
+<pre class="prettyprint linenums">
+$builder->add('date2', 'date', array('widget' => 'single_text'));
+</pre>
+
+          <h3>Time</h3>
+          <p>Form control which supports selecting a time.</p>
+          <form class="bs-docs-example form-inline">
+            {{ form_widget(supportedFormControls.time1) }}
+          </form>
+<pre class="prettyprint linenums">
+$builder->add('time1', 'time');
+</pre>
+
+          <form class="bs-docs-example form-inline">
+            {{ form_widget(supportedFormControls.time2) }}
+          </form>
+<pre class="prettyprint linenums">
+$builder->add('time2', 'time', array('widget' => 'single_text'));
+</pre>
+
+          <h3>DateTime</h3>
+          <p>Form control which supports selecting a date and a time.</p>
+          <form class="bs-docs-example form-inline">
+            {{ form_widget(supportedFormControls.datetime1) }}
+          </form>
+<pre class="prettyprint linenums">
+$builder->add('datetime1', 'datetime');
+</pre>
+
+          <form class="bs-docs-example form-inline">
+            {{ form_widget(supportedFormControls.datetime2) }}
+          </form>
+<pre class="prettyprint linenums">
+$builder->add(
+    'datetime2',
+    'datetime',
+    array(
+        'date_widget'   => 'single_text',
+        'time_widget'   => 'single_text',
+        'attr'          => array(
+            'date' => array(
+                'placeholder' => 'Start date'
+            ),
+            'time' => array(
+                'placeholder' => 'Start time'
+            )
+        )
+    )
+);
+</pre>
+
           <h3>Checkboxes and radios</h3>
           <p>Checkboxes are for selecting one or several options in a list while radios are for selecting one option from many.</p>
           <h4>Default (stacked)</h4>

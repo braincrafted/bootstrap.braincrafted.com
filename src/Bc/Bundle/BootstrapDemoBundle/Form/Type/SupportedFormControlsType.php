@@ -65,6 +65,31 @@ class SupportedFormControlsType extends AbstractType
             'choices'   => array(1, 2, 3, 4, 5),
             'multiple'  => true
         ));
+
+        $builder->add('date1', 'date');
+        $builder->add('date2', 'date', array('widget' => 'single_text'));
+
+        $builder->add('time1', 'time');
+        $builder->add('time2', 'time', array('widget' => 'single_text'));
+
+        $builder->add('datetime1', 'datetime');
+
+        $builder->add(
+            'datetime2',
+            'datetime',
+            array(
+                'date_widget'   => 'single_text',
+                'time_widget'   => 'single_text',
+                'attr'          => array(
+                    'date' => array(
+                        'placeholder' => 'Start date'
+                    ),
+                    'time' => array(
+                        'placeholder' => 'Start time'
+                    )
+                )
+            )
+        );
     }
 
     /**
