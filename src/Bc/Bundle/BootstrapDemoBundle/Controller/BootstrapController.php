@@ -53,16 +53,6 @@ class BootstrapController extends Controller
     }
 
     /**
-     * The scaffolding action.
-     *
-     * @return \Symfony\Component\HttpFoundation\Response The response
-     */
-    public function scaffoldingAction()
-    {
-        return $this->render('BcBootstrapDemoBundle:Bootstrap:scaffolding.html.twig');
-    }
-
-    /**
      * The base CSS action.
      *
      * @return \Symfony\Component\HttpFoundation\Response The response

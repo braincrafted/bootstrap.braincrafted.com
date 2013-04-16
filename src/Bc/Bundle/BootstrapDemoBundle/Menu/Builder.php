@@ -37,7 +37,6 @@ class Builder extends ContainerAware
 
         $menu->addChild('Home', array('route' => 'bc_bootstrap_demo_index'));
         $menu->addChild('Get started', array('route' => 'bc_bootstrap_demo_gettingStarted'));
-        $menu->addChild('Scaffolding', array('route' => 'bc_bootstrap_demo_scaffolding'));
         $menu->addChild('Base CSS', array('route' => 'bc_bootstrap_demo_baseCss'));
         $menu->addChild('Components', array('route' => 'bc_bootstrap_demo_components'));
         $menu->addChild('Javascript', array('route' => 'bc_bootstrap_demo_javascript'));
