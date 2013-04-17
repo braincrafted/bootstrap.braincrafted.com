@@ -94,7 +94,26 @@ class SupportedFormControlsType extends AbstractType
         $builder->add(
             'collection1',
             'bootstrap_collection',
-            array('type' => 'text', 'allow_add' => true)
+            array('type' => 'text', 'allow_add' => true, 'prototype' => true)
+        );
+
+        $builder->add(
+            'collection2',
+            'bootstrap_collection',
+            array('type' => 'text', 'allow_add' => true, 'allow_delete' => true, 'prototype' => true)
+        );
+
+        $builder->add(
+            'collection3',
+            'bootstrap_collection',
+            array(
+                'type'                  => 'text',
+                'allow_add'             => true,
+                'allow_delete'          => true,
+                'prototype'             => true,
+                'add_button_text'       => 'Add Hobbit',
+                'delete_button_text'    => 'Delete Hobbit'
+            )
         );
     }
 

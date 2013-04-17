@@ -44,10 +44,14 @@ class CityType extends AbstractType
             'multiple' => false,
             'expanded' => true
         ));
-        $builder->add('citizens', 'collection', array(
-            'type'      => 'text',
-            'allow_add' => true,
-            'options'   => array(
+        $builder->add('citizens', 'bootstrap_collection', array(
+            'type'                  => 'text',
+            'allow_add'             => true,
+            'allow_delete'          => true,
+            'prototype'             => true,
+            'add_button_text'       => 'Add Citizen',
+            'delete_button_text'    => 'Remove Citizen',
+            'options'               => array(
                 'required'  => false,
                 'attr'      => array('class' => 'citizen-field')
             ),

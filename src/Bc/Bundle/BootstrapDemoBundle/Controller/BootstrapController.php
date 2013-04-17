@@ -112,7 +112,11 @@ class BootstrapController extends Controller
         $controlStatesForm     = $this->createForm(new ControlStatesFormType());
         $supportedFormControls = $this->createForm(
             new SupportedFormControlsType(),
-            array('collection1' => array('Gandalf', 'Bilbo Baggings', 'Frodo Baggins'))
+            array(
+                'collection1' => array('Samwise Gamgee', 'Bilbo Baggins', 'Frodo Baggins'),
+                'collection2' => array('Samwise Gamgee', 'Bilbo Baggins', 'Frodo Baggins'),
+                'collection3' => array('Samwise Gamgee', 'Bilbo Baggins', 'Frodo Baggins')
+            )
         );
         $extendingControlsForm = $this->createForm(
             new ExtendingControlsFormType()
@@ -163,6 +167,8 @@ class BootstrapController extends Controller
 
         if ($request->getMethod() == 'POST') {
             $cityForm->bind($request);
+
+            print_r($cityForm->getData());
 
             if ($cityForm->isValid()) {
             }

@@ -428,7 +428,55 @@ $builder->add('select2', 'choice', array(
 $builder->add(
     'collection1',
     'bootstrap_collection',
-    array('type' => 'text', 'allow_add' => true)
+    array(
+        'type'      => 'text',
+        'allow_add' => true,
+        'prototype' => true
+    )
+);
+</pre>
+
+                <p>To display the dynamic add button the <code>allow_add</code> and <code>prototype</code> options must be <code>true</code>.</p>
+
+                <h3>Remove Fields</h3>
+
+                <p>If the <code>allow_delete</code> is <code>true</code> then fields can be removed dynamically from the DOM using JavaScript.</p>
+
+                <form class="bs-docs-example">
+                    {{ form_widget(supportedFormControls.collection2) }}
+                </form>
+<pre class="prettyprint linenums">
+$builder->add(
+    'collection2',
+    'bootstrap_collection',
+    array(
+        'type'          => 'text',
+        'allow_add'     => true,
+        'prototype'     => true,
+        'allow_delete'  => true
+    )
+);
+</pre>
+
+                <h3>Change Button Labels</h3>
+
+                <p>It is also possible to change the labelling of the buttons.</p>
+
+                <form class="bs-docs-example">
+                    {{ form_widget(supportedFormControls.collection3) }}
+                </form>
+<pre class="prettyprint linenums">
+$builder->add(
+    'collection3',
+    'bootstrap_collection',
+    array(
+        'type'                  => 'text',
+        'allow_add'             => true,
+        'allow_delete'          => true,
+        'prototype'             => true,
+        'add_button_text'       => 'Add Hobbit',
+        'delete_button_text'    => 'Delete Hobbit'
+    )
 );
 </pre>
 
