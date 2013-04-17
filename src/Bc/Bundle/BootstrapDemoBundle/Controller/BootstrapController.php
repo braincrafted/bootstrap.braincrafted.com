@@ -110,7 +110,10 @@ class BootstrapController extends Controller
     {
         $defaultStylesForm     = $this->createForm(new DefaultStylesFormType());
         $controlStatesForm     = $this->createForm(new ControlStatesFormType());
-        $supportedFormControls = $this->createForm(new SupportedFormControlsType());
+        $supportedFormControls = $this->createForm(
+            new SupportedFormControlsType(),
+            array('collection1' => array('Gandalf', 'Bilbo Baggings', 'Frodo Baggins'))
+        );
         $extendingControlsForm = $this->createForm(
             new ExtendingControlsFormType()
         );

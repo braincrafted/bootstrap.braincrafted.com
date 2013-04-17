@@ -90,6 +90,12 @@ class SupportedFormControlsType extends AbstractType
                 )
             )
         );
+
+        $builder->add(
+            'collection1',
+            'bootstrap_collection',
+            array('type' => 'text', 'allow_add' => true)
+        );
     }
 
     /**

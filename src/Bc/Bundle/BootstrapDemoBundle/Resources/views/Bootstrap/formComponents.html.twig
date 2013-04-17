@@ -417,6 +417,21 @@ $builder->add('select2', 'choice', array(
 ));
 </pre>
 
+                <h2>Collections</h2>
+
+                <p>BcBootstrapBundle offers a form type that already includes JavaScript to add fields to a collection.</p>
+
+                <form class="bs-docs-example">
+                    {{ form_widget(supportedFormControls.collection1) }}
+                </form>
+<pre class="prettyprint linenums">
+$builder->add(
+    'collection1',
+    'bootstrap_collection',
+    array('type' => 'text', 'allow_add' => true)
+);
+</pre>
+
             </section>
 
             <section id="extending-form-controls">
