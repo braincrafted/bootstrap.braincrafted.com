@@ -129,6 +129,11 @@ class BootstrapController extends Controller
         ));
     }
 
+    public function flashComponentsAction()
+    {
+        return $this->render('BcBootstrapDemoBundle:Bootstrap:flashComponents.html.twig', array());
+    }
+
     /**
      * The javascript action.
      *

@@ -1,0 +1,157 @@
+{% extends 'BcBootstrapDemoBundle::layout.html.twig' %}
+
+{% block title %}Flash Messages · BcBootstrapBundle{% endblock %}
+
+{% block body %}
+
+<!-- Subhead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+    <div class="container">
+        <h1>Flash Messages</h1>
+        <p class="lead">A quick and easy way to display errors, warnings and success messages to the user.</p>
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="row">
+
+        <!-- Docs nav
+        ================================================== -->
+        <div class="span3 bs-docs-sidebar">
+            <ul class="nav nav-list bs-docs-sidenav">
+                <li><a href="#trigger-a-message">{{ 'chevron-right'|icon }} Trigger a Message</a></li>
+                <li><a href="#display-messages">{{ 'chevron-right'|icon }} Display Messages</a></li>
+                <li><a href="#customization">{{ 'chevron-right'|icon }} Customization</a></li>
+            </ul>
+        </div>
+
+        <div class="span9">
+
+            <!-- Alerts
+            ================================================== -->
+            <section id="trigger-a-message">
+                <div class="page-header">
+                    <h2>Trigger a Message</h2>
+                </div>
+
+                <p>Twitter Bootstrap comes with four different styles for alert messages. Let's first take a look at these styles. You can use the flash message helper from BcBootstrapBundle to use this styles in your Symfony2 project.</p>
+
+                <h3>Default style</h3>
+
+                <div class="bs-docs-example">
+                    <div class="alert">
+                        <strong>Warning!</strong> Best check yo self, you're not looking too good.
+                    </div>
+                </div>
+<pre class="prettyprint linenums">
+$this->get('bc_bootstrap.flash')->alert('Warning! Best check yo self, you\'re not looking too good.');
+</pre>
+
+                <h3>Error or danger</h3>
+
+                <div class="bs-docs-example">
+                  <div class="alert alert-error">
+                    <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                  </div>
+                </div>
+<pre class="prettyprint linenums">
+$this->get('bc_bootstrap.flash')->error('Oh snap! Change a few things up and try submitting again.');
+</pre>
+
+                <h3>Success</h3>
+
+                <div class="bs-docs-example">
+                  <div class="alert alert-success">
+                    <strong>Well done!</strong> You successfully read this important alert message.
+                  </div>
+                </div>
+<pre class="prettyprint linenums">
+$this->get('bc_bootstrap.flash')->success('Well done! You successfully read this important alert message.');
+</pre>
+
+                <h3>Information</h3>
+
+                <div class="bs-docs-example">
+                  <div class="alert alert-info">
+                    <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                  </div>
+                </div>
+<pre class="prettyprint linenums">
+$this->get('bc_bootstrap.flash')->info('Heads up! This alert needs your attention, but it\'s not super important.');
+</pre>
+
+            </section>
+
+            <section id="display-messages">
+                <div class="page-header">
+                    <h2>Display Messages</h2>
+                </div>
+
+                <p>To show flash messages in a Twig template you need only include the template provided by BcBootstrapBundle.</p>
+
+<pre class="prettyprint linenums">
+{{ "{% include 'BcBootstrapBundle::flash.html.twig' %}" }}
+</pre>
+
+                <hr class="bs-docs-separator">
+
+                <h3>Dismiss buttons</h3>
+
+                <p>You can also provide a button to dismiss a message, that looks like this.</p>
+
+                <div class="bs-docs-example">
+                  <div class="alert alert-block">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <h4>Warning!</h4>
+                    <p>Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+                  </div>
+                </div>
+<pre class="prettyprint linenums">
+{{ "{% include 'BcBootstrapBundle::flash.html.twig' with { 'close': true } %}" }}
+</pre>
+
+                <h4>Dismiss alerts via javascript</h4>
+                <p>Use the <a href="http://twitter.github.io/bootstrap/javascript.html#alerts">alerts jQuery plugin</a> for quick and easy dismissal of alerts.</p>
+
+            </section>
+
+            <section id="customization">
+                <div class="page-header">
+                    <h2>Customization</h2>
+                </div>
+
+                <h3>Display Customization</h3>
+
+                <p>The flash messages component of BcBootstrapBundle is built on top of the FlashMessager in Symfony2. For example, if you want to use a custom template for success messages, you could use the following code in your Twig template:</p>
+
+<pre class="prettyprint linenums">
+{{ "{% for flashMessage in app.session.flashbag.get('success') %}" }}
+    &lt;div class=&quot;alert alert-success&quot;&gt;
+        {{ "{{ flashMessage }}" }}
+    &lt;/div&gt;
+{{ "{% endfor %}" }}
+</pre>
+
+                <h3>Triggter Customization</h3>
+
+                <p>You can also decide to only use the display part of the component and add the messages using the Symfony2 component.</p>
+
+<pre class="prettyprint linenums">
+$this->session->getFlashBag()->add('alert', $message);
+</pre>
+
+                <h3>Dependency Injection</h3>
+
+                <p>If you want to use the FlashMessage component of BcBootstrapBundle in one of your classes you can use the DIC key <code>bc_bootstrap.flash</code>.</p>
+
+            </section>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
