@@ -136,6 +136,11 @@ class BootstrapController extends Controller
         ));
     }
 
+    public function navComponentsAction()
+    {
+        return $this->render('BcBootstrapDemoBundle:Bootstrap:navComponents.html.twig', array());
+    }
+
     public function flashComponentsAction()
     {
         return $this->render('BcBootstrapDemoBundle:Bootstrap:flashComponents.html.twig', array());

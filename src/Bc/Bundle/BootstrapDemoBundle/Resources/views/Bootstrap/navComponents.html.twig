@@ -1,0 +1,316 @@
+{% extends 'BcBootstrapDemoBundle::layout.html.twig' %}
+
+{% block title %}Flash Messages · BcBootstrapBundle{% endblock %}
+
+{% block body %}
+
+<!-- Subhead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+    <div class="container">
+        <h1>Navigation and Menus</h1>
+        <p class="lead">BcBootstrapBundle integrates all different types of navigations from Twitter Bootstrap into KnpMenuBundle.</p>
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="row">
+
+        <!-- Docs nav
+        ================================================== -->
+        <div class="span3 bs-docs-sidebar">
+            <ul class="nav nav-list bs-docs-sidenav">
+                <li><a href="#basic-tabs-pills">{{ 'chevron-right'|icon }} Basic tabs &amp; pills</a></li>
+                <li><a href="#stackable">{{ 'chevron-right'|icon }} Stackable</a></li>
+                <li><a href="#dropdowns">{{ 'chevron-right'|icon }} Dropdowns</a></li>
+                <li><a href="#nav-lists">{{ 'chevron-right'|icon }} Nav lists</a></li>
+            </ul>
+        </div>
+
+        <div class="span9">
+
+            <!-- Basic tabs & pills
+            ================================================== -->
+            <section id="basic-tabs-pills">
+                <div class="page-header">
+                    <h1>Basic tabs &amp; pills</small></h1>
+                </div>
+
+                <h2>Basic tabs</h2>
+
+                <p>Take a regular <code>&lt;ul&gt;</code> of links and add <code>.nav-tabs</code>:</p>
+                <div class="bs-docs-example">
+                    {{ knp_menu_render('BcBootstrapDemoBundle:Builder:basicTabs', {'nav_type': 'tabs'}) }}
+                </div>
+<pre class="prettyprint linenums">
+{{ "{{ knp_menu_render('BcBootstrapDemoBundle:Builder:basicTabs', {'nav_type': 'tabs'}) }}" }}
+</pre>
+<pre class="prettyprint linenums">
+// src/Bc/Bundle/BootstrapDemoBundle/Menu/Builder.php
+...
+public function basicTabs(FactoryInterface $factory, array $options)
+{
+    $menu = $factory->createItem('root');
+
+    $item = $menu->addChild('Home', array('uri' => '#'));
+    $item->setCurrent(true);
+    $item = $menu->addChild('Profile', array('uri' => '#'));
+    $item = $menu->addChild('Messages', array('uri' => '#'));
+
+    return $menu;
+}
+...
+</pre>
+
+                <hr class="bs-docs-separator">
+
+                <h2>Basic pills</h2>
+                <p>Take that same HTML, but use <code>.nav-pills</code> instead:</p>
+
+                <div class="bs-docs-example">
+                    {{ knp_menu_render('BcBootstrapDemoBundle:Builder:basicTabs', {'nav_type': 'pills'}) }}
+                </div>
+<pre class="prettyprint linenums">
+{{ "{{ knp_menu_render('BcBootstrapDemoBundle:Builder:basicTabs', {'nav_type': 'pills'}) }}" }}
+</pre>
+<pre class="prettyprint linenums">
+// src/Bc/Bundle/BootstrapDemoBundle/Menu/Builder.php
+...
+public function basicPills(FactoryInterface $factory, array $options)
+{
+    $menu = $factory->createItem('root');
+
+    $item = $menu->addChild('Home', array('uri' => '#'));
+    $item->setCurrent(true);
+    $item = $menu->addChild('Profile', array('uri' => '#'));
+    $item = $menu->addChild('Messages', array('uri' => '#'));
+
+    return $menu;
+}
+...
+</pre>
+
+                <hr class="bs-docs-separator">
+
+                <h2>Disabled state</h2>
+                <p>For any nav component (tabs, pills, or list), add <code>.disabled</code> for <strong>gray links and no hover effects</strong>. Links will remain clickable, however, unless custom javascript is implemented to prevent those clicks.</p>
+
+                <div class="bs-docs-example">
+                    {{ knp_menu_render('BcBootstrapDemoBundle:Builder:disabledState', {'nav_type': 'pills'}) }}
+                </div>
+<pre class="prettyprint linenums">
+// src/Braincrafted/BootstrapDemoBundle/Menu/Builder.php
+...
+public function disabledState(FactoryInterface $factory, array $options)
+{
+    $menu = $factory->createItem('root');
+
+    $item = $menu->addChild('Clickable link 1', array('uri' => '#'));
+    $item = $menu->addChild('Clickable link 2', array('uri' => '#'));
+    $item = $menu->addChild('Disabled link', array(
+        'uri'           => '#',
+        'attributes'    => array('class' => 'disabled')
+    ));
+
+    return $menu;
+}
+...
+</pre>
+
+                <hr class="bs-docs-separator">
+
+                <h2>Component alignment</h2>
+                <p>To align nav links, use the <code>.pull-left</code> or <code>.pull-right</code> utility classes. Both classes will add a CSS float in the specified direction.</p>
+
+                <div class="bs-docs-example">
+                {{ knp_menu_render('BcBootstrapDemoBundle:Builder:pullRight', {'nav_type': 'pills'}) }}
+                </div>
+<pre class="prettyprint linenums">
+// src/Braincrafted/BootstrapDemoBundle/Menu/Builder.php
+...
+public function pullRight(FactoryInterface $factory, array $options)
+{
+    $menu = $factory->createItem('root');
+
+    $item = $menu->addChild('Link 1', array('uri' => '#'));
+    $item = $menu->addChild('Link 2', array('uri' => '#'));
+    $item = $menu->addChild('Link 3', array(
+        'uri'           => '#',
+        'attributes'    => array('class' => 'pull-right')
+    ));
+
+    return $menu;
+}
+...
+</pre>
+
+            </section>
+
+            <!-- Stackable tabs & pills
+            ================================================== -->
+            <section id="stackable">
+                <div class="page-header">
+                    <h1>Stackable tabs &amp; pills</small></h1>
+                </div>
+
+                <p>As tabs and pills are horizontal by default, just add a second class, <code>.nav-stacked</code>, to make them appear vertically stacked.</p>
+
+                <h2>Stacked tabs</h2>
+
+                <div class="bs-docs-example">
+                    {{ knp_menu_render('BcBootstrapDemoBundle:Builder:stackedTabs', {'nav_type': 'stacked_tabs'}) }}
+                </div>
+<pre class="prettyprint linenums">
+{{ "{{ knp_menu_render('BcBootstrapDemoBundle:Builder:stackedTabs', {'nav_type': 'stacked_tabs'}) }}" }}
+</pre>
+
+                <hr class="bs-docs-separator">
+
+                <h2>Stacked pills</h2>
+                <div class="bs-docs-example">
+                    {{ knp_menu_render('BcBootstrapDemoBundle:Builder:stackedTabs', {'nav_type': 'stacked_pills'}) }}
+                </div>
+<pre class="prettyprint linenums">
+{{ "{{ knp_menu_render('BcBootstrapDemoBundle:Builder:stackedTabs', {'nav_type': 'stacked_pills'}) }}" }}
+</pre>
+
+            </section>
+
+            <!-- Dropdowns
+            ================================================== -->
+            <section id="dropdowns">
+                <div class="page-header">
+                    <h1>Dropdowns</small></h1>
+                </div>
+
+                <p>Add dropdown menus with a little extra HTML and the <a href="./javascript.html#dropdowns">dropdowns javascript plugin</a>.</p>
+
+                <h2>Tabs with dropdowns</h2>
+
+                <div class="bs-docs-example">
+                    {{ knp_menu_render('BcBootstrapDemoBundle:Builder:tabsDropdown', {'nav_type': 'tabs'}) }}
+                </div>
+<pre class="prettyprint linenums">
+{{ "{{ knp_menu_render('BcBootstrapDemoBundle:Builder:tabsDropdown', {'nav_type': 'tabs'}) }}" }}
+</pre>
+<pre class="prettyprint linenums">
+// src/Braincrafted/BootstrapDemoBundle/Menu/Builder.php
+...
+public function tabsDropdown(FactoryInterface $factory, array $options)
+{
+    $menu = $factory->createItem('root');
+
+    $item = $menu->addChild('Home', array('uri' => '#'));
+    $item->setCurrent(true);
+    $item = $menu->addChild('Help', array('uri' => '#'));
+    $dropdown = $menu->addChild('Dropdown');
+        $dropdown->addChild('Action', array('uri' => '#'));
+        $dropdown->addChild('Another action', array('uri' => '#'));
+        $dropdown->addChild('Something else here', array('uri' => '#'));
+        $dropdown->addChild('d1', array('attributes' => array('divider' => true)));
+        $dropdown->addChild('Separated link', array('uri' => '#'));
+
+    return $menu;
+}
+...
+</pre>
+
+                <hr class="bs-docs-separator">
+
+                <h2>Pills with dropdowns</h2>
+                <div class="bs-docs-example">
+                    {{ knp_menu_render('BcBootstrapDemoBundle:Builder:tabsDropdown', {'nav_type': 'pills'}) }}
+                </div>
+<pre class="prettyprint linenums">
+{{ "{{ knp_menu_render('BcBootstrapDemoBundle:Builder:tabsDropdown', {'nav_type': 'pills'}) }}" }}
+</pre>
+
+            </section>
+
+            <!-- Nav lists
+            ================================================== -->
+            <section id="nav-lists">
+                <div class="page-header">
+                    <h1>Nav lists</small></h1>
+                </div>
+
+                <p>A simple and easy way to build groups of nav links with optional headers. They're best used in sidebars like the Finder in OS X.</p>
+
+                <h2>Example nav list</h2>
+                <p>Take a list of links and add <code>class="nav nav-list"</code>:</p>
+                <div class="bs-docs-example">
+                    <div class="well" style="max-width: 340px; padding: 8px 0;">
+                        {{ knp_menu_render('BcBootstrapDemoBundle:Builder:navList', {'nav_type': 'list'}) }}
+                    </div> <!-- /well -->
+                </div>
+<pre class="prettyprint linenums">
+{{ "{{ knp_menu_render('BcBootstrapDemoBundle:Builder:navList', {'nav_type': 'list'}) }}" }}
+</pre>
+<pre class="prettyprint linenums">
+// src/Braincrafted/BootstrapDemoBundle/Menu/Builder.php
+...
+public function navList(FactoryInterface $factory, array $options)
+{
+    $menu = $factory->createItem('root');
+
+    $item = $menu->addChild('List Header');
+    $item->addChild('Home', array('uri' => '#'));
+    $item->addChild('Library', array('uri' => '#'));
+    ...
+
+    return $menu;
+}
+...
+</pre>
+
+                <hr class="bs-docs-separator">
+
+                <h2>Nav list with icons</h2>
+                <p>You can use the  <code>.icon-*</code> syntax to add an icon to a menu:</p>
+
+                <div class="bs-docs-example">
+                    <div class="well" style="max-width: 340px; padding: 8px 0;">
+                        {{ knp_menu_render('BcBootstrapDemoBundle:Builder:navListIcons', {'nav_type': 'list'}) }}
+                    </div> <!-- /well -->
+                </div>
+<pre class="prettyprint linenums">
+{{ "{{ knp_menu_render('BcBootstrapDemoBundle:Builder:navListIcons', {'nav_type': 'list'}) }}" }}
+</pre>
+<pre class="prettyprint linenums">
+// src/Braincrafted/BootstrapDemoBundle/Menu/Builder.php
+...
+public function navList(FactoryInterface $factory, array $options)
+{
+    $menu = $factory->createItem('root');
+
+    $item = $menu->addChild('List Header');
+    $item->addChild('.icon-home Home', array('uri' => '#'));
+    $item->addChild('.icon-book Library', array('uri' => '#'));
+    ...
+
+    return $menu;
+}
+...
+</pre>
+
+                <hr class="bs-docs-separator">
+
+                <h2>Horizontal dividers</h2>
+                <p>Add a horizontal divider by creating a list item with the attribute <code>divider</code>, like so:</p>
+<pre class="prettyprint linenums">
+...
+$dropdown->addChild('d1', array('attributes' => array('divider' => true)));
+...
+</pre>
+
+            </section>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -22,6 +22,10 @@ bc_bootstrap_demo_components_flash:
     pattern:  /components/flash
     defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:flashComponents }
 
+bc_bootstrap_demo_components_navs:
+    pattern:  /components/navs
+    defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:navComponents }
+
 bc_bootstrap_demo_javascript:
     pattern:  /javascript
     defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:javascript }
