@@ -1,0 +1,390 @@
+{% extends 'BcBootstrapDemoBundle::layout.html.twig' %}
+
+{% block title %}Flash Messages · BcBootstrapBundle{% endblock %}
+
+{% block body %}
+
+<!-- Subhead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+    <div class="container">
+        <h1>Navbar</h1>
+        <p class="lead">BcBootstrapBundle integrates all different types of navbars from Twitter Bootstrap into KnpMenuBundle.</p>
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="row">
+
+        <!-- Docs nav
+        ================================================== -->
+        <div class="span3 bs-docs-sidebar">
+            <ul class="nav nav-list bs-docs-sidenav">
+                <li><a href="#basic-navbar">{{ 'chevron-right'|icon }} Basic navbar</a></li>
+                <li><a href="#components">{{ 'chevron-right'|icon }} Navbar components</a></li>
+                <li><a href="#variations">{{ 'chevron-right'|icon }} Display variations</a></li>
+                <li><a href="#responsive">{{ 'chevron-right'|icon }} Responsive navbar</a></li>
+            </ul>
+        </div>
+
+        <div class="span9">
+
+            <!-- Navbar
+            ================================================== -->
+            <section id="basic-navbar">
+                <div class="page-header">
+                    <h1>Basic Navbar</h1>
+                </div>
+
+                <p>To start, navbars are static (not fixed to the top) and include support for a project name and basic navigation. Place one anywhere within a <code>.container</code>, which sets the width of your site and content.</p>
+
+                <div class="bs-docs-example">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <a class="brand" href="#">Title</a>
+                            {{ knp_menu_render('BcBootstrapDemoBundle:Builder:basicNavbar', {'nav_type': 'navbar'}) }}
+                      </div>
+                    </div>
+                </div>
+<pre class="prettyprint linenums">
+&lt;div class="navbar"&gt;
+    &lt;div class="navbar-inner"&gt;
+        &lt;a class="brand" href="#"&gt;Title&lt;/a&gt;
+        {{ "{{ knp_menu_render('BcBootstrapDemoBundle:Builder:basicNavbar', {'nav_type': 'navbar'}) }}" }}
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<pre class="prettyprint linenums">
+// src/Braincrafted/BootstrapDemoBundle/Menu/Builder.php
+...
+public function basicNavbar(FactoryInterface $factory, array $options)
+{
+    $menu = $factory->createItem('root');
+
+    $item = $menu->addChild('Home', array('uri' => '#'));
+    $item->setCurrent(true);
+    $item = $menu->addChild('Link 1', array('uri' => '#'));
+    $item = $menu->addChild('Link 2', array('uri' => '#'));
+
+    return $menu;
+}
+...
+</pre>
+
+            </section>
+
+            <!-- Navbar components
+            ================================================== -->
+            <section id="components">
+                <div class="page-header">
+                    <h1>Navbar components</h1>
+                </div>
+
+                <h2>Brand</h2>
+                <p>A simple link to show your brand or project name only requires an anchor tag.</p>
+                <div class="bs-docs-example">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <a class="brand" href="#">Title</a>
+                        </div>
+                    </div>
+                </div>
+<pre class="prettyprint linenums">
+&lt;a class="brand" href="#"&gt;Project name&lt;/a&gt;
+</pre>
+
+                <hr class="bs-docs-separator">
+
+                <h2>Nav links</h2>
+
+                <p>Nav items are simple to add via unordered lists.</p>
+
+                <div class="bs-docs-example">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            {{ knp_menu_render('BcBootstrapDemoBundle:Builder:basicNavbar', {'nav_type': 'navbar'}) }}
+                        </div>
+                    </div>
+                </div>
+<pre class="prettyprint linenums">
+{{ "{{ knp_menu_render('BcBootstrapDemoBundle:Builder:basicNavbar', {'nav_type': 'navbar'}) }}" }}
+</pre>
+
+                <p>You can easily add dividers to your nav links with an empty list item and a simple class. Just add this between links:</p>
+                <div class="bs-docs-example">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            {{ knp_menu_render('BcBootstrapDemoBundle:Builder:dividerNavbar', {'nav_type': 'navbar'}) }}
+                        </div>
+                    </div>
+                </div>
+<pre class="prettyprint linenums">
+// src/Braincrafted/BootstrapDemoBundle/Menu/Builder.php
+...
+public function dividerNavbar(FactoryInterface $factory, array $options)
+{
+  ...
+  $item = $menu->addChild('d1', array('attributes' => array('divider' => true)));
+  ...
+}
+...
+</pre>
+
+                <hr class="bs-docs-separator">
+
+                <h2>Forms</h2>
+
+                <p>To properly style and position a form within the navbar, add the appropriate classes as shown below. For a default form, include <code>.navbar-form</code> and either <code>.pull-left</code> or <code>.pull-right</code> to properly align it.</p>
+                <div class="bs-docs-example">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <form class="navbar-form pull-left">
+                                <input type="text" class="span2">
+                                <button type="submit" class="btn">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+<pre class="prettyprint linenums">
+&lt;form class="navbar-form pull-left"&gt;
+    &lt;input type="text" class="span2"&gt;
+    &lt;button type="submit" class="btn"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+</pre>
+
+                <hr class="bs-docs-separator">
+
+                <h2>Search form</h2>
+
+                <p>For a more customized search form, add <code>.navbar-search</code> to the <code>form</code> and <code>.search-query</code> to the input for specialized styles in the navbar.</p>
+                <div class="bs-docs-example">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <form class="navbar-search pull-left">
+                                <input type="text" class="search-query" placeholder="Search">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+<pre class="prettyprint linenums">
+&lt;form class="navbar-search pull-left"&gt;
+    &lt;input type="text" class="search-query" placeholder="Search"&gt;
+&lt;/form&gt;
+</pre>
+
+                <hr class="bs-docs-separator">
+
+                <h2>Component alignment</h2>
+
+                <p>Align search form, or text, use the <code>.pull-left</code> or <code>.pull-right</code> utility classes. Both classes will add a CSS float in the specified direction. Use the <code>pull</code> option to float nav links left or right.</p>
+<pre class="prettyprint linenums">
+{{ "{{ knp_menu_render('BcBootstrapDemoBundle:Builder:basicNavbar', {'nav_type': 'navbar', 'pull': 'left'}) }}" }}
+{{ "{{ knp_menu_render('BcBootstrapDemoBundle:Builder:basicNavbar', {'nav_type': 'navbar', 'pull': 'right'}) }}" }}
+</pre>
+
+                <hr class="bs-docs-separator">
+
+                <h2>Using dropdowns</h2>
+                <p>Add dropdowns and dropups to the nav by nesting the menus. The <a href="./javascript.html#dropdowns">dropdowns javascript plugin</a> is required.</p>
+<pre class="prettyprint linenums">
+// src/Braincrafted/BootstrapDemoBundle/Menu/Builder.php
+...
+public function dropdownNavbar(FactoryInterface $factory, array $options)
+{
+    ...
+    $dropdown = $menu->addChild('Dropdown');
+    $dropdown->addChild('Action', array('uri' => '#'));
+    ...
+}
+...
+</pre>
+                <p>Visit the <a href="./javascript.html#dropdowns">javascript dropdowns documentation</a> for more markup and information on calling dropdowns.</p>
+
+                <hr class="bs-docs-separator">
+
+                <h2>Text</h2>
+                <p>Wrap strings of text in an element with <code>.navbar-text</code>, usually on a <code>&lt;p&gt;</code> tag for proper leading and color.</p>
+
+            </section>
+
+            <section id="variations">
+                <div class="page-header">
+                    <h1>Optional display variations</h1>
+                </div>
+
+                <p>Fix the navbar to the top or bottom of the viewport with an additional class on the outermost div, <code>.navbar</code>.</p>
+
+                <h2>Fixed to top</h2>
+
+                <p>Add <code>.navbar-fixed-top</code> and remember to account for the hidden area underneath it by adding at least 40px <code>padding</code> to the <code>&lt;body&gt;</code>. Be sure to add this after the core Bootstrap CSS and before the optional responsive CSS.</p>
+                <div class="bs-docs-example bs-navbar-top-example">
+                    <div class="navbar navbar-fixed-top" style="position: absolute;">
+                        <div class="navbar-inner">
+                            <div class="container" style="width: auto; padding: 0 20px;">
+                                <a class="brand" href="#">Title</a>
+                                <ul class="nav">
+                                    <li class="active"><a href="#">Home</a></li>
+                                    <li><a href="#">Link</a></li>
+                                    <li><a href="#">Link</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<pre class="prettyprint linenums">
+&lt;div class="navbar navbar-fixed-top"&gt;
+    ...
+&lt;/div&gt;
+</pre>
+
+                <hr class="bs-docs-separator">
+
+                <h2>Fixed to bottom</h2>
+
+                <p>Add <code>.navbar-fixed-bottom</code> instead.</p>
+                <div class="bs-docs-example bs-navbar-bottom-example">
+                    <div class="navbar navbar-fixed-bottom" style="position: absolute;">
+                        <div class="navbar-inner">
+                            <div class="container" style="width: auto; padding: 0 20px;">
+                                <a class="brand" href="#">Title</a>
+                                <ul class="nav">
+                                    <li class="active"><a href="#">Home</a></li>
+                                    <li><a href="#">Link</a></li>
+                                    <li><a href="#">Link</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<pre class="prettyprint linenums">
+&lt;div class="navbar navbar-fixed-bottom"&gt;
+    ...
+&lt;/div&gt;
+</pre>
+
+                <hr class="bs-docs-separator">
+
+                <h2>Static top navbar</h2>
+
+                <p>Create a full-width navbar that scrolls away with the page by adding <code>.navbar-static-top</code>. Unlike the <code>.navbar-fixed-top</code> class, you do not need to change any padding on the <code>body</code>.</p>
+                <div class="bs-docs-example bs-navbar-top-example">
+                    <div class="navbar navbar-static-top" style="margin: -1px -1px 0;">
+                        <div class="navbar-inner">
+                            <div class="container" style="width: auto; padding: 0 20px;">
+                                <a class="brand" href="#">Title</a>
+                                <ul class="nav">
+                                    <li class="active"><a href="#">Home</a></li>
+                                    <li><a href="#">Link</a></li>
+                                    <li><a href="#">Link</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<pre class="prettyprint linenums">
+&lt;div class="navbar navbar-static-top"&gt;
+    ...
+&lt;/div&gt;
+</pre>
+
+                <h2>Inverted variation</h2>
+
+                <p>Modify the look of the navbar by adding <code>.navbar-inverse</code>.</p>
+                <div class="bs-docs-example">
+                    <div class="navbar navbar-inverse" style="position: static;">
+                        <div class="navbar-inner">
+                            <div class="container">
+                                <a class="btn btn-navbar" data-toggle="collapse" data-target=".subnav-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </a>
+                                <a class="brand" href="#">Title</a>
+                                <div class="nav-collapse subnav-collapse">
+                                    {{ knp_menu_render('BcBootstrapDemoBundle:Builder:responsiveNavbar', {'nav_type': 'navbar'}) }}
+                                    <form class="navbar-search pull-left" action="">
+                                        <input type="text" class="search-query span2" placeholder="Search">
+                                    </form>
+                                    {{ knp_menu_render('BcBootstrapDemoBundle:Builder:responsiveNavbarRight', {'nav_type': 'navbar', 'pull': 'right'}) }}
+                                </div><!-- /.nav-collapse -->
+                            </div>
+                        </div><!-- /navbar-inner -->
+                    </div><!-- /navbar -->
+                </div>
+<pre class="prettyprint linenums">
+&lt;div class="navbar navbar-inverse"&gt;
+    ...
+&lt;/div&gt;
+</pre>
+
+            </section>
+
+            <section id="responsive">
+                <div class="page-header">
+                    <h1>Responsive navbar</h1>
+                </div>
+
+                <p>To implement a collapsing responsive navbar, wrap your navbar content in a containing div, <code>.nav-collapse.collapse</code>, and add the navbar toggle button, <code>.btn-navbar</code>.</p>
+                <div class="bs-docs-example">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <div class="container">
+                                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </a>
+                                <a class="brand" href="#">Title</a>
+                                <div class="nav-collapse">
+                                    {{ knp_menu_render('BcBootstrapDemoBundle:Builder:responsiveNavbar', {'nav_type': 'navbar'}) }}
+                                    <form class="navbar-search pull-left" action="">
+                                        <input type="text" class="search-query span2" placeholder="Search">
+                                    </form>
+                                    {{ knp_menu_render('BcBootstrapDemoBundle:Builder:responsiveNavbarRight', {'nav_type': 'navbar', 'pull': 'right'}) }}
+                                </div><!-- /.nav-collapse -->
+                            </div>
+                        </div><!-- /navbar-inner -->
+                    </div><!-- /navbar -->
+                </div>
+<pre class="prettyprint linenums">
+&lt;div class="navbar"&gt;
+    &lt;div class="navbar-inner"&gt;
+        &lt;div class="container"&gt;
+
+            &lt;!-- .btn-navbar is used as the toggle for collapsed navbar content --&gt;
+            &lt;a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+            &lt;/a&gt;
+
+            &lt;!-- Be sure to leave the brand out there if you want it shown --&gt;
+            &lt;a class="brand" href="#"&gt;Project name&lt;/a&gt;
+
+            &lt;!-- Everything you want hidden at 940px or less, place within here --&gt;
+            &lt;div class="nav-collapse"&gt;
+                {{ "{{ knp_menu_render('BcBootstrapDemoBundle:Builder:responsiveNavbar', {'nav_type': 'navbar'}) }}" }}
+                &lt;form class="navbar-search pull-left" action=""&gt;
+                    &lt;input type="text" class="search-query span2" placeholder="Search"&gt;
+                &lt;/form&gt;
+                {{ "{{ knp_menu_render('BcBootstrapDemoBundle:Builder:responsiveNavbarRight', {'nav_type': 'navbar', 'pull': 'right'}) }}" }}
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+                <div class="alert alert-info">
+                    <strong>Heads up!</strong> The responsive navbar requires the <a href="./javascript.html#collapse">collapse plugin</a> and <a href="./scaffolding.html#responsive">responsive Bootstrap CSS file</a>.
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

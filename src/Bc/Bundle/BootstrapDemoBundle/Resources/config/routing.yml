@@ -26,6 +26,10 @@ bc_bootstrap_demo_components_navs:
     pattern:  /components/navs
     defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:navComponents }
 
+bc_bootstrap_demo_components_navbar:
+    pattern:  /components/navbar
+    defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:navbarComponents }
+
 bc_bootstrap_demo_javascript:
     pattern:  /javascript
     defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:javascript }

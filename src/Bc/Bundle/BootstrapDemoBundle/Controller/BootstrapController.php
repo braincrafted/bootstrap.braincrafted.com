@@ -141,6 +141,11 @@ class BootstrapController extends Controller
         return $this->render('BcBootstrapDemoBundle:Bootstrap:navComponents.html.twig', array());
     }
 
+    public function navbarComponentsAction()
+    {
+        return $this->render('BcBootstrapDemoBundle:Bootstrap:navbarComponents.html.twig', array());
+    }
+
     public function flashComponentsAction()
     {
         return $this->render('BcBootstrapDemoBundle:Bootstrap:flashComponents.html.twig', array());
