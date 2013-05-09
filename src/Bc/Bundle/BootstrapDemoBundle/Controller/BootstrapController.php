@@ -90,15 +90,7 @@ class BootstrapController extends Controller
      */
     public function componentsAction()
     {
-        $paginator = $this->get('knp_paginator');
-        $pagination = $paginator->paginate(
-            range('a', 'z'),
-            $this->get('request')->query->get('page', 1)/*page number*/,
-            10/*limit per page*/
-        );
-        return $this->render('BcBootstrapDemoBundle:Bootstrap:components.html.twig', array(
-            'pagination'    => $pagination
-        ));
+        return $this->render('BcBootstrapDemoBundle:Bootstrap:components.html.twig', array());
     }
 
     /**
@@ -149,6 +141,11 @@ class BootstrapController extends Controller
     public function flashComponentsAction()
     {
         return $this->render('BcBootstrapDemoBundle:Bootstrap:flashComponents.html.twig', array());
+    }
+
+    public function labelsComponentsAction()
+    {
+        return $this->render('BcBootstrapDemoBundle:Bootstrap:labelsComponents.html.twig', array());
     }
 
     public function paginationComponentsAction()

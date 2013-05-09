@@ -45,6 +45,7 @@ class Builder extends ContainerAware
         $components->addChild('Navbar', array('route' => 'bc_bootstrap_demo_components_navbar'));
         $components->addChild('Pagination', array('route' => 'bc_bootstrap_demo_components_pagination'));
         $components->addChild('Flash Messages', array('route' => 'bc_bootstrap_demo_components_flash'));
+        $components->addChild('Labels and badges', array('route' => 'bc_bootstrap_demo_components_labels'));
 
         $menu->addChild('Base CSS', array('route' => 'bc_bootstrap_demo_baseCss'));
         $menu->addChild('Javascript', array('route' => 'bc_bootstrap_demo_javascript'));
