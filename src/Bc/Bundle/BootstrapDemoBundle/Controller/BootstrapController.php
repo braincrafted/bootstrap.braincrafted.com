@@ -138,6 +138,11 @@ class BootstrapController extends Controller
         return $this->render('BcBootstrapDemoBundle:Bootstrap:labelsComponents.html.twig', array());
     }
 
+    public function iconsComponentsAction()
+    {
+        return $this->render('BcBootstrapDemoBundle:Bootstrap:iconsComponents.html.twig', array());
+    }
+
     public function paginationComponentsAction()
     {
         $paginator = $this->get('knp_paginator');

@@ -34,6 +34,10 @@ bc_bootstrap_demo_components_labels:
     pattern:  /components/labels-and-badges
     defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:labelsComponents }
 
+bc_bootstrap_demo_components_icons:
+    pattern:  /components/icons
+    defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:iconsComponents }
+
 bc_bootstrap_demo_javascript:
     pattern:  /javascript
     defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:javascript }
