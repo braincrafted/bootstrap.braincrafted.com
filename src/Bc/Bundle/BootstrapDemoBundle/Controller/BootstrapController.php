@@ -126,31 +126,4 @@ class BootstrapController extends Controller
             array('pagination' => $pagination)
         );
     }
-
-    /**
-     * The forms action.
-     *
-     * @return \Symfony\Component\HttpFoundation\Response The response
-     */
-    public function formsAction()
-    {
-        $request = $this->getRequest();
-
-        $city = new City();
-        $city->setCitizens(array("Adam", "Eve"));
-        $cityForm = $this->createForm(new CityType(), $city);
-
-        if ($request->getMethod() == 'POST') {
-            $cityForm->bind($request);
-
-            print_r($cityForm->getData());
-
-            if ($cityForm->isValid()) {
-            }
-        }
-
-        return $this->render('BcBootstrapDemoBundle:Bootstrap:forms.html.twig', array(
-            'cityForm' => $cityForm->createView()
-        ));
-    }
 }

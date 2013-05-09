@@ -38,16 +38,13 @@ class Builder extends ContainerAware
         $menu->addChild('Home', array('route' => 'bc_bootstrap_demo_index'));
         $menu->addChild('Get started', array('route' => 'bc_bootstrap_demo_gettingStarted'));
 
-        $components = $menu->addChild('Components');
-        $components->addChild('Forms', array('route' => 'bc_bootstrap_demo_components_forms'));
-        $components->addChild('Navs', array('route' => 'bc_bootstrap_demo_components_navs'));
-        $components->addChild('Navbar', array('route' => 'bc_bootstrap_demo_components_navbar'));
-        $components->addChild('Pagination', array('route' => 'bc_bootstrap_demo_components_pagination'));
-        $components->addChild('Flash Messages', array('route' => 'bc_bootstrap_demo_components_flash'));
-        $components->addChild('Labels and badges', array('route' => 'bc_bootstrap_demo_components_labels'));
-        $components->addChild('Icons', array('route' => 'bc_bootstrap_demo_components_icons'));
-
-        $menu->addChild('Forms', array('route' => 'bc_bootstrap_demo_forms'));
+        $menu->addChild('Forms', array('route' => 'bc_bootstrap_demo_components_forms'));
+        $menu->addChild('Navs', array('route' => 'bc_bootstrap_demo_components_navs'));
+        $menu->addChild('Navbar', array('route' => 'bc_bootstrap_demo_components_navbar'));
+        $menu->addChild('Pagination', array('route' => 'bc_bootstrap_demo_components_pagination'));
+        $menu->addChild('Flash Messages', array('route' => 'bc_bootstrap_demo_components_flash'));
+        $menu->addChild('Labels and badges', array('route' => 'bc_bootstrap_demo_components_labels'));
+        $menu->addChild('Icons', array('route' => 'bc_bootstrap_demo_components_icons'));
 
         return $menu;
     }
