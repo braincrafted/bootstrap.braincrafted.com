@@ -39,7 +39,6 @@ class Builder extends ContainerAware
         $menu->addChild('Get started', array('route' => 'bc_bootstrap_demo_gettingStarted'));
 
         $components = $menu->addChild('Components');
-        $components->addChild('General', array('route' => 'bc_bootstrap_demo_components'));
         $components->addChild('Forms', array('route' => 'bc_bootstrap_demo_components_forms'));
         $components->addChild('Navs', array('route' => 'bc_bootstrap_demo_components_navs'));
         $components->addChild('Navbar', array('route' => 'bc_bootstrap_demo_components_navbar'));

@@ -10,10 +10,6 @@ bc_bootstrap_demo_baseCss:
     pattern:  /base-css
     defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:baseCss }
 
-bc_bootstrap_demo_components:
-    pattern:  /components
-    defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:components }
-
 bc_bootstrap_demo_components_forms:
     pattern:  /components/forms
     defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:formComponents }

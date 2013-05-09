@@ -84,16 +84,6 @@ class BootstrapController extends Controller
     }
 
     /**
-     * The components action.
-     *
-     * @return \Symfony\Component\HttpFoundation\Response The response
-     */
-    public function componentsAction()
-    {
-        return $this->render('BcBootstrapDemoBundle:Bootstrap:components.html.twig', array());
-    }
-
-    /**
      * The form components action.
      *
      * @return \Symfony\Component\HttpFoundation\Response The response
