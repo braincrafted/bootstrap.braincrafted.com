@@ -17,16 +17,21 @@ framework:
     session:         ~
 
 bc_bootstrap:
-    less_filter: lessphp
+    less_filter: less
+    auto_configure:
+        assetic:       true # Automatically configure Assetic for BcBootstrap
+        twig:          true # Automatically configure Twig for BcBootstrap
+        knp_menu:      true # Automatically configure KnpMenuBundle for BcBootstrap
+        knp_paginator: true # Automatically configure KnpPaginatorBundle for BcBootstap
 
 # Assetic Configuration
 assetic:
     filters:
-        lessphp:
-            file: %kernel.root_dir%/../vendor/leafo/lessphp/lessc.inc.php
-            apply_to:   "\.less$"
-        # less:
-        #     node:       /usr/local/bin/node
-        #     node_paths: [/usr/local/lib/node_modules]
+        # lessphp:
+        #     file: %kernel.root_dir%/../vendor/leafo/lessphp/lessc.inc.php
         #     apply_to:   "\.less$"
+        less:
+            node:       /usr/local/bin/node
+            node_paths: [/usr/local/lib/node_modules]
+            apply_to:   "\.less$"
         cssrewrite: ~

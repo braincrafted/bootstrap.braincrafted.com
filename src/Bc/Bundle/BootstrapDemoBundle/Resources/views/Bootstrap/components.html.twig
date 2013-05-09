@@ -22,7 +22,6 @@
       <div class="span3 bs-docs-sidebar">
         <ul class="nav nav-list bs-docs-sidenav">
           <li><a href="#breadcrumbs"><i class="icon-chevron-right"></i> Breadcrumbs</a></li>
-          <li><a href="#pagination"><i class="icon-chevron-right"></i> Pagination</a></li>
           <li><a href="#labels-badges"><i class="icon-chevron-right"></i> Labels and badges</a></li>
           <li><a href="#typography"><i class="icon-chevron-right"></i> Typography</a></li>
           <li><a href="#thumbnails"><i class="icon-chevron-right"></i> Thumbnails</a></li>
@@ -66,93 +65,6 @@
 </pre>
 
         </section>
-
-
-
-        <!-- Pagination
-        ================================================== -->
-        <section id="pagination">
-          <div class="page-header">
-            <h1>Pagination <small>Two options for paging through content</small></h1>
-          </div>
-
-          <h2>Standard pagination</h2>
-          <p>Simple pagination inspired by Rdio, great for apps and search results. The large block is hard to miss, easily scalable, and provides large click areas.</p>
-          <div class="bs-docs-example">
-            {{ knp_pagination_render(pagination) }}
-          </div>
-<pre class="prettyprint linenums">
-{{ '{{ knp_pagination_render(pagination) }}' }}
-</pre>
-
-
-          <hr class="bs-docs-separator">
-
-
-          <h2>Options</h2>
-
-
-          <h3>Alignment</h3>
-          <p>You can change the alignment of the pagination widget by adding an <code>alignment</code> option:</p>
-          <div class="bs-docs-example">
-            {{ knp_pagination_render(pagination, null, {}, {'alignment': 'center'}) }}
-          </div>
-<pre class="prettyprint linenums">
-{{ "{{ knp_pagination_render(pagination, null, {}, {'alignment': 'center'}) }}" }}
-</pre>
-          <div class="bs-docs-example">
-            {{ knp_pagination_render(pagination, null, {}, {'alignment': 'right'}) }}
-          </div>
-<pre class="prettyprint linenums">
-{{ "{{ knp_pagination_render(pagination, null, {}, {'alignment': 'right'}) }}" }}
-</pre>
-
-          <h3>Labels</h3>
-          <p>Change the text of the labels:</p>
-          <div class="bs-docs-example">
-            {{ knp_pagination_render(pagination, null, {}, {'alignment': 'center', 'first_label': '&lt;&lt;', 'last_label': '&gt;&gt;', 'prev_label': '&lt;', 'next_label': '&gt;'}) }}
-          </div>
-<pre class="prettyprint linenums">
-{{ "{{ knp_pagination_render(pagination, null, {}, {'alignment': 'center', 'first_label': '&lt;&lt;', 'last_label': '&gt;&gt;', 'prev_label': '&lt;', 'next_label': '&gt;'}) }}" }}
-</pre>
-
-
-          <hr class="bs-docs-separator">
-
-
-          <h2>Pager</h2>
-          <p>Quick previous and next links for simple pagination implementations with light markup and styles. It's great for simple sites like blogs or magazines.</p>
-
-          <h3>Default example</h3>
-          <p>By default, the pager centers links.</p>
-          <div class="bs-docs-example">
-            {{ knp_pagination_render(pagination, null, {}, {'style': 'pager'}) }}
-          </div>
-<pre class="prettyprint linenums">
-{{ "{{ knp_pagination_render(pagination, null, {}, {'style': 'pager'}) }}" }}
-</pre>
-
-          <h3>Aligned links</h3>
-          <p>Alternatively, you can align each link to the sides:</p>
-          <div class="bs-docs-example">
-            {{ knp_pagination_render(pagination, null, {}, {'style': 'pager', 'aligned': true}) }}
-          </div>
-<pre class="prettyprint linenums">
-{{ "{{ knp_pagination_render(pagination, null, {}, {'style': 'pager', 'aligned': true}) }}" }}
-</pre>
-
-          <h3>Labels</h3>
-          <p>You can change the text of the buttons:</p>
-          <div class="bs-docs-example">
-            {{ knp_pagination_render(pagination, null, {}, {'style': 'pager', 'prev_label': '&larr; Older', 'next_label': 'Newer &rarr;'}) }}
-          </div>
-<pre class="prettyprint linenums">
-{{ "{{ knp_pagination_render(pagination, null, {}, {'style': 'pager', 'prev_label': '&larr; Older', 'next_label': 'Newer &rarr;'}) }}" }}
-</pre>
-
-
-        </section>
-
 
 
         <!-- Labels and badges

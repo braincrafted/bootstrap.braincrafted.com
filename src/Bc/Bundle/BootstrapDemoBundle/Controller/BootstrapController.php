@@ -151,6 +151,21 @@ class BootstrapController extends Controller
         return $this->render('BcBootstrapDemoBundle:Bootstrap:flashComponents.html.twig', array());
     }
 
+    public function paginationComponentsAction()
+    {
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            range('a', 'z'),
+            $this->get('request')->query->get('page', 1)/*page number*/,
+            10/*limit per page*/
+        );
+
+        return $this->render(
+            'BcBootstrapDemoBundle:Bootstrap:paginationComponents.html.twig',
+            array('pagination' => $pagination)
+        );
+    }
+
     /**
      * The javascript action.
      *
