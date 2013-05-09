@@ -47,8 +47,6 @@ class Builder extends ContainerAware
         $components->addChild('Labels and badges', array('route' => 'bc_bootstrap_demo_components_labels'));
         $components->addChild('Icons', array('route' => 'bc_bootstrap_demo_components_icons'));
 
-        $menu->addChild('Base CSS', array('route' => 'bc_bootstrap_demo_baseCss'));
-        $menu->addChild('Javascript', array('route' => 'bc_bootstrap_demo_javascript'));
         $menu->addChild('Forms', array('route' => 'bc_bootstrap_demo_forms'));
 
         return $menu;

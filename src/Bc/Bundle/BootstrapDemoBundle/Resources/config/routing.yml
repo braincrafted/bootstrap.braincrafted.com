@@ -6,10 +6,6 @@ bc_bootstrap_demo_gettingStarted:
     pattern:  /getting-started
     defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:gettingStarted }
 
-bc_bootstrap_demo_baseCss:
-    pattern:  /base-css
-    defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:baseCss }
-
 bc_bootstrap_demo_components_forms:
     pattern:  /components/forms
     defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:formComponents }
@@ -37,10 +33,6 @@ bc_bootstrap_demo_components_labels:
 bc_bootstrap_demo_components_icons:
     pattern:  /components/icons
     defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:iconsComponents }
-
-bc_bootstrap_demo_javascript:
-    pattern:  /javascript
-    defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:javascript }
 
 bc_bootstrap_demo_forms:
     pattern:  /forms
