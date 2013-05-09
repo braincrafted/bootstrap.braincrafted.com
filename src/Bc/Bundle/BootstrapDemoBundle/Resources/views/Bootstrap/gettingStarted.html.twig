@@ -158,6 +158,7 @@ assetic:
         cssrewrite: ~
 ...
 </pre>
+
               <p>If you want to use LessPHP to compile the Bootstrap LESS files, you need to change your configuration to this:
 <pre class="prettyprint linenums">
 bc_bootstrap:
@@ -170,6 +171,12 @@ assetic:
             file: %kernel.root_dir%/../vendor/leafo/lessphp/lessc.inc.php
             apply_to:   "\.less$"
         cssrewrite: ~
+</pre>
+
+              <p>If you don't want to use the Bootstrap LESS files, you can disable this in the configuration:
+<pre class="prettyprint linenums">
+bc_bootstrap:
+    less_filter: none
 </pre>
 
               <p>You can also tell BcBootstrapBundle to not include the CSS code for responsive layouts:</p>
@@ -235,6 +242,18 @@ bc_bootstrap:
     assets_dir:  %kernel.root_dir%/../vendor/twitter/bootstrap
     jquery_path: %kernel.root_dir%/../vendor/jquery/jquery/jquery-1.9.1.js
 </pre>
+
+            <p>If you don't want BcBootstrap to configure Assetic, Twig, KnpMenu and/or KnpPaginator for you, you can disable auto configuration for these bundles separately:</p>
+<pre class="prettyprint linenums">
+# app/config.yml
+bc_bootstrap:
+    auto_configure:
+        assetic:       false
+        twig:          false
+        knp_menu:      false
+        knp_paginator: false
+</pre>
+
             </div>
           </div>
 
@@ -291,6 +310,7 @@ twig:
         resources:
             - "AcmeBundle:Form:form_div_layout.html.twig"
 </pre>
+
             </div>
           </div>
           <div class="row-fluid">
@@ -314,7 +334,7 @@ knp_menu:
 # app/config.yml
 knp_paginator:
     template:
-        pagination: AcmeBundle:Pagination:pagination.html.twig
+        pagination: BcBootstrapBundle:Pagination:pagination.html.twig
 </pre>
             </div>
           </div>
@@ -378,8 +398,6 @@ knp_paginator:
           <p class="lead">Bootstrap for Symfony2 does not only include Twitter Bootstrap but also come with templates and Twig filters. To make it easy for existing users of Twitter Bootstrap the <a href="http://bootstrap.braincrafted.com">Bootstrap for Symfony2 documentation</a> uses the same format and categories as the documentation of Twitter Bootstrap.</p>
 
           <h2>Docs sections</h2>
-          <h4><a href="{{ path('bc_bootstrap_demo_scaffolding') }}">Scaffolding</a></h4>
-          <p>Global styles for the body to reset type and background, link styles, grid system, and two simple layouts.</p>
           <h4><a href="{{ path('bc_bootstrap_demo_baseCss') }}">Base CSS</a></h4>
           <p>Styles for common HTML elements like typography, code, tables, forms, and buttons. Also includes <a href="http://glyphicons.com">Glyphicons</a>, a great little icon set.</p>
           <h4><a href="{{ path('bc_bootstrap_demo_components') }}">Components</a></h4>
