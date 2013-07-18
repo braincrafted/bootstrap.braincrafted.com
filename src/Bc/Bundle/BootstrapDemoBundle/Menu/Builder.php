@@ -35,16 +35,8 @@ class Builder extends ContainerAware
     {
         $menu = $factory->createItem('root');
 
-        $menu->addChild('Home', array('route' => 'bc_bootstrap_demo_index'));
-        $menu->addChild('Get started', array('route' => 'bc_bootstrap_demo_gettingStarted'));
-
-        $menu->addChild('Forms', array('route' => 'bc_bootstrap_demo_components_forms'));
-        $menu->addChild('Navs', array('route' => 'bc_bootstrap_demo_components_navs'));
-        $menu->addChild('Navbar', array('route' => 'bc_bootstrap_demo_components_navbar'));
-        $menu->addChild('Pagination', array('route' => 'bc_bootstrap_demo_components_pagination'));
-        $menu->addChild('Flash Messages', array('route' => 'bc_bootstrap_demo_components_flash'));
-        $menu->addChild('Labels and badges', array('route' => 'bc_bootstrap_demo_components_labels'));
-        $menu->addChild('Icons', array('route' => 'bc_bootstrap_demo_components_icons'));
+        $menu->addChild('Installation', array('route' => 'bc_bootstrap_installation'));
+        $menu->addChild('Components', array('route' => 'bc_bootstrap_components'));
 
         return $menu;
     }

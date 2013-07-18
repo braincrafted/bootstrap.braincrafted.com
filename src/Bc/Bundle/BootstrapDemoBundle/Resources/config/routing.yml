@@ -1,10 +1,14 @@
-bc_bootstrap_demo_index:
+bc_bootstrap_index:
     pattern:  /
-    defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:index }
+    defaults: { _controller: BcBootstrapDemoBundle:Documentation:index }
 
-bc_bootstrap_demo_gettingStarted:
-    pattern:  /getting-started
-    defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:gettingStarted }
+bc_bootstrap_installation:
+    pattern:  /installation
+    defaults: { _controller: BcBootstrapDemoBundle:Documentation:installation }
+
+bc_bootstrap_components:
+    pattern:  /components
+    defaults: { _controller: BcBootstrapDemoBundle:Documentation:components }
 
 bc_bootstrap_demo_components_forms:
     pattern:  /components/forms
