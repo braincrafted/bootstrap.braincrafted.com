@@ -3,31 +3,167 @@
         <h2>Forms</h2>
     </div>
 
-    <h2>Field Types</h2>
-
-    <h3>Text Fields</h3>
+    <h2>Text Fields</h2>
 
     {{ form_start(formFieldTypes, {'style': 'horizontal'}) }}
 
-        {{ form_row(formFieldTypes.textField, {'style': 'horizontal'}) }}
+        <h3>Text</h3>
 
+        {{ form_row(formFieldTypes.textField, {'style': 'horizontal'}) }}
+        <hr>
+
+        <div class="panel">
+            <div class="panel-heading">Form Builder</div>
+            <pre><code class="php">$builder->add('firstName', 'text');</code></pre>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">Twig</div>
+            <pre><code>{{ "{{ form_row(form.firstName, {'style': 'horizontal'}) }}" }}</code></pre>
+        </div>
+
+
+        <h3>Textarea</h3>
         {{ form_row(formFieldTypes.textareaField, {'style': 'horizontal'}) }}
+        <hr>
+
+        <div class="panel">
+            <div class="panel-heading">Form Builder</div>
+            <pre><code class="php">$builder->add('description', 'textarea');</code></pre>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">Twig</div>
+            <pre><code>{{ "{{ form_row(form.description, {'style': 'horizontal'}) }}" }}</code></pre>
+        </div>
+
+
+        <h3>Email</h3>
 
         {{ form_row(formFieldTypes.emailField, {'style': 'horizontal'}) }}
+        <hr>
+
+        <div class="panel">
+            <div class="panel-heading">Form Builder</div>
+            <pre><code class="php">$builder->add('email', 'email');</code></pre>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">Twig</div>
+            <pre><code>{{ "{{ form_row(form.email, {'style': 'horizontal'}) }}" }}</code></pre>
+        </div>
+
+
+        <h3>Integer</h3>
 
         {{ form_row(formFieldTypes.integerField, {'style': 'horizontal'}) }}
+        <hr>
+
+        <div class="panel">
+            <div class="panel-heading">Form Builder</div>
+            <pre><code class="php">$builder->add('integer', 'integer');</code></pre>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">Twig</div>
+            <pre><code>{{ "{{ form_row(form.integer, {'style': 'horizontal'}) }}" }}</code></pre>
+        </div>
+
+
+        <h3>Money</h3>
 
         {{ form_row(formFieldTypes.moneyField, {'style': 'horizontal'}) }}
+        <hr>
+
+        <div class="panel">
+            <div class="panel-heading">Form Builder</div>
+            <pre><code class="php">$builder->add('amount', 'bootstrap_money');</code></pre>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">Twig</div>
+            <pre><code>{{ "{{ form_row(form.amount, {'style': 'horizontal'}) }}" }}</code></pre>
+        </div>
+
+
+        <h3>Number</h3>
 
         {{ form_row(formFieldTypes.numberField, {'style': 'horizontal'}) }}
+        <hr>
+
+        <div class="panel">
+            <div class="panel-heading">Form Builder</div>
+            <pre><code class="php">$builder->add('number', 'number');</code></pre>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">Twig</div>
+            <pre><code>{{ "{{ form_row(form.number, {'style': 'horizontal'}) }}" }}</code></pre>
+        </div>
+
+
+        <h3>Password</h3>
 
         {{ form_row(formFieldTypes.passwordField, {'style': 'horizontal'}) }}
+        <hr>
+
+        <div class="panel">
+            <div class="panel-heading">Form Builder</div>
+            <pre><code class="php">$builder->add('password', 'password');</code></pre>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">Twig</div>
+            <pre><code>{{ "{{ form_row(form.password, {'style': 'horizontal'}) }}" }}</code></pre>
+        </div>
+
+
+        <h3>Percent</h3>
 
         {{ form_row(formFieldTypes.percentField, {'style': 'horizontal'}) }}
+        <hr>
+
+        <div class="panel">
+            <div class="panel-heading">Form Builder</div>
+            <pre><code class="php">$builder->add('percent', 'percent');</code></pre>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">Twig</div>
+            <pre><code>{{ "{{ form_row(form.percent, {'style': 'horizontal'}) }}" }}</code></pre>
+        </div>
+
+
+        <h3>Search</h3>
 
         {{ form_row(formFieldTypes.searchField, {'style': 'horizontal'}) }}
+        <hr>
+
+        <div class="panel">
+            <div class="panel-heading">Form Builder</div>
+            <pre><code class="php">$builder->add('query', 'search');</code></pre>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">Twig</div>
+            <pre><code>{{ "{{ form_row(form.query, {'style': 'horizontal'}) }}" }}</code></pre>
+        </div>
+
+
+        <h3>URL</h3>
 
         {{ form_row(formFieldTypes.urlField, {'style': 'horizontal'}) }}
+        <hr>
+
+        <div class="panel">
+            <div class="panel-heading">Form Builder</div>
+            <pre><code class="php">$builder->add('website', 'url');</code></pre>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">Twig</div>
+            <pre><code class="php">{{ "{{ form_row(form.website, {'style': 'horizontal'}) }}" }}</code></pre>
+        </div>
 
     {{ form_end(formFieldTypes) }}
 

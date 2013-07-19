@@ -19,16 +19,16 @@ class DocumentationController extends Controller
     public function componentsAction()
     {
         $formFieldTypes = $this->createFormBuilder([])
-            ->add('textField', 'text')
-            ->add('textareaField', 'textarea')
-            ->add('emailField', 'email')
+            ->add('textField', 'text', ['label' => 'First name'])
+            ->add('textareaField', 'textarea', ['label' => 'Description'])
+            ->add('emailField', 'email', ['label' => 'Email'])
             ->add('integerField', 'integer')
-            ->add('moneyField', 'bootstrap_money')
+            ->add('moneyField', 'bootstrap_money', ['label' => 'Amount'])
             ->add('numberField', 'number')
             ->add('passwordField', 'password')
             ->add('percentField', 'percent')
-            ->add('searchField', 'search')
-            ->add('urlField', 'url')
+            ->add('searchField', 'search', ['label' => 'Query'])
+            ->add('urlField', 'url', ['label' => 'Website'])
             ->getForm();
 
         return $this->render(
