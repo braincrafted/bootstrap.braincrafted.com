@@ -47,6 +47,18 @@
 
     <p>There is also an option <code>simple_col</code> which wraps the input field in a <code>&lt;div&gt;</code> with the given size. This is useful when creating compound types and is used, for example, in the date widget provided by BcBootstrapBundle.</p>
 
+    <h4>Checkbox and Radio Widgets</h4>
+
+    <p><span class="label label-info">Note</span> This section talks only about the field types <code>checkbox</code> and <code>radio</code> and not about <code>choice</code>, which can be rendered using checkbox and radio buttons.</p>
+
+    <p>Checkbox and radio widgets are a little bit different than other types of widgets, since Bootstraps wraps the input field inside the label. Therefore there are specific blocks <code>checkbox_row</code> and <code>radio_row</code> to render this markup. The blocks <code>checkbox_widget</code> and <code>radio_widget</code> only render the input element and not the label.</p>
+
+    <p>By default Bootstrap aligns checkboxes and radio fields on the left, if you want to align checkboxes and radio buttons with the other form elements, use the option <code>align_with_widget</code>. This option can be either setted on the <code>form_row</code> function or as an attribute when building the form.</p>
+
+    <pre><code class="php">$builder->add('termsAccepted', 'checkbox', [ 'attr' => [ 'align_with_widget' => true ] ]);</code></pre>
+
+    <pre><code>{{ "{{ form_row(form.termsAccepted, { 'align_with_widget': true }) }}" }}</code></pre>
+
     <hr>
 
     <h3>Additional Form Types</h3>

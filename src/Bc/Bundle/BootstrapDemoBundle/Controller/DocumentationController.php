@@ -33,6 +33,9 @@ class DocumentationController extends Controller
             ->add('dateTime', 'datetime')
             ->add('time', 'time')
             ->add('birthday', 'birthday')
+            ->add('file', 'file')
+            ->add('checkbox', 'checkbox')
+            ->add('radio', 'radio')
             ->getForm();
 
         $form = $this->createFormBuilder([])
