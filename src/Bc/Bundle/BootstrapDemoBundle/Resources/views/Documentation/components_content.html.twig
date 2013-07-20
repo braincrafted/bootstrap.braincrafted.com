@@ -3,183 +3,65 @@
         <h2>Forms</h2>
     </div>
 
-    <h2>Text Fields</h2>
+    <h3>Styles</h3>
 
-    {{ form_start(formFieldTypes, {'style': 'horizontal'}) }}
+    <p>BcBootstrapBundle integrates all styles from Bootstrap. You can pass the style attribute to most form widgets</p>
 
-        <h3>Text</h3>
+    <pre><code>{{ "{{ form(form, { 'style': 'horizontal' }) }}" }}
+{{ "{{ form_start(form, { 'style': 'horizontal' }) }}" }}
+{{ "{{ form_row(form.firstName, { 'style': 'horizontal' }) }}" }}
+{{ "{{ form_label(form.firstName, { 'style': 'horizontal' }) }}" }}</code></pre>
 
-        {{ form_row(formFieldTypes.textField, {'style': 'horizontal'}) }}
-        <hr>
+    <p>If you pass the style to <code>form</code> or <code>form_start</code> you don't have to pass the style attribute to each <code>form_row</code> widget. The style will be defined for each widget between <code>form_start</code> and <code>form_end</code>.</p>
 
-        <div class="panel">
-            <div class="panel-heading">Form Builder</div>
-            <pre><code class="php">$builder->add('firstName', 'text');</code></pre>
-        </div>
+    <pre><code>{{ "{{ form_start(form, { 'style': 'horizontal' }) }}" }}
+    {{ "{{ form_row(form.firstName) }}" }}
+    {{ "{{ form_row(form.lastName) }}" }}
+{{ "{{ form_end(form) }}" }}</code></pre>
 
-        <div class="panel">
-            <div class="panel-heading">Twig</div>
-            <pre><code>{{ "{{ form_row(form.firstName, {'style': 'horizontal'}) }}" }}</code></pre>
-        </div>
+    <p>Internally BcBootstrapBundle uses functions to write and read the global style and use can also use these functions, for example, when you use HTML for the <code>&lt;form&gt;</code> tag but want set the style once for all fields.</p>
 
+    <pre><code>&lt;form action="..." method="..." class="form-horizontal"&gt;
+    {{ "{{ bootstrap_set_style('horizontal') }}" }}
 
-        <h3>Textarea</h3>
-        {{ form_row(formFieldTypes.textareaField, {'style': 'horizontal'}) }}
-        <hr>
+    {{ "{{ form_row(form.firstName) }}" }}
+    {{ "{{ form_row(form.lastName) }}" }}
 
-        <div class="panel">
-            <div class="panel-heading">Form Builder</div>
-            <pre><code class="php">$builder->add('description', 'textarea');</code></pre>
-        </div>
+    {{ "{{ bootstrap_set_style('') }}" }}
+&lt;/form&gt;</code></pre>
 
-        <div class="panel">
-            <div class="panel-heading">Twig</div>
-            <pre><code>{{ "{{ form_row(form.description, {'style': 'horizontal'}) }}" }}</code></pre>
-        </div>
+    <p>The function <code>bootstrap_get_style()</code> returns the current style.</p>
 
+    <hr>
 
-        <h3>Email</h3>
+    <h3>Additional Form Types</h3>
 
-        {{ form_row(formFieldTypes.emailField, {'style': 'horizontal'}) }}
-        <hr>
+    <p>BcBootstrapBundle does not only provides styles for the existing form types of Symfony2 but also provides you with addional types. In some cases this is due to technical limitations of the implementation of Twig and/or Symfony2.</p>
 
-        <div class="panel">
-            <div class="panel-heading">Form Builder</div>
-            <pre><code class="php">$builder->add('email', 'email');</code></pre>
-        </div>
+    <h4>Money</h4>
 
-        <div class="panel">
-            <div class="panel-heading">Twig</div>
-            <pre><code>{{ "{{ form_row(form.email, {'style': 'horizontal'}) }}" }}</code></pre>
-        </div>
+    <p>The type <code>BootstrapMoneyType</code> extends <code>MoneyType</code> from Symfony2 to use Bootstraps prepend and append style to display the currency. </p>
 
+    <div class="panel">
+        <pre><code class="php">$form = $this->createFormBuilder([])
+    ->add('amount', 'bootstrap_money');</code></pre>
+        <div class="panel-footer">PHP</div>
+    </div>
 
-        <h3>Integer</h3>
+    <div class="panel">
+        <pre><code>{{ "{{ form_row(form.amount) }}" }}</code></pre>
+        <div class="panel-footer">Twig</div>
+    </div>
 
-        {{ form_row(formFieldTypes.integerField, {'style': 'horizontal'}) }}
-        <hr>
+    <p>The result will depend on the locale.</p>
 
-        <div class="panel">
-            <div class="panel-heading">Form Builder</div>
-            <pre><code class="php">$builder->add('integer', 'integer');</code></pre>
-        </div>
-
-        <div class="panel">
-            <div class="panel-heading">Twig</div>
-            <pre><code>{{ "{{ form_row(form.integer, {'style': 'horizontal'}) }}" }}</code></pre>
-        </div>
-
-
-        <h3>Money</h3>
-
-        {{ form_row(formFieldTypes.moneyField, {'style': 'horizontal'}) }}
-        <hr>
-
-        <div class="panel">
-            <div class="panel-heading">Form Builder</div>
-            <pre><code class="php">$builder->add('amount', 'bootstrap_money');</code></pre>
-        </div>
-
-        <div class="panel">
-            <div class="panel-heading">Twig</div>
-            <pre><code>{{ "{{ form_row(form.amount, {'style': 'horizontal'}) }}" }}</code></pre>
-        </div>
-
-
-        <h3>Number</h3>
-
-        {{ form_row(formFieldTypes.numberField, {'style': 'horizontal'}) }}
-        <hr>
-
-        <div class="panel">
-            <div class="panel-heading">Form Builder</div>
-            <pre><code class="php">$builder->add('number', 'number');</code></pre>
-        </div>
-
-        <div class="panel">
-            <div class="panel-heading">Twig</div>
-            <pre><code>{{ "{{ form_row(form.number, {'style': 'horizontal'}) }}" }}</code></pre>
-        </div>
-
-
-        <h3>Password</h3>
-
-        {{ form_row(formFieldTypes.passwordField, {'style': 'horizontal'}) }}
-        <hr>
-
-        <div class="panel">
-            <div class="panel-heading">Form Builder</div>
-            <pre><code class="php">$builder->add('password', 'password');</code></pre>
-        </div>
-
-        <div class="panel">
-            <div class="panel-heading">Twig</div>
-            <pre><code>{{ "{{ form_row(form.password, {'style': 'horizontal'}) }}" }}</code></pre>
-        </div>
-
-
-        <h3>Percent</h3>
-
-        {{ form_row(formFieldTypes.percentField, {'style': 'horizontal'}) }}
-        <hr>
-
-        <div class="panel">
-            <div class="panel-heading">Form Builder</div>
-            <pre><code class="php">$builder->add('percent', 'percent');</code></pre>
-        </div>
-
-        <div class="panel">
-            <div class="panel-heading">Twig</div>
-            <pre><code>{{ "{{ form_row(form.percent, {'style': 'horizontal'}) }}" }}</code></pre>
-        </div>
-
-
-        <h3>Search</h3>
-
-        {{ form_row(formFieldTypes.searchField, {'style': 'horizontal'}) }}
-        <hr>
-
-        <div class="panel">
-            <div class="panel-heading">Form Builder</div>
-            <pre><code class="php">$builder->add('query', 'search');</code></pre>
-        </div>
-
-        <div class="panel">
-            <div class="panel-heading">Twig</div>
-            <pre><code>{{ "{{ form_row(form.query, {'style': 'horizontal'}) }}" }}</code></pre>
-        </div>
-
-
-        <h3>URL</h3>
-
-        {{ form_row(formFieldTypes.urlField, {'style': 'horizontal'}) }}
-        <hr>
-
-        <div class="panel">
-            <div class="panel-heading">Form Builder</div>
-            <pre><code class="php">$builder->add('website', 'url');</code></pre>
-        </div>
-
-        <div class="panel">
-            <div class="panel-heading">Twig</div>
-            <pre><code class="php">{{ "{{ form_row(form.website, {'style': 'horizontal'}) }}" }}</code></pre>
-        </div>
-
-    {{ form_end(formFieldTypes) }}
-
-    <h3>Choice Fields</h3>
-
-    <h3>Date and Time Fields</h3>
-
-    <h3>Other Fields</h3>
-
-    <h3>Field Groups</h3>
-
-    <h3>Hidden Fields</h3>
-
-    <h3>Buttons</h3>
-
-    <h3>Base Fields</h3>
+    <div class="panel">
+        <form action="" class="form-horizontal">
+            {{ form_row(moneyForm.priceEuro, { 'style': 'horizontal' }) }}
+            {{ form_row(moneyForm.priceDollar, { 'style': 'horizontal' }) }}
+        </form>
+        <div class="panel-footer">Result</div>
+    </div>
 
 </section>
 

@@ -18,22 +18,14 @@ class DocumentationController extends Controller
 
     public function componentsAction()
     {
-        $formFieldTypes = $this->createFormBuilder([])
-            ->add('textField', 'text', ['label' => 'First name'])
-            ->add('textareaField', 'textarea', ['label' => 'Description'])
-            ->add('emailField', 'email', ['label' => 'Email'])
-            ->add('integerField', 'integer')
-            ->add('moneyField', 'bootstrap_money', ['label' => 'Amount'])
-            ->add('numberField', 'number')
-            ->add('passwordField', 'password')
-            ->add('percentField', 'percent')
-            ->add('searchField', 'search', ['label' => 'Query'])
-            ->add('urlField', 'url', ['label' => 'Website'])
+        $moneyForm = $this->createFormBuilder([])
+            ->add('priceEuro', 'bootstrap_money', ['label' => 'Price', 'currency' => 'EUR'])
+            ->add('priceDollar', 'bootstrap_money', ['label' => 'Price', 'currency' => 'USD'])
             ->getForm();
 
         return $this->render(
             'BcBootstrapDemoBundle:Documentation:components.html.twig',
-            [ 'formFieldTypes' => $formFieldTypes->createView() ]
+            [ 'moneyForm' => $moneyForm->createView() ]
         );
     }
 }

@@ -40,3 +40,4 @@ assetic:
             node_paths: [/usr/local/lib/node_modules]
             apply_to:   "\.less$"
         cssrewrite: ~
+
