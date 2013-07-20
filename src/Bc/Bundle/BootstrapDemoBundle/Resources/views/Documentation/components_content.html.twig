@@ -32,36 +32,26 @@
 
     <p>The function <code>bootstrap_get_style()</code> returns the current style.</p>
 
+    <div class="panel">
+        {{ form(horizontalForm, { 'style': 'horizontal' }) }}
+        <div class="panel-footer">Example</div>
+    </div>
+
+    <p>Bootstrap uses its grid to determine the size of label and widget. You can pass the <code>label_col</code> and <code>widget_col</code> options to set the number of columns label and widget should have.</p>
+
+    <pre><code>{{ "{{ form_row(form.firstName, { 'label_col': 4, 'widget_col': 8}) }}" }}</code></pre>
+
+    <form action="" class="form-horizontal">
+        {{ form_row(form.firstName, { 'label_col': 4, 'widget_col': 8, 'style': 'horizontal'}) }}
+    </form>
+
+    <p>There is also an option <code>simple_col</code> which wraps the input field in a <code>&lt;div&gt;</code> with the given size. This is useful when creating compound types and is used, for example, in the date widget provided by BcBootstrapBundle.</p>
+
     <hr>
 
     <h3>Additional Form Types</h3>
 
     <p>BcBootstrapBundle does not only provides styles for the existing form types of Symfony2 but also provides you with addional types. In some cases this is due to technical limitations of the implementation of Twig and/or Symfony2.</p>
-
-    <h4>Money</h4>
-
-    <p>The type <code>BootstrapMoneyType</code> extends <code>MoneyType</code> from Symfony2 to use Bootstraps prepend and append style to display the currency. </p>
-
-    <div class="panel">
-        <pre><code class="php">$form = $this->createFormBuilder([])
-    ->add('amount', 'bootstrap_money');</code></pre>
-        <div class="panel-footer">PHP</div>
-    </div>
-
-    <div class="panel">
-        <pre><code>{{ "{{ form_row(form.amount) }}" }}</code></pre>
-        <div class="panel-footer">Twig</div>
-    </div>
-
-    <p>The result will depend on the locale.</p>
-
-    <div class="panel">
-        <form action="" class="form-horizontal">
-            {{ form_row(moneyForm.priceEuro, { 'style': 'horizontal' }) }}
-            {{ form_row(moneyForm.priceDollar, { 'style': 'horizontal' }) }}
-        </form>
-        <div class="panel-footer">Result</div>
-    </div>
 
 </section>
 
