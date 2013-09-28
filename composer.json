@@ -47,7 +47,7 @@
         "knplabs/knp-menu-bundle":              "dev-master",
         "knplabs/knp-markdown-bundle":          "dev-master",
         "knplabs/knp-paginator-bundle":         "dev-master",
-        "twitter/bootstrap":                    "3.0.0",
+        "twbs/bootstrap":                       "3.0.*",
         "jquery/jquery":                        "1.9.*"
     },
     "require-dev": {

@@ -45,6 +45,11 @@ class DocumentationController extends Controller
             ->add('file', 'file')
             ->add('checkbox', 'checkbox')
             ->add('radio', 'radio')
+            ->add('repeated', 'repeated', [ 'type' => 'email' ])
+            ->add('bc_collection', 'bc_collection', [ 'allow_add' => true, 'allow_delete' => true ])
+            ->add('button', 'button')
+            ->add('submit', 'submit')
+            ->add('reset', 'reset')
             ->getForm();
 
         $form = $this->createFormBuilder([])
