@@ -46,7 +46,6 @@ class DocumentationController extends Controller
             ->add('checkbox', 'checkbox')
             ->add('radio', 'radio')
             ->add('repeated', 'repeated', [ 'type' => 'email' ])
-            ->add('bc_collection', 'bc_collection', [ 'allow_add' => true, 'allow_delete' => true ])
             ->add('button', 'button')
             ->add('submit', 'submit')
             ->add('reset', 'reset')
@@ -56,11 +55,28 @@ class DocumentationController extends Controller
             ->add('firstName', 'text')
             ->getForm();
 
+        $bcCollectionForm = $this->createFormBuilder([])
+            ->add(
+                'hobbits',
+                'bc_collection',
+                [
+                    'allow_add'             => true,
+                    'allow_delete'          => true,
+                    'add_button_text'       => 'Add Hobbit',
+                    'delete_button_text'    => 'Delete Hobbit',
+                    'widget_col'            => 9,
+                    'button_col'            => 3
+                ]
+            )
+            ->setData(['hobbits' => ['Frodo Baggins', 'Bilbo Baggins']])
+            ->getForm();
+
         return $this->render(
             'BcBootstrapDemoBundle:Documentation:components.html.twig',
             [
                 'horizontalForm'    => $horizontalForm->createView(),
-                'form'              => $form->createView()
+                'form'              => $form->createView(),
+                'bcCollectionForm'  => $bcCollectionForm->createView()
             ]
         );
     }

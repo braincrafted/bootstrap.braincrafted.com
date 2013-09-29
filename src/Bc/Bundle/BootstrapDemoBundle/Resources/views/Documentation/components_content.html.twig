@@ -32,7 +32,7 @@
 
     <p>The function <code>bootstrap_get_style()</code> returns the current style.</p>
 
-    <h3>Examples</h3>
+    <h4>Examples</h4>
 
     <p>The following example shows the styles of all widgets provided by Symfony2 by default.</p>
 
@@ -68,6 +68,43 @@
     <h3>Additional Form Types</h3>
 
     <p>BcBootstrapBundle does not only provides styles for the existing form types of Symfony2 but also provides you with addional types. In some cases this is due to technical limitations of the implementation of Twig and/or Symfony2.</p>
+
+    <h4>Collection</h4>
+
+    <p><code>bc_collection</code> is a form type that extends Symfony2s <code>collection</code> form type and includes styles and JavaScript to use the widget out of the box.</p>
+
+    <p>The form type also introduces new options:</p>
+
+    <ul>
+        <li><code>add_button_text</code> allows you to define the text on the <strong>Add</strong> button</li>
+        <li><code>delete_button_text</code> allows you to define the text on the <strong>Delete</strong> button</li>
+        <li><code>widget_col</code> sets the number of columns used for the widget</li>
+        <li><code>button_col</code> sets the number of columns used for the delete button</li>
+    </ul>
+
+    <p>Here is an example of a form that lets you add and delete hobbits.</p>
+
+    <pre><code class="php">$form = $this->createFormBuilder([])
+    ->add(
+        'hobbits',
+        'bc_collection',
+        [
+            'allow_add'          => true,
+            'allow_delete'       => true,
+            'add_button_text'    => 'Add Hobbit',
+            'delete_button_text' => 'Delete Hobbit',
+            'widget_col'         => 9,
+            'button_col'         => 3
+        ]
+    )
+    ->getForm();</code></pre>
+
+    <p>When rendered with Bootstraps <code>horizontal</code> style it will look like this:</p>
+
+    <div class="panel">
+        {{ form(bcCollectionForm, { 'style': 'horizontal' }) }}
+        <div class="panel-footer">Example</div>
+    </div>
 
 </section>
 
