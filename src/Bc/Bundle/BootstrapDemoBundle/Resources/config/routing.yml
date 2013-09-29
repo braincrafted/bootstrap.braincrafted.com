@@ -1,39 +1,11 @@
 bc_bootstrap_index:
-    pattern:  /
+    pattern:  /index.html
     defaults: { _controller: BcBootstrapDemoBundle:Documentation:index }
 
 bc_bootstrap_installation:
-    pattern:  /installation
+    pattern:  /installation.html
     defaults: { _controller: BcBootstrapDemoBundle:Documentation:installation }
 
 bc_bootstrap_components:
-    pattern:  /components
+    pattern:  /components.html
     defaults: { _controller: BcBootstrapDemoBundle:Documentation:components }
-
-bc_bootstrap_demo_components_forms:
-    pattern:  /components/forms
-    defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:formComponents }
-
-bc_bootstrap_demo_components_flash:
-    pattern:  /components/flash
-    defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:flashComponents }
-
-bc_bootstrap_demo_components_navs:
-    pattern:  /components/navs
-    defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:navComponents }
-
-bc_bootstrap_demo_components_navbar:
-    pattern:  /components/navbar
-    defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:navbarComponents }
-
-bc_bootstrap_demo_components_pagination:
-    pattern:  /components/pagination
-    defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:paginationComponents }
-
-bc_bootstrap_demo_components_labels:
-    pattern:  /components/labels-and-badges
-    defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:labelsComponents }
-
-bc_bootstrap_demo_components_icons:
-    pattern:  /components/icons
-    defaults: { _controller: BcBootstrapDemoBundle:Bootstrap:iconsComponents }
