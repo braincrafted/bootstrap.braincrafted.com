@@ -1,3 +1,7 @@
+bc_bootstrap_root:
+    pattern:  /
+    defaults: { _controller: BcBootstrapDemoBundle:Documentation:root }
+
 bc_bootstrap_index:
     pattern:  /index.html
     defaults: { _controller: BcBootstrapDemoBundle:Documentation:index }

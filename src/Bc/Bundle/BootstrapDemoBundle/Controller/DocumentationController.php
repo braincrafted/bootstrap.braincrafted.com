@@ -4,18 +4,53 @@ namespace Bc\Bundle\BootstrapDemoBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+/**
+ * DocumentationController
+ *
+ * @package    BcBootstrapDemoBundle
+ * @subpackage Controller
+ * @author     Florian Eckerstorfer <florian@eckerstorfer.co>
+ * @copyright  2013 Florian Eckerstorfer
+ * @license    http://opensource.org/licenses/MIT The MIT License
+ */
 class DocumentationController extends Controller
 {
+    /**
+     * Root action, redirects the user to {@see indexAction()}.
+     *
+     * @return Symfony\Component\HttpFoundation\Response
+     */
+    public function rootAction()
+    {
+        return $this->redirect($this->generateUrl('bc_bootstrap_index'));
+    }
+
+    /**
+     * Index action, renders the homepage.
+     *
+     * @return Symfony\Component\HttpFoundation\Response
+     */
     public function indexAction()
     {
         return $this->render('BcBootstrapDemoBundle:Documentation:index.html.twig');
     }
 
+    /**
+     * Renders the installation guide.
+     *
+     * @return Symfony\Component\HttpFoundation\Response
+     *
+     */
     public function installationAction()
     {
         return $this->render('BcBootstrapDemoBundle:Documentation:installation.html.twig');
     }
 
+    /**
+     * Renders information about the components included in BcBootstrapBundle.
+     *
+     * @return Symfony\Component\HttpFoundation\Response
+     */
     public function componentsAction()
     {
         $horizontalForm = $this->createFormBuilder([])
