@@ -1,4 +1,8 @@
 <?php
+/**
+ * This file is part of BcBootstrapDemoBundle.
+ * (c) 2012-2013 Florian Eckerstorfer
+ */
 
 namespace Bc\Bundle\BootstrapDemoBundle\Controller;
 
@@ -12,6 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  * @author     Florian Eckerstorfer <florian@eckerstorfer.co>
  * @copyright  2013 Florian Eckerstorfer
  * @license    http://opensource.org/licenses/MIT The MIT License
+ * @link       http://bootstrap.braincrafted.com BcBootstrapBundle
  */
 class DocumentationController extends Controller
 {
