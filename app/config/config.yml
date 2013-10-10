@@ -21,6 +21,9 @@ framework:
     fragments:       ~
     http_method_override: true
 
+bc_static_site:
+    build_directory: %kernel.root_dir%/../gh-pages
+
 bc_bootstrap:
     less_filter: less
     auto_configure:

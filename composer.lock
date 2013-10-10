@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "b502243765d44bd7eeedb15168332b80",
+    "hash": "7433e604bfe42f709a0b09c44a6fed86",
     "packages": [
         {
             "name": "dflydev/markdown",
@@ -1900,6 +1900,49 @@
     ],
     "packages-dev": [
         {
+            "name": "braincrafted/static-site-bundle",
+            "version": "dev-master",
+            "target-dir": "Bc/Bundle/StaticSiteBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/braincrafted/static-site-bundle.git",
+                "reference": "457a335774d9c3e9bc8decd02bce79eebbf8e0d2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/braincrafted/static-site-bundle/zipball/457a335774d9c3e9bc8decd02bce79eebbf8e0d2",
+                "reference": "457a335774d9c3e9bc8decd02bce79eebbf8e0d2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4",
+                "symfony/symfony": "2.3.*"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Bc\\Bundle\\StaticSiteBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Florian Eckerstorfer",
+                    "email": "florian@eckerstorfer.co",
+                    "homepage": "http://florianeckerstorfer.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "BcStaticSiteBundle",
+            "keywords": [
+                "static site"
+            ],
+            "time": "2013-10-02 19:16:29"
+        },
+        {
             "name": "leafo/lessphp",
             "version": "dev-master",
             "source": {
@@ -1951,7 +1994,8 @@
         "knplabs/knp-menu-bundle": 20,
         "knplabs/knp-markdown-bundle": 20,
         "knplabs/knp-paginator-bundle": 20,
-        "leafo/lessphp": 20
+        "leafo/lessphp": 20,
+        "braincrafted/static-site-bundle": 20
     },
     "platform": {
         "php": ">=5.3.3"
