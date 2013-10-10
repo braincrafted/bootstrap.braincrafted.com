@@ -8,22 +8,10 @@
         {
             "type": "package",
             "package": {
-                "name": "twitter/bootstrap",
-                "version": "3.0.0",
-                "source": {
-                    "url": "https://github.com/twitter/bootstrap",
-                    "type": "git",
-                    "reference": "3.0.0-wip"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
                 "name": "jquery/jquery",
-                "version": "1.9.1",
+                "version": "1.10.2",
                 "dist": {
-                    "url": "http://code.jquery.com/jquery-1.9.1.js",
+                    "url": "http://code.jquery.com/jquery-1.10.2.js",
                     "type": "file"
                 }
             }
@@ -31,24 +19,23 @@
     ],
     "require": {
         "php":                                  ">=5.3.3",
-        "symfony/symfony":                      "2.3.*",
-        "doctrine/orm":                         ">=2.2.3,<2.4-dev",
-        "doctrine/doctrine-bundle":             "1.2.*",
-        "twig/extensions":                      "1.0.*@dev",
-        "symfony/assetic-bundle":               "2.3.*",
-        "symfony/swiftmailer-bundle":           "2.3.*",
-        "symfony/monolog-bundle":               "2.3.*",
-        "sensio/distribution-bundle":           "2.3.*",
-        "symfony/http-kernel":                  "2.3.*",
-        "sensio/framework-extra-bundle":        "2.3.*",
-        "sensio/generator-bundle":              "2.3.*",
+        "symfony/symfony":                      "~2.4",
+        "doctrine/orm":                         "~2.2,>=2.2.3",
+        "doctrine/doctrine-bundle":             "~1.2",
+        "twig/extensions":                      "~1.0",
+        "symfony/assetic-bundle":               "~2.3",
+        "symfony/swiftmailer-bundle":           "~2.3",
+        "symfony/monolog-bundle":               "~2.4",
+        "sensio/distribution-bundle":           "~2.3",
+        "sensio/framework-extra-bundle":        "~2.3",
+        "sensio/generator-bundle":              "~2.3",
         "incenteev/composer-parameter-handler": "~2.0",
         "knplabs/knp-menu":                     "dev-master",
         "knplabs/knp-menu-bundle":              "dev-master",
         "knplabs/knp-markdown-bundle":          "dev-master",
         "knplabs/knp-paginator-bundle":         "dev-master",
         "twbs/bootstrap":                       "3.0.*",
-        "jquery/jquery":                        "1.9.*"
+        "jquery/jquery":                        "1.10.*"
     },
     "require-dev": {
         "leafo/lessphp":                   "dev-master",
@@ -71,13 +58,13 @@
     "config": {
         "bin-dir": "bin"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "beta",
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
         "symfony-assets-install": "symlink",
         "branch-alias": {
-            "dev-master": "2.2-dev"
+            "dev-master": "2.4-dev"
         }
     }
 }

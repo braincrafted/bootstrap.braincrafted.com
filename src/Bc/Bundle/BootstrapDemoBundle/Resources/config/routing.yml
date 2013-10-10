@@ -6,9 +6,9 @@ bc_bootstrap_index:
     pattern:  /index.html
     defaults: { _controller: BcBootstrapDemoBundle:Documentation:index }
 
-bc_bootstrap_installation:
-    pattern:  /installation.html
-    defaults: { _controller: BcBootstrapDemoBundle:Documentation:installation }
+bc_bootstrap_getting_started:
+    pattern:  /getting-started.html
+    defaults: { _controller: BcBootstrapDemoBundle:Documentation:gettingStarted }
 
 bc_bootstrap_components:
     pattern:  /components.html

@@ -33,7 +33,7 @@ class Builder extends ContainerAware
     {
         $menu = $factory->createItem('root');
 
-        $menu->addChild('Installation', array('route' => 'bc_bootstrap_installation'));
+        $menu->addChild('Getting started', array('route' => 'bc_bootstrap_getting_started'));
         $menu->addChild('Components', array('route' => 'bc_bootstrap_components'));
 
         return $menu;
