@@ -57,7 +57,55 @@ class AppKernel extends Kernel
 
     <pre><code>php app/console assetic:dump</code></pre>
 
-    <p></p>
+    <p><span class="label label-info">Please note</span> Assetic needs to compile the LESS files from Bootstrap and therefore requires either <a href="http://lesscss.org">LESS</a> or <a href="http://leafo.net/lessphp/">lessphp</a>. The following section explains how to install and configure them.</p>
+
+    <h3>Installing a LESS compiler</h3>
+
+    <p>As mentioned above you need either LESS or lessphp. Not both.</p>
+
+    <p><span class="label label-primary">Don't forget</span> You have to install the library, configure Assetic to compile <code>.less</code> files using that library and you have to tell BcBootstrapBundle if you want to use <code>less</code> or <code>lessphp</code>.</p>
+
+    <h4>LESS</h4>
+
+    <p>We highly recommend using the original version of LESS, since the developers of Bootstrap only use this version to compile the stylesheets and it can happen that Bootstrap does not compile with lessphp. To install LESS you need <a href="https://npmjs.org">NPM</a>.</p>
+
+    <pre><code>npm install -g less</code></pre>
+
+    <p>You probably need to configure Assetic to use the installed binary. Please change the path to Node.js where you have installed Node.js on your system.</p>
+
+    <pre><code># app/config/config.yml
+
+assetic:
+    filters:
+        less:
+            node: /usr/local/bin/node
+            node_paths: [/usr/local/lib/node_modules]
+            apply_to: "\.less$"
+        cssrewrite: ~
+bc_bootstrap:
+    less_filter: less</code></pre>
+
+    <h4>lessphp</h4>
+
+    <p>Although it is not recommended to use lessphp, you can use it and install it via Composer.</p>
+
+    <pre><code class="json">{
+  "require": {
+    "leafo/lessphp": "0.4.0"
+  }
+}</code></pre>
+
+    <p>And add the following section to your config.</p>
+
+    <pre><code class="yamnl"># app/config/config.yml
+assetic:
+    filters:
+        lessphp:
+             file: %kernel.root_dir%/../vendor/leafo/lessphp/lessc.inc.php
+             apply_to: "\.less$"
+        cssrewrite: ~
+bc_bootstrap:
+    less_filter: lessphp</code></pre>
 
 </section>
 
