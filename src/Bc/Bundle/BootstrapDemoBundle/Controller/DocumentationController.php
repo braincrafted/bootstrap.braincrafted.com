@@ -46,9 +46,9 @@ class DocumentationController extends Controller
      * @return Symfony\Component\HttpFoundation\Response
      *
      */
-    public function installationAction()
+    public function gettingStartedAction()
     {
-        return $this->render('BcBootstrapDemoBundle:Documentation:installation.html.twig');
+        return $this->render('BcBootstrapDemoBundle:Documentation:getting-started.html.twig');
     }
 
     /**

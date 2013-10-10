@@ -8,22 +8,10 @@
         {
             "type": "package",
             "package": {
-                "name": "twitter/bootstrap",
-                "version": "3.0.0",
-                "source": {
-                    "url": "https://github.com/twitter/bootstrap",
-                    "type": "git",
-                    "reference": "3.0.0-wip"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
                 "name": "jquery/jquery",
-                "version": "1.9.1",
+                "version": "1.10.2",
                 "dist": {
-                    "url": "http://code.jquery.com/jquery-1.9.1.js",
+                    "url": "http://code.jquery.com/jquery-1.10.2.js",
                     "type": "file"
                 }
             }
@@ -48,7 +36,7 @@
         "knplabs/knp-markdown-bundle":          "dev-master",
         "knplabs/knp-paginator-bundle":         "dev-master",
         "twbs/bootstrap":                       "3.0.*",
-        "jquery/jquery":                        "1.9.*"
+        "jquery/jquery":                        "1.10.*"
     },
     "require-dev": {
         "leafo/lessphp": "dev-master"
