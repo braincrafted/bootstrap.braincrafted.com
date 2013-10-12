@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "22d61ee2179c6d5879559b6f7564defd",
+    "hash": "e652f6443bca5ebed363f25377932f69",
     "packages": [
         {
             "name": "dflydev/markdown",
@@ -1920,12 +1920,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/braincrafted/static-site-bundle.git",
-                "reference": "4a4f0b216380c90a0285c24b0c42d95f5dca5c62"
+                "reference": "399fbb90d4e2f8e128aacfa6d0bfccb56941a36e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/braincrafted/static-site-bundle/zipball/4a4f0b216380c90a0285c24b0c42d95f5dca5c62",
-                "reference": "4a4f0b216380c90a0285c24b0c42d95f5dca5c62",
+                "url": "https://api.github.com/repos/braincrafted/static-site-bundle/zipball/399fbb90d4e2f8e128aacfa6d0bfccb56941a36e",
+                "reference": "399fbb90d4e2f8e128aacfa6d0bfccb56941a36e",
                 "shasum": ""
             },
             "require": {
@@ -1958,7 +1958,7 @@
             "keywords": [
                 "static site"
             ],
-            "time": "2013-10-09 13:30:46"
+            "time": "2013-10-12 23:12:16"
         },
         {
             "name": "leafo/lessphp",

@@ -39,7 +39,7 @@
     },
     "require-dev": {
         "leafo/lessphp":                   "dev-master",
-        "braincrafted/static-site-bundle": "dev-master"
+        "braincrafted/static-site-bundle": "dev-master@dev"
     },
     "scripts": {
         "post-install-cmd": [
