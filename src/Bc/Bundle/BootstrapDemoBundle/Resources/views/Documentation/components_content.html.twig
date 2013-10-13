@@ -142,6 +142,17 @@
         <div class="panel-footer">Menu in the tabs style</div>
     </div>
 
+    <p>Tabs can be justified to span the whole width of the parent container.</p>
+
+    <pre class="code twig">{{ "{{ knp_menu_render(menu, { 'type': 'justified-tabs' }) }}" }}</pre>
+
+    <div class="panel">
+        <div class="panel-body">
+            {{ knp_menu_render(justifiedTabsMenu, { 'type': 'justified-tabs' }) }}
+        </div>
+        <div class="panel-footer">Menu in the justified tabs style</div>
+    </div>
+
     <h3>Pills</h3>
 
     <pre><code class="twig">{{ "{{ knp_menu_render(menu, { 'type': 'pills' }) }}" }}</code></pre>
@@ -152,6 +163,29 @@
         </div>
         <div class="panel-footer">Menu in the pills style</div>
     </div>
+
+    <p>Pills can also be stacked:</p>
+
+    <pre><code class="twig">{{ "{{ knp_menu_render(menu, { 'type': 'stacked-pills' }) }}" }}</code></pre>
+
+    <div class="panel">
+        <div class="panel-body">
+            {{ knp_menu_render(stackedPillsMenu, { 'type': 'stacked-pills' }) }}
+        </div>
+        <div class="panel-footer">Menu in the stacked pills style</div>
+    </div>
+
+    <p>Just like tabs, pills can also be justified.</p>
+
+    <pre><code class="twig">{{ "{{ knp_menu_render(menu, { 'type': 'justified-pills' }) }}" }}</code></pre>
+
+    <div class="panel">
+        <div class="panel-body">
+            {{ knp_menu_render(pillsMenu, { 'type': 'justified-pills' }) }}
+        </div>
+        <div class="panel-footer">Menu in the justified pills style</div>
+    </div>
+
 </section>
 
 <section>

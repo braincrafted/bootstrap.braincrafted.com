@@ -134,11 +134,30 @@ class DocumentationController extends Controller
         $tabsMenu->addChild('Home', [ 'uri' => '#' ])->setCurrent(true);
         $tabsMenu->addChild('Profile', [ 'uri' => '#' ]);
         $tabsMenu->addChild('Messages', [ 'uri' => '#' ]);
+        $settings = $tabsMenu->addChild('Settings', [ 'uri' => '#' ]);
+        $settings->addChild('Edit Profile', [ 'uri' => '#' ]);
+        $settings->addChild('Privacy', [ 'uri' => '#' ]);
+
+        $justifiedTabsMenu = $menuFactory->createItem('root');
+        $justifiedTabsMenu->addChild('Home', [ 'uri' => '#' ]);
+        $justifiedTabsMenu->addChild('Profile', [ 'uri' => '#' ]);
+        $justifiedTabsMenu->addChild('Messages', [ 'uri' => '#' ]);
+        $settings = $justifiedTabsMenu->addChild('Settings', [ 'uri' => '#' ]);
+        $settings->addChild('Edit Profile', [ 'uri' => '#' ])->setCurrent(true);
+        $settings->addChild('Privacy', [ 'uri' => '#' ]);
+
+        $stackedPillsMenu = $menuFactory->createItem('root');
+        $stackedPillsMenu->addChild('Home', [ 'uri' => '#' ])->setCurrent(true);
+        $stackedPillsMenu->addChild('Profile', [ 'uri' => '#' ]);
+        $stackedPillsMenu->addChild('Messages', [ 'uri' => '#' ]);
 
         $pillsMenu = $menuFactory->createItem('root');
         $pillsMenu->addChild('Home', [ 'uri' => '#' ])->setCurrent(true);
         $pillsMenu->addChild('Profile', [ 'uri' => '#' ]);
         $pillsMenu->addChild('Messages', [ 'uri' => '#' ]);
+        $settings = $pillsMenu->addChild('Settings', [ 'uri' => '#' ]);
+        $settings->addChild('Edit Profile', [ 'uri' => '#' ]);
+        $settings->addChild('Privacy', [ 'uri' => '#' ]);
 
         return $this->render(
             'BcBootstrapDemoBundle:Documentation:components.html.twig',
@@ -149,7 +168,9 @@ class DocumentationController extends Controller
                 'errorForm'         => $errorForm->createView(),
                 'error2Form'        => $error2Form->createView(),
                 'tabsMenu'          => $tabsMenu,
-                'pillsMenu'          => $pillsMenu
+                'justifiedTabsMenu' => $justifiedTabsMenu,
+                'pillsMenu'         => $pillsMenu,
+                'stackedPillsMenu'  => $stackedPillsMenu
             ]
         );
     }
