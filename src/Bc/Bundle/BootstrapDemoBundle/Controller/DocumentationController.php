@@ -8,6 +8,8 @@ namespace Bc\Bundle\BootstrapDemoBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+use Bc\Bundle\BootstrapDemoBundle\Entity\DemoUser;
+
 /**
  * DocumentationController
  *
@@ -95,6 +97,15 @@ class DocumentationController extends Controller
             ->add('firstName', 'text')
             ->getForm();
 
+        $demoUser = new DemoUser;
+        $demoUser->setFavoriteHobbits(['', '']);
+        $errorForm = $this->createFormBuilder($demoUser, [ 'csrf_protection' => false ])
+            ->add('username', 'text', [ 'required' => true ])
+            ->add('favoriteHobbits', 'bc_collection', [ 'required' => true ])
+            ->add('birthday', 'birthday', [ 'required' => true ])
+            ->getForm();
+        $errorForm->submit([]);
+
         $bcCollectionForm = $this->createFormBuilder([])
             ->add(
                 'hobbits',
@@ -116,7 +127,8 @@ class DocumentationController extends Controller
             [
                 'horizontalForm'    => $horizontalForm->createView(),
                 'form'              => $form->createView(),
-                'bcCollectionForm'  => $bcCollectionForm->createView()
+                'bcCollectionForm'  => $bcCollectionForm->createView(),
+                'errorForm'         => $errorForm->createView()
             ]
         );
     }
