@@ -103,8 +103,14 @@ class DocumentationController extends Controller
             ->add('username', 'text', [ 'required' => true ])
             ->add('favoriteHobbits', 'bc_collection', [ 'required' => true ])
             ->add('birthday', 'birthday', [ 'required' => true ])
+            ->add('gender', 'choice', [ 'choices' => [ 'female', 'male' ], 'expanded' => true, 'multiple' => true, 'required' => true ])
             ->getForm();
         $errorForm->submit([]);
+
+        $error2Form = $this->createFormBuilder([])
+            ->add('username', 'text', [ 'required' => true ])
+            ->getForm();
+        $error2Form->submit([]);
 
         $bcCollectionForm = $this->createFormBuilder([])
             ->add(
@@ -115,7 +121,7 @@ class DocumentationController extends Controller
                     'allow_delete'          => true,
                     'add_button_text'       => 'Add Hobbit',
                     'delete_button_text'    => 'Delete Hobbit',
-                    'widget_col'            => 9,
+                    'sub_widget_col'        => 9,
                     'button_col'            => 3
                 ]
             )
@@ -128,7 +134,8 @@ class DocumentationController extends Controller
                 'horizontalForm'    => $horizontalForm->createView(),
                 'form'              => $form->createView(),
                 'bcCollectionForm'  => $bcCollectionForm->createView(),
-                'errorForm'         => $errorForm->createView()
+                'errorForm'         => $errorForm->createView(),
+                'error2Form'        => $error2Form->createView()
             ]
         );
     }

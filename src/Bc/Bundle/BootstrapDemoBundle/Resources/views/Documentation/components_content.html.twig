@@ -78,7 +78,7 @@
     <ul>
         <li><code>add_button_text</code> allows you to define the text on the <strong>Add</strong> button</li>
         <li><code>delete_button_text</code> allows you to define the text on the <strong>Delete</strong> button</li>
-        <li><code>widget_col</code> sets the number of columns used for the widget</li>
+        <li><code>sub_widget_col</code> sets the number of columns used for the widget</li>
         <li><code>button_col</code> sets the number of columns used for the delete button</li>
     </ul>
 
@@ -93,7 +93,7 @@
             'allow_delete'       => true,
             'add_button_text'    => 'Add Hobbit',
             'delete_button_text' => 'Delete Hobbit',
-            'widget_col'         => 9,
+            'sub_widget_col'     => 9,
             'button_col'         => 3
         ]
     )
@@ -113,6 +113,11 @@
     <div class="panel">
         {{ form(errorForm, { 'style': 'horizontal' }) }}
         <div class="panel-footer">Example of horizontal form with errors</div>
+    </div>
+
+    <div class="panel">
+        {{ form(error2Form, { 'style': 'horizontal' }) }}
+        <div class="panel-footer">Example of horizontal form with global errors</div>
     </div>
 
 </section>

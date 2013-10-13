@@ -10,14 +10,14 @@ class DemoUser
     /** @var string */
     private $username;
 
-    /** @var string */
-    private $password;
-
     /** @var \DateTime */
     private $birthday;
 
     /** @var array */
     private $favoriteHobbits = [];
+
+    /** @var integer */
+    private $gender;
 
     public function setUsername($username)
     {
@@ -28,17 +28,6 @@ class DemoUser
     public function getUsername()
     {
         return $this->username;
-    }
-
-    public function setPassword($password)
-    {
-        $this->password = $password;
-        return $this;
-    }
-
-    public function getPassword()
-    {
-        return $this->password;
     }
 
     public function setBirthday($birthday)
@@ -63,6 +52,17 @@ class DemoUser
         return $this->favoriteHobbits;
     }
 
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+        return $this;
+    }
+
+    public function getGender()
+    {
+        return $this->gender;
+    }
+
     public static function loadValidatorMetadata(ClassMetadata $metadata)
     {
         $metadata->addPropertyConstraint('username', new Assert\NotBlank());
@@ -75,5 +75,7 @@ class DemoUser
         )));
 
         $metadata->addPropertyConstraint('birthday', new Assert\NotBlank());
+
+        $metadata->addPropertyConstraint('gender', new Assert\NotBlank());
     }
 }
