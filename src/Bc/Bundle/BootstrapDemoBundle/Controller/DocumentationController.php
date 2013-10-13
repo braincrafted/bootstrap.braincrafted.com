@@ -128,6 +128,18 @@ class DocumentationController extends Controller
             ->setData(['hobbits' => ['Frodo Baggins', 'Bilbo Baggins']])
             ->getForm();
 
+        $menuFactory = $this->container->get('knp_menu.factory');
+
+        $tabsMenu = $menuFactory->createItem('root');
+        $tabsMenu->addChild('Home', [ 'uri' => '#' ])->setCurrent(true);
+        $tabsMenu->addChild('Profile', [ 'uri' => '#' ]);
+        $tabsMenu->addChild('Messages', [ 'uri' => '#' ]);
+
+        $pillsMenu = $menuFactory->createItem('root');
+        $pillsMenu->addChild('Home', [ 'uri' => '#' ])->setCurrent(true);
+        $pillsMenu->addChild('Profile', [ 'uri' => '#' ]);
+        $pillsMenu->addChild('Messages', [ 'uri' => '#' ]);
+
         return $this->render(
             'BcBootstrapDemoBundle:Documentation:components.html.twig',
             [
@@ -135,7 +147,9 @@ class DocumentationController extends Controller
                 'form'              => $form->createView(),
                 'bcCollectionForm'  => $bcCollectionForm->createView(),
                 'errorForm'         => $errorForm->createView(),
-                'error2Form'        => $error2Form->createView()
+                'error2Form'        => $error2Form->createView(),
+                'tabsMenu'          => $tabsMenu,
+                'pillsMenu'          => $pillsMenu
             ]
         );
     }

@@ -126,6 +126,32 @@
     <div class="page-header">
         <h2>Menus</h2>
     </div>
+
+    <p>BcBootstrapBundle includes styles for KnpMenuBundle. Since Bootstrap contains a bunch of different styles you have provide the <code>knp_menu_render</code> with the <code>type</code> option.</p>
+
+    <h3>Tabs</h3>
+
+    <p>Renders a menu in the <strong>tabs</strong> style of Bootstrap.</p>
+
+    <pre class="code twig">{{ "{{ knp_menu_render(menu, { 'type': 'tabs' }) }}" }}</pre>
+
+    <div class="panel">
+        <div class="panel-body">
+            {{ knp_menu_render(tabsMenu, { 'type': 'tabs' }) }}
+        </div>
+        <div class="panel-footer">Menu in the tabs style</div>
+    </div>
+
+    <h3>Pills</h3>
+
+    <pre><code class="twig">{{ "{{ knp_menu_render(menu, { 'type': 'pills' }) }}" }}</code></pre>
+
+    <div class="panel">
+        <div class="panel-body">
+            {{ knp_menu_render(pillsMenu, { 'type': 'pills' }) }}
+        </div>
+        <div class="panel-footer">Menu in the pills style</div>
+    </div>
 </section>
 
 <section>
