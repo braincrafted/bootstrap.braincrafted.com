@@ -1,6 +1,9 @@
 # Bootstrap
 app/bootstrap*
 
+# Documentation
+gh-pages/*
+
 # Symfony directories
 vendor/*
 */logs/*
