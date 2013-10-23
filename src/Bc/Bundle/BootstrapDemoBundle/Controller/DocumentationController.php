@@ -131,33 +131,51 @@ class DocumentationController extends Controller
         $menuFactory = $this->container->get('knp_menu.factory');
 
         $tabsMenu = $menuFactory->createItem('root');
-        $tabsMenu->addChild('Home', [ 'uri' => '#' ])->setCurrent(true);
-        $tabsMenu->addChild('Profile', [ 'uri' => '#' ]);
-        $tabsMenu->addChild('Messages', [ 'uri' => '#' ]);
-        $settings = $tabsMenu->addChild('Settings', [ 'uri' => '#' ]);
-        $settings->addChild('Edit Profile', [ 'uri' => '#' ]);
-        $settings->addChild('Privacy', [ 'uri' => '#' ]);
+        $tabsMenu->addChild('Home', [ 'uri' => '#menus-tabs' ])->setCurrent(true);
+        $tabsMenu->addChild('Profile', [ 'uri' => '#menus-tabs' ]);
+        $tabsMenu->addChild('Messages', [ 'uri' => '#menus-tabs' ]);
+        $settings = $tabsMenu->addChild('Settings', [ 'uri' => '#menus-tabs' ]);
+        $settings->addChild('Edit Profile', [ 'uri' => '#menus-tabs' ]);
+        $settings->addChild('Privacy', [ 'uri' => '#menus-tabs' ]);
 
         $justifiedTabsMenu = $menuFactory->createItem('root');
-        $justifiedTabsMenu->addChild('Home', [ 'uri' => '#' ]);
-        $justifiedTabsMenu->addChild('Profile', [ 'uri' => '#' ]);
-        $justifiedTabsMenu->addChild('Messages', [ 'uri' => '#' ]);
-        $settings = $justifiedTabsMenu->addChild('Settings', [ 'uri' => '#' ]);
-        $settings->addChild('Edit Profile', [ 'uri' => '#' ])->setCurrent(true);
-        $settings->addChild('Privacy', [ 'uri' => '#' ]);
+        $justifiedTabsMenu->addChild('Home', [ 'uri' => '#menus-tabs' ]);
+        $justifiedTabsMenu->addChild('Profile', [ 'uri' => '#menus-tabs' ]);
+        $justifiedTabsMenu->addChild('Messages', [ 'uri' => '#menus-tabs' ]);
+        $settings = $justifiedTabsMenu->addChild('Settings', [ 'uri' => '#menus-tabs' ]);
+        $settings->addChild('Edit Profile', [ 'uri' => '#menus-tabs' ])->setCurrent(true);
+        $settings->addChild('Privacy', [ 'uri' => '#menus-tabs' ]);
 
         $stackedPillsMenu = $menuFactory->createItem('root');
-        $stackedPillsMenu->addChild('Home', [ 'uri' => '#' ])->setCurrent(true);
-        $stackedPillsMenu->addChild('Profile', [ 'uri' => '#' ]);
-        $stackedPillsMenu->addChild('Messages', [ 'uri' => '#' ]);
+        $stackedPillsMenu->addChild('Home', [ 'uri' => '#menus-pills' ])->setCurrent(true);
+        $stackedPillsMenu->addChild('Profile', [ 'uri' => '#menus-pills' ]);
+        $stackedPillsMenu->addChild('Messages', [ 'uri' => '#menus-pills' ]);
 
         $pillsMenu = $menuFactory->createItem('root');
-        $pillsMenu->addChild('Home', [ 'uri' => '#' ])->setCurrent(true);
-        $pillsMenu->addChild('Profile', [ 'uri' => '#' ]);
-        $pillsMenu->addChild('Messages', [ 'uri' => '#' ]);
-        $settings = $pillsMenu->addChild('Settings', [ 'uri' => '#' ]);
-        $settings->addChild('Edit Profile', [ 'uri' => '#' ]);
-        $settings->addChild('Privacy', [ 'uri' => '#' ]);
+        $pillsMenu->addChild('Home', [ 'uri' => '#menus-pills' ])->setCurrent(true);
+        $pillsMenu->addChild('Profile', [ 'uri' => '#menus-pills' ]);
+        $pillsMenu->addChild('Messages', [ 'uri' => '#menus-pills' ]);
+        $settings = $pillsMenu->addChild('Settings', [ 'uri' => '#menus-pills' ]);
+        $settings->addChild('Edit Profile', [ 'uri' => '#menus-pills' ]);
+        $settings->addChild('Privacy', [ 'uri' => '#menus-pills' ]);
+
+        $leftNavbarMenu = $menuFactory->createItem('root');
+        $leftNavbarMenu->addChild('Link 1', [ 'uri' => '#navbars' ])->setCurrent(true);
+        $leftNavbarMenu->addChild('Link 2', [ 'uri' => '#navbars' ]);
+        $dropdown = $leftNavbarMenu->addChild('Dropdown');
+        $dropdown->addChild('Action', [ 'uri' => '#navbars' ]);
+        $dropdown->addChild('Another action', [ 'uri' => '#navbars' ]);
+        $dropdown->addChild('Something else here', [ 'uri' => '#navbars' ]);
+        $dropdown->addChild('Separated link', [ 'uri' => '#navbars' ]);
+        $dropdown->addChild('One more separated link', [ 'uri' => '#navbars' ]);
+
+        $rightNavbarMenu = $menuFactory->createItem('root');
+        $rightNavbarMenu->addChild('Link', [ 'uri' => '#navbars' ]);
+        $dropdown = $rightNavbarMenu->addChild('Dropdown');
+        $dropdown->addChild('Action', [ 'uri' => '#navbars' ]);
+        $dropdown->addChild('Another action', [ 'uri' => '#navbars' ]);
+        $dropdown->addChild('Something elese here', [ 'uri' => '#navbars' ]);
+        $dropdown->addChild('Separated link', [ 'uri' => '#navbars' ]);
 
         return $this->render(
             'BcBootstrapDemoBundle:Documentation:components.html.twig',
@@ -170,7 +188,9 @@ class DocumentationController extends Controller
                 'tabsMenu'          => $tabsMenu,
                 'justifiedTabsMenu' => $justifiedTabsMenu,
                 'pillsMenu'         => $pillsMenu,
-                'stackedPillsMenu'  => $stackedPillsMenu
+                'stackedPillsMenu'  => $stackedPillsMenu,
+                'leftNavbarMenu'    => $leftNavbarMenu,
+                'rightNavbarMenu'   => $rightNavbarMenu
             ]
         );
     }

@@ -1504,21 +1504,20 @@
         },
         {
             "name": "symfony/icu",
-            "version": "v1.2.0",
+            "version": "v1.0.0",
             "target-dir": "Symfony/Component/Icu",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Icu.git",
-                "reference": "7299cd3d8d6602103d1ebff5d0a9917b7bc6de72"
+                "reference": "cac3fdfb111adbe590155f491594636d45129783"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Icu/zipball/7299cd3d8d6602103d1ebff5d0a9917b7bc6de72",
-                "reference": "7299cd3d8d6602103d1ebff5d0a9917b7bc6de72",
+                "url": "https://api.github.com/repos/symfony/Icu/zipball/cac3fdfb111adbe590155f491594636d45129783",
+                "reference": "cac3fdfb111adbe590155f491594636d45129783",
                 "shasum": ""
             },
             "require": {
-                "lib-icu": ">=4.4",
                 "php": ">=5.3.3",
                 "symfony/intl": "~2.3"
             },
@@ -1548,7 +1547,7 @@
                 "icu",
                 "intl"
             ],
-            "time": "2013-06-03 18:32:58"
+            "time": "2013-06-03 18:32:07"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -1864,16 +1863,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.14.0",
+            "version": "v1.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig.git",
-                "reference": "224fc55635d544a2ec8edb3592be18db5a093f59"
+                "reference": "8873d7593ad7c120004f177c0fd01459b383c9cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/224fc55635d544a2ec8edb3592be18db5a093f59",
-                "reference": "224fc55635d544a2ec8edb3592be18db5a093f59",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/8873d7593ad7c120004f177c0fd01459b383c9cb",
+                "reference": "8873d7593ad7c120004f177c0fd01459b383c9cb",
                 "shasum": ""
             },
             "require": {
@@ -1909,7 +1908,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2013-10-03 06:41:20"
+            "time": "2013-10-15 19:17:38"
         }
     ],
     "packages-dev": [
@@ -1920,12 +1919,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/braincrafted/static-site-bundle.git",
-                "reference": "399fbb90d4e2f8e128aacfa6d0bfccb56941a36e"
+                "reference": "d399af6c448dd1f1b216334e0376b578dfd86667"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/braincrafted/static-site-bundle/zipball/399fbb90d4e2f8e128aacfa6d0bfccb56941a36e",
-                "reference": "399fbb90d4e2f8e128aacfa6d0bfccb56941a36e",
+                "url": "https://api.github.com/repos/braincrafted/static-site-bundle/zipball/d399af6c448dd1f1b216334e0376b578dfd86667",
+                "reference": "d399af6c448dd1f1b216334e0376b578dfd86667",
                 "shasum": ""
             },
             "require": {
@@ -1958,7 +1957,7 @@
             "keywords": [
                 "static site"
             ],
-            "time": "2013-10-12 23:12:16"
+            "time": "2013-10-12 23:39:53"
         },
         {
             "name": "leafo/lessphp",
@@ -1966,12 +1965,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/leafo/lessphp.git",
-                "reference": "c6cd043c94ba2a94ae3eeedc7a4c925302b61252"
+                "reference": "bc4f33b4bfc889018ebe53611050729641b82dc6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/leafo/lessphp/zipball/c6cd043c94ba2a94ae3eeedc7a4c925302b61252",
-                "reference": "c6cd043c94ba2a94ae3eeedc7a4c925302b61252",
+                "url": "https://api.github.com/repos/leafo/lessphp/zipball/bc4f33b4bfc889018ebe53611050729641b82dc6",
+                "reference": "bc4f33b4bfc889018ebe53611050729641b82dc6",
                 "shasum": ""
             },
             "type": "library",
@@ -1999,7 +1998,7 @@
             ],
             "description": "lessphp is a compiler for LESS written in PHP.",
             "homepage": "http://leafo.net/lessphp/",
-            "time": "2013-10-04 15:40:57"
+            "time": "2013-10-17 16:23:00"
         }
     ],
     "aliases": [
