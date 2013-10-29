@@ -1,10 +1,10 @@
 <?php
 /**
- * This file is part of BcBootstrapDemoBundle.
+ * This file is part of BraincraftedBootstrapDemoBundle.
  * (c) 2012-2013 Florian Eckerstorfer
  */
 
-namespace Bc\Bundle\BootstrapDemoBundle\Menu;
+namespace Braincrafted\Bundle\BootstrapDemoBundle\Menu;
 
 use Knp\Menu\FactoryInterface;
 use Symfony\Component\DependencyInjection\ContainerAware;
@@ -12,12 +12,12 @@ use Symfony\Component\DependencyInjection\ContainerAware;
 /**
  * Builder
  *
- * @package    BcBootstrapDemoBundle
+ * @package    BraincraftedBootstrapDemoBundle
  * @subpackage Menu
  * @author     Florian Eckerstorfer <florian@eckerstorfer.co>
  * @copyright  2012 Florian Eckerstorfer
  * @license    http://opensource.org/licenses/MIT The MIT License
- * @link       http://bootstrap.braincrafted.com BcBootstrapBundle
+ * @link       http://bootstrap.braincrafted.com BraincraftedBootstrapBundle
  */
 class Builder extends ContainerAware
 {
@@ -33,8 +33,8 @@ class Builder extends ContainerAware
     {
         $menu = $factory->createItem('root');
 
-        $menu->addChild('Getting started', array('route' => 'bc_bootstrap_getting_started'));
-        $menu->addChild('Components', array('route' => 'bc_bootstrap_components'));
+        $menu->addChild('Getting started', array('route' => 'braincrafted_bootstrap_getting_started'));
+        $menu->addChild('Components', array('route' => 'braincrafted_bootstrap_components'));
 
         return $menu;
     }

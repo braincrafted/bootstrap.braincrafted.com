@@ -1,3 +1,3 @@
-bc_bootstrap_bundle:
-    resource: "@BcBootstrapDemoBundle/Resources/config/routing.yml"
+braincrafted_bootstrap_bundle:
+    resource: "@BraincraftedBootstrapDemoBundle/Resources/config/routing.yml"
     prefix:   /

@@ -1,10 +1,10 @@
 <?php
 /**
- * This file is part of BcBootstrapDemoBundle.
+ * This file is part of BraincraftedBootstrapDemoBundle.
  * (c) 2012-2013 Florian Eckerstorfer
  */
 
-namespace Bc\Bundle\BootstrapDemoBundle\DependencyInjection;
+namespace Braincrafted\Bundle\BootstrapDemoBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -14,14 +14,14 @@ use Symfony\Component\DependencyInjection\Loader;
 /**
  * BraincraftedBootstrapDemoExtension
  *
- * @package    BcBootstrapDemoBundle
+ * @package    BraincraftedBootstrapDemoBundle
  * @subpackage DependencyInjection
  * @author     Florian Eckerstorfer <florian@eckerstorfer.co>
  * @copyright  2012 Florian Eckerstorfer
  * @license    http://opensource.org/licenses/MIT The MIT License
- * @link       http://bootstrap.braincrafted.com BcBootstrapBundle
+ * @link       http://bootstrap.braincrafted.com BraincraftedBootstrapBundle
  */
-class BcBootstrapDemoExtension extends Extension
+class BraincraftedBootstrapDemoExtension extends Extension
 {
     /**
      * {@inheritDoc}

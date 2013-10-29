@@ -19,8 +19,8 @@ class AppKernel extends Kernel
             new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
-            new Bc\Bundle\BootstrapBundle\BcBootstrapBundle(),
-            new Bc\Bundle\BootstrapDemoBundle\BcBootstrapDemoBundle(),
+            new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
+            new Braincrafted\Bundle\BootstrapDemoBundle\BraincraftedBootstrapDemoBundle(),
             new Bc\Bundle\StaticSiteBundle\BcStaticSiteBundle(),
         );
 

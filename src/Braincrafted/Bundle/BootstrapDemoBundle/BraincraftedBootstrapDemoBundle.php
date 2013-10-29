@@ -1,22 +1,22 @@
 <?php
 /**
- * This file is part of BcBootstrapDemoBundle.
+ * This file is part of BraincraftedBootstrapDemoBundle.
  * (c) 2012-2013 Florian Eckerstorfer
  */
 
-namespace Bc\Bundle\BootstrapDemoBundle;
+namespace Braincrafted\Bundle\BootstrapDemoBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
  * BraincraftedBootstrapDemoBundle
  *
- * @package    BcBootstrapDemoBundle
+ * @package    BraincraftedBootstrapDemoBundle
  * @author     Florian Eckerstorfer <florian@eckerstorfer.co>
  * @copyright  2012 Florian Eckerstorfer
  * @license    http://opensource.org/licenses/MIT The MIT License
- * @link       http://bootstrap.braincrafted.com BcBootstrapBundle
+ * @link       http://bootstrap.braincrafted.com BraincraftedBootstrapBundle
  */
-class BcBootstrapDemoBundle extends Bundle
+class BraincraftedBootstrapDemoBundle extends Bundle
 {
 }

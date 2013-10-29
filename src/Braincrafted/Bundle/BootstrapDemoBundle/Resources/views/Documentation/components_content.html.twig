@@ -5,7 +5,7 @@
 
     <h3>Styles</h3>
 
-    <p>BcBootstrapBundle integrates all styles from Bootstrap. You can pass the style attribute to most form widgets</p>
+    <p>BraincraftedBootstrapBundle integrates all styles from Bootstrap. You can pass the style attribute to most form widgets</p>
 
     <pre><code>{{ "{{ form(form, { 'style': 'horizontal' }) }}" }}
 {{ "{{ form_start(form, { 'style': 'horizontal' }) }}" }}
@@ -19,7 +19,7 @@
     {{ "{{ form_row(form.lastName) }}" }}
 {{ "{{ form_end(form) }}" }}</code></pre>
 
-    <p>Internally BcBootstrapBundle uses functions to write and read the global style and use can also use these functions, for example, when you use HTML for the <code>&lt;form&gt;</code> tag but want set the style once for all fields.</p>
+    <p>Internally BraincraftedBootstrapBundle uses functions to write and read the global style and use can also use these functions, for example, when you use HTML for the <code>&lt;form&gt;</code> tag but want set the style once for all fields.</p>
 
     <pre><code>&lt;form action="..." method="..." class="form-horizontal"&gt;
     {{ "{{ bootstrap_set_style('horizontal') }}" }}
@@ -49,7 +49,7 @@
         {{ form_row(form.firstName, { 'label_col': 4, 'widget_col': 8, 'style': 'horizontal'}) }}
     </form>
 
-    <p>There is also an option <code>simple_col</code> which wraps the input field in a <code>&lt;div&gt;</code> with the given size. This is useful when creating compound types and is used, for example, in the date widget provided by BcBootstrapBundle.</p>
+    <p>There is also an option <code>simple_col</code> which wraps the input field in a <code>&lt;div&gt;</code> with the given size. This is useful when creating compound types and is used, for example, in the date widget provided by BraincraftedBootstrapBundle.</p>
 
     <h4>Checkbox and Radio Widgets</h4>
 
@@ -67,11 +67,11 @@
 
     <h3>Additional Form Types</h3>
 
-    <p>BcBootstrapBundle does not only provides styles for the existing form types of Symfony2 but also provides you with addional types. In some cases this is due to technical limitations of the implementation of Twig and/or Symfony2.</p>
+    <p>BraincraftedBootstrapBundle does not only provides styles for the existing form types of Symfony2 but also provides you with addional types. In some cases this is due to technical limitations of the implementation of Twig and/or Symfony2.</p>
 
     <h4>Collection</h4>
 
-    <p><code>bc_collection</code> is a form type that extends Symfony2s <code>collection</code> form type and includes styles and JavaScript to use the widget out of the box.</p>
+    <p><code>braincrafted_collection</code> is a form type that extends Symfony2s <code>collection</code> form type and includes styles and JavaScript to use the widget out of the box.</p>
 
     <p>The form type also introduces new options:</p>
 
@@ -87,7 +87,7 @@
     <pre><code class="php">$form = $this->createFormBuilder([])
     ->add(
         'hobbits',
-        'bc_collection',
+        'braincrafted_collection',
         [
             'allow_add'          => true,
             'allow_delete'       => true,
@@ -108,7 +108,7 @@
 
     <h3>Form errors</h3>
 
-    <p>BcBootstrapBundle automatically styles error messages in forms.</p>
+    <p>BraincraftedBootstrapBundle automatically styles error messages in forms.</p>
 
     <div class="panel">
         {{ form(errorForm, { 'style': 'horizontal' }) }}
@@ -127,7 +127,7 @@
         <h2>Menus</h2>
     </div>
 
-    <p>BcBootstrapBundle includes styles for KnpMenuBundle. Since Bootstrap contains a bunch of different styles you have provide the <code>knp_menu_render</code> with the <code>type</code> option.</p>
+    <p>BraincraftedBootstrapBundle includes styles for KnpMenuBundle. Since Bootstrap contains a bunch of different styles you have provide the <code>knp_menu_render</code> with the <code>type</code> option.</p>
 
     <h3 id="menus-tabs">Tabs</h3>
 

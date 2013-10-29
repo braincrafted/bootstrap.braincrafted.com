@@ -24,7 +24,7 @@ framework:
 bc_static_site:
     build_directory: %kernel.root_dir%/../gh-pages
 
-bc_bootstrap:
+braincrafted_bootstrap:
     less_filter: less
     auto_configure:
         assetic:       true # Automatically configure Assetic for BcBootstrap

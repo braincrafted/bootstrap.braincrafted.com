@@ -1,6 +1,6 @@
 <?php
 
-namespace Bc\Bundle\BootstrapDemoBundle\Entity;
+namespace Braincrafted\Bundle\BootstrapDemoBundle\Entity;
 
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use Symfony\Component\Validator\Constraints as Assert;

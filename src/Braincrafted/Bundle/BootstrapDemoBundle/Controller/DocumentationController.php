@@ -1,24 +1,24 @@
 <?php
 /**
- * This file is part of BcBootstrapDemoBundle.
+ * This file is part of BraincraftedBootstrapDemoBundle.
  * (c) 2012-2013 Florian Eckerstorfer
  */
 
-namespace Bc\Bundle\BootstrapDemoBundle\Controller;
+namespace Braincrafted\Bundle\BootstrapDemoBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use Bc\Bundle\BootstrapDemoBundle\Entity\DemoUser;
+use Braincrafted\Bundle\BootstrapDemoBundle\Entity\DemoUser;
 
 /**
  * DocumentationController
  *
- * @package    BcBootstrapDemoBundle
+ * @package    BraincraftedBootstrapDemoBundle
  * @subpackage Controller
  * @author     Florian Eckerstorfer <florian@eckerstorfer.co>
  * @copyright  2013 Florian Eckerstorfer
  * @license    http://opensource.org/licenses/MIT The MIT License
- * @link       http://bootstrap.braincrafted.com BcBootstrapBundle
+ * @link       http://bootstrap.braincrafted.com BraincraftedBootstrapBundle
  */
 class DocumentationController extends Controller
 {
@@ -29,7 +29,7 @@ class DocumentationController extends Controller
      */
     public function rootAction()
     {
-        return $this->redirect($this->generateUrl('bc_bootstrap_index'));
+        return $this->redirect($this->generateUrl('braincrafted_bootstrap_index'));
     }
 
     /**
@@ -39,7 +39,7 @@ class DocumentationController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('BcBootstrapDemoBundle:Documentation:index.html.twig');
+        return $this->render('BraincraftedBootstrapDemoBundle:Documentation:index.html.twig');
     }
 
     /**
@@ -50,11 +50,11 @@ class DocumentationController extends Controller
      */
     public function gettingStartedAction()
     {
-        return $this->render('BcBootstrapDemoBundle:Documentation:getting-started.html.twig');
+        return $this->render('BraincraftedBootstrapDemoBundle:Documentation:getting-started.html.twig');
     }
 
     /**
-     * Renders information about the components included in BcBootstrapBundle.
+     * Renders information about the components included in BraincraftedBootstrapBundle.
      *
      * @return Symfony\Component\HttpFoundation\Response
      */
@@ -101,7 +101,7 @@ class DocumentationController extends Controller
         $demoUser->setFavoriteHobbits(['', '']);
         $errorForm = $this->createFormBuilder($demoUser, [ 'csrf_protection' => false ])
             ->add('username', 'text', [ 'required' => true ])
-            ->add('favoriteHobbits', 'bc_collection', [ 'required' => true ])
+            ->add('favoriteHobbits', 'braincrafted_collection', [ 'required' => true ])
             ->add('birthday', 'birthday', [ 'required' => true ])
             ->add('gender', 'choice', [ 'choices' => [ 'female', 'male' ], 'expanded' => true, 'multiple' => true, 'required' => true ])
             ->getForm();
@@ -115,7 +115,7 @@ class DocumentationController extends Controller
         $bcCollectionForm = $this->createFormBuilder([])
             ->add(
                 'hobbits',
-                'bc_collection',
+                'braincrafted_collection',
                 [
                     'allow_add'             => true,
                     'allow_delete'          => true,
@@ -178,7 +178,7 @@ class DocumentationController extends Controller
         $dropdown->addChild('Separated link', [ 'uri' => '#navbars' ]);
 
         return $this->render(
-            'BcBootstrapDemoBundle:Documentation:components.html.twig',
+            'BraincraftedBootstrapDemoBundle:Documentation:components.html.twig',
             [
                 'horizontalForm'    => $horizontalForm->createView(),
                 'form'              => $form->createView(),

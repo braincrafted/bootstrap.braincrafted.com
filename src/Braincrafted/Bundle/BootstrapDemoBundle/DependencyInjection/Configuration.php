@@ -1,10 +1,10 @@
 <?php
 /**
- * This file is part of BcBootstrapDemoBundle.
+ * This file is part of BraincraftedBootstrapDemoBundle.
  * (c) 2012-2013 Florian Eckerstorfer
  */
 
-namespace Bc\Bundle\BootstrapDemoBundle\DependencyInjection;
+namespace Braincrafted\Bundle\BootstrapDemoBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -18,7 +18,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  * @author     Florian Eckerstorfer <florian@eckerstorfer.co>
  * @copyright  2012 Florian Eckerstorfer
  * @license    http://opensource.org/licenses/MIT The MIT License
- * @link       http://bootstrap.braincrafted.com BcBootstrapBundle
+ * @link       http://bootstrap.braincrafted.com BraincraftedBootstrapBundle
  */
 class Configuration implements ConfigurationInterface
 {
@@ -28,7 +28,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('bc_bootstrap_demo');
+        $rootNode = $treeBuilder->root('braincrafted_bootstrap_demo');
 
         return $treeBuilder;
     }
