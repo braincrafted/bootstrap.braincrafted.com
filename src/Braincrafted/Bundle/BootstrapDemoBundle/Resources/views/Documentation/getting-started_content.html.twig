@@ -74,7 +74,6 @@ class AppKernel extends Kernel
     <p>You probably need to configure Assetic to use the installed binary. Please change the path to Node.js where you have installed Node.js on your system.</p>
 
     <pre><code># app/config/config.yml
-
 assetic:
     filters:
         less:
@@ -121,7 +120,6 @@ braincrafted_bootstrap:
     <p>The options under <code>auto_configure</code> are used to disable the auto configuration functionality of BraincraftedBootstrapBundle. For example, if you want to override the default Assetic configuration of the bundle you need to set the value to <code>false</code>.</p>
 
     <pre><code class="yaml"># app/config/config.yml
-
 braincrafted_bootstrap:
     output_dir: %kernel.root_dir%/../web
     assets_dir: %kernel.root_dir%/../vendor/twbs/bootstrap
@@ -131,5 +129,90 @@ braincrafted_bootstrap:
         assetic: true
         twig: true
         knp_menu: true
-        knp_paginator: true</code></pre>
+        knp_paginator: true
+    customize_variables:
+        variables_file: ~
+        bootstrap_output: %kernel.root_dir%/Resources/less/bootstrap.less
+        bootstrap_template: BraincraftedBootstrapBundle:Bootstrap:bootstrap.less.twig</code></pre>
+
+    <h3>Assetic Configuration</h3>
+
+    <p>If the option <code>braincrafted_bootstrap.auto_configure.assetic</code> is set to <code>true</code> the bundle configures Assetic for you. In case you want to adapt the configuration, you can use the default one.</p>
+
+    <pre><code class="yaml"># app/config/config.yml
+
+assetic:
+    ...
+    assets:
+        bootstrap_css:
+            inputs:
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/less/bootstrap.less
+            filters:
+                - less
+                - cssrewrite
+            output: css/bootstrap.css
+        bootstrap_js:
+            inputs:
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/transition.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/alert.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/button.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/carousel.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/collapse.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/dropdown.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/modal.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/tooltip.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/popover.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/scrollspy.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/tab.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap/js/affix.js
+                - %kernel.root_dir%/../vendor/braincrafted/bootstrap-bundle/Braincrafted/Bundle/BootstrapBundle/Resources/js/bc-bootstrap-collection.js
+            output: js/bootstrap.js
+        jquery:
+            inputs:
+                - %kernel.root_dir%/../vendor/jquery/jquery/jquery-1.9.1.js
+            output: js/jquery.js
+    </code></pre>
+
+    <h3>Customizing Bootstrap</h3>
+
+    <p>Bootstraps has the ability to be modified by manipulating the <code>variables.less</code> file provided with the framework. However, since this bundle uses Composer to download and install Bootstrap we can not overwrite the <code>variables.less</code> file (every <code>composer update</code> would eliminate changes made to that file). It is required to build a custom <code>bootstrap.less</code> that includes the custom <code>variables.less</code> and all the other <code>.less</code> files from Bootstrap.</p>
+
+    <p>BraincraftedBootstrapBundle helps you by generating a custom <code>bootstrap.less</code> and importing your <code>variables.less</code> and all LESS files from Bootstrap.</p>
+
+    <p>This feature is only activated when:</p>
+
+    <ul>
+        <li>The option <code>braincrafted_bootstrap.customize_variables.variables_file</code> is set to a value other than <code>NULL</code></li>
+        <li>You use LESS, that is, the option <code>braincrafted_bootstrap.less_filter</code> is set to <code>less</code> or <code>lessphp</code></li>
+    </ul>
+
+    <pre><code class="yaml"># app/config/config.yml
+
+braincrafted_bootstrap:
+    customize_variables:
+        variables_file: %kernel.root_dir%/Resources/less/variables.less
+</code></pre>
+
+    <p>It is also possible to use a file provided by a bundle. You can use the option <code>braincrafted_bootstrap.bootstrap_output</code> to configure where BraincraftedBootstrapBundle stores the generated <code>bootstrap.less</code> file. This defaults to <code>app/Resources/less/bootstrap.less</code>. The option <code>braincrafted_bootstrap.customize_variables.bootstrap_template</code> defines the template used to generate the file. You can use two variables <code>variables_file</code> and <code>assets_dir</code>. The later points to the value of the option <code>braincrafted_bootstrap.assets_dir</code>.</p>
+
+    <p>After you configured the bundle with your customer <code>variables.less</code> file you need to generate the <code>bootstrap.less</code> file.</p>
+
+    <pre><code class="bash">$ php app/console braincrafted:bootstrap:generate</code></pre>
+
+    <p>Now you can use <code>assetic:dump</code> to generate the CSS files.</p>
+
+    <p><span class="label label-warning">Warning</span> If you have a custom configuration of Assetic you need to change it in a way that the <code>bootstrap.less</code> file generated by the bundle is used.</p>
+
+    <pre><code class="yaml"># app/config/config.yml
+
+assetic:
+    ...
+    assets:
+        bootstrap_css:
+            inputs:
+                - %kernel.root_dir%/Resources/less/bootstrap.less
+            filters:
+                - less
+                - cssrewrite
+            output: css/bootstrap.css</code></pre>
 </section>
