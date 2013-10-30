@@ -1670,16 +1670,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.4.0-BETA1",
+            "version": "v2.4.0-BETA2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "911b328dc197531be7301f8bffa8f63232b6b58d"
+                "reference": "b6310973d7ebc28955841ca0a294e2667d5e8a63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/911b328dc197531be7301f8bffa8f63232b6b58d",
-                "reference": "911b328dc197531be7301f8bffa8f63232b6b58d",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/b6310973d7ebc28955841ca0a294e2667d5e8a63",
+                "reference": "b6310973d7ebc28955841ca0a294e2667d5e8a63",
                 "shasum": ""
             },
             "require": {
@@ -1779,7 +1779,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2013-10-07 13:08:26"
+            "time": "2013-10-30 13:25:52"
         },
         {
             "name": "twbs/bootstrap",
@@ -1867,16 +1867,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.14.1",
+            "version": "v1.14.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig.git",
-                "reference": "8873d7593ad7c120004f177c0fd01459b383c9cb"
+                "reference": "ca445842fcea4f844d68203ffa2d00f5e3cdea64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/8873d7593ad7c120004f177c0fd01459b383c9cb",
-                "reference": "8873d7593ad7c120004f177c0fd01459b383c9cb",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/ca445842fcea4f844d68203ffa2d00f5e3cdea64",
+                "reference": "ca445842fcea4f844d68203ffa2d00f5e3cdea64",
                 "shasum": ""
             },
             "require": {
@@ -1912,23 +1912,23 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2013-10-15 19:17:38"
+            "time": "2013-10-30 08:20:53"
         }
     ],
     "packages-dev": [
         {
             "name": "braincrafted/static-site-bundle",
             "version": "dev-master",
-            "target-dir": "Bc/Bundle/StaticSiteBundle",
+            "target-dir": "Braincrafted/Bundle/StaticSiteBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/braincrafted/static-site-bundle.git",
-                "reference": "d399af6c448dd1f1b216334e0376b578dfd86667"
+                "reference": "85b96ceae57aae8dfa5d4c2a8b2dc9600ac460ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/braincrafted/static-site-bundle/zipball/d399af6c448dd1f1b216334e0376b578dfd86667",
-                "reference": "d399af6c448dd1f1b216334e0376b578dfd86667",
+                "url": "https://api.github.com/repos/braincrafted/static-site-bundle/zipball/85b96ceae57aae8dfa5d4c2a8b2dc9600ac460ec",
+                "reference": "85b96ceae57aae8dfa5d4c2a8b2dc9600ac460ec",
                 "shasum": ""
             },
             "require": {
@@ -1942,7 +1942,7 @@
             "type": "symfony-bundle",
             "autoload": {
                 "psr-0": {
-                    "Bc\\Bundle\\StaticSiteBundle": ""
+                    "Braincrafted\\Bundle\\StaticSiteBundle": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1957,11 +1957,11 @@
                     "role": "Developer"
                 }
             ],
-            "description": "BcStaticSiteBundle",
+            "description": "BraincraftedStaticSiteBundle",
             "keywords": [
                 "static site"
             ],
-            "time": "2013-10-12 23:39:53"
+            "time": "2013-10-30 21:34:48"
         },
         {
             "name": "leafo/lessphp",

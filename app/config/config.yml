@@ -21,7 +21,7 @@ framework:
     fragments:       ~
     http_method_override: true
 
-bc_static_site:
+braincrafted_static_site:
     build_directory: %kernel.root_dir%/../gh-pages
 
 braincrafted_bootstrap:
@@ -45,4 +45,10 @@ assetic:
             node_paths: [/usr/local/lib/node_modules]
             apply_to:   "\.less$"
         cssrewrite: ~
-
+    assets:
+        documentation_css:
+            inputs:
+                - %kernel.root_dir%/../src/Braincrafted/Bundle/BootstrapDemoBundle/Resources/public/css/documentation.css
+            filters:
+                - cssrewrite
+            output: css/documentation.css
