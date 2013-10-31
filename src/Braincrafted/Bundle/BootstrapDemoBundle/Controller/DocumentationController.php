@@ -177,6 +177,10 @@ class DocumentationController extends Controller
         $dropdown->addChild('Something elese here', [ 'uri' => '#navbars' ]);
         $dropdown->addChild('Separated link', [ 'uri' => '#navbars' ]);
 
+        $paginator  = $this->get('knp_paginator');
+        $paginationPage1 = $paginator->paginate(range(1, 30), 1/*page*/, 10/*limit*/);
+        $paginationPage2 = $paginator->paginate(range(1, 30), 2/*page*/, 10/*limit*/);
+
         return $this->render(
             'BraincraftedBootstrapDemoBundle:Documentation:components.html.twig',
             [
@@ -190,7 +194,9 @@ class DocumentationController extends Controller
                 'pillsMenu'         => $pillsMenu,
                 'stackedPillsMenu'  => $stackedPillsMenu,
                 'leftNavbarMenu'    => $leftNavbarMenu,
-                'rightNavbarMenu'   => $rightNavbarMenu
+                'rightNavbarMenu'   => $rightNavbarMenu,
+                'paginationPage1'   => $paginationPage1,
+                'paginationPage2'   => $paginationPage2
             ]
         );
     }

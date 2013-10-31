@@ -33,7 +33,8 @@
         "knplabs/knp-menu":                     "dev-master@dev",
         "knplabs/knp-menu-bundle":              "dev-master@dev",
         "knplabs/knp-markdown-bundle":          "dev-master",
-        "knplabs/knp-paginator-bundle":         "~2.3",
+        "knplabs/knp-components":               "dev-master@dev",
+        "knplabs/knp-paginator-bundle":         "dev-master@dev",
         "twbs/bootstrap":                       "3.0.*",
         "jquery/jquery":                        "1.10.*"
     },

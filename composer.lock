@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "3b2836050b26272b6986f18266c4884c",
+    "hash": "4acae483b9f556c66afe1d67e504d1a5",
     "packages": [
         {
             "name": "dflydev/markdown",
@@ -787,16 +787,16 @@
         },
         {
             "name": "knplabs/knp-components",
-            "version": "1.2.3",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/knp-components.git",
-                "reference": "d18fa34bd7c22a725b71fd655232c9ef2ac0e29b"
+                "reference": "71ae73c8098b256e5e516349d88d4288ae2d30c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/knp-components/zipball/d18fa34bd7c22a725b71fd655232c9ef2ac0e29b",
-                "reference": "d18fa34bd7c22a725b71fd655232c9ef2ac0e29b",
+                "url": "https://api.github.com/repos/KnpLabs/knp-components/zipball/71ae73c8098b256e5e516349d88d4288ae2d30c5",
+                "reference": "71ae73c8098b256e5e516349d88d4288ae2d30c5",
                 "shasum": ""
             },
             "require": {
@@ -844,7 +844,7 @@
                 "pager",
                 "paginator"
             ],
-            "time": "2013-03-14 07:31:46"
+            "time": "2013-09-23 07:23:42"
         },
         {
             "name": "knplabs/knp-markdown-bundle",
@@ -1025,17 +1025,17 @@
         },
         {
             "name": "knplabs/knp-paginator-bundle",
-            "version": "2.3.3",
+            "version": "dev-master",
             "target-dir": "Knp/Bundle/PaginatorBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpPaginatorBundle.git",
-                "reference": "ce6b7b36d3bed5cb6bfb9645018dd407395fce15"
+                "reference": "769b83d01b3f76b011522599bd48e5e202d94ff4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpPaginatorBundle/zipball/ce6b7b36d3bed5cb6bfb9645018dd407395fce15",
-                "reference": "ce6b7b36d3bed5cb6bfb9645018dd407395fce15",
+                "url": "https://api.github.com/repos/KnpLabs/KnpPaginatorBundle/zipball/769b83d01b3f76b011522599bd48e5e202d94ff4",
+                "reference": "769b83d01b3f76b011522599bd48e5e202d94ff4",
                 "shasum": ""
             },
             "require": {
@@ -1080,7 +1080,7 @@
                 "pagination",
                 "paginator"
             ],
-            "time": "2013-07-30 20:36:09"
+            "time": "2013-09-23 09:04:09"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -1923,12 +1923,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/braincrafted/static-site-bundle.git",
-                "reference": "1fa26f3ac53564a38d8f5ef6dc86eee524469cfa"
+                "reference": "dda7a5e226892bb1ab91b5c161caaacac5ee306b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/braincrafted/static-site-bundle/zipball/1fa26f3ac53564a38d8f5ef6dc86eee524469cfa",
-                "reference": "1fa26f3ac53564a38d8f5ef6dc86eee524469cfa",
+                "url": "https://api.github.com/repos/braincrafted/static-site-bundle/zipball/dda7a5e226892bb1ab91b5c161caaacac5ee306b",
+                "reference": "dda7a5e226892bb1ab91b5c161caaacac5ee306b",
                 "shasum": ""
             },
             "require": {
@@ -1961,7 +1961,7 @@
             "keywords": [
                 "static site"
             ],
-            "time": "2013-10-31 11:07:02"
+            "time": "2013-10-31 11:14:25"
         },
         {
             "name": "leafo/lessphp",
@@ -2013,6 +2013,8 @@
         "knplabs/knp-menu": 20,
         "knplabs/knp-menu-bundle": 20,
         "knplabs/knp-markdown-bundle": 20,
+        "knplabs/knp-components": 20,
+        "knplabs/knp-paginator-bundle": 20,
         "braincrafted/static-site-bundle": 20
     },
     "platform": {
