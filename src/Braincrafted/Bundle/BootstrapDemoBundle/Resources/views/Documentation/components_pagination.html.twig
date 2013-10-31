@@ -5,7 +5,7 @@
 
     <p>You can use BraincraftedBootstrapBundle to style the paginator component provided by <a href="https://github.com/KnpLabs/KnpPaginatorBundle">KnpPaginatorBundle</a>.</p>
 
-    <pre><code class="twig">{{ '{{ knp_pagination_render(paginationPage1) }}' }}</code></pre>
+    <pre><code class="twig">{{ '{{ knp_pagination_render(pagination) }}' }}</code></pre>
 
     <div class="panel">
         <div class="panel-body disable-links">
@@ -15,6 +15,8 @@
     </div>
 
     <p>You can override the previous and next labels and you can add links to jump to the first and last page.</p>
+
+    <pre><code class="twig">{{ '{{ knp_pagination_render(pagination, "", {}, { "prev_label": "Previous", "next_label": "Next", "first_label": "First", "last_label": "Last"}) }}' }}</code></pre>
 
     <div class="panel">
         <div class="panel-body disable-links">
@@ -27,7 +29,7 @@
 
     <p>Pager is an alternative style of pagination provided by Bootstrap. Instead of listing the available page numbers, only <i>Previous</i> and <i>Next</i> links are displayed. You can activate this kind of pagination by using the <code>pager</code> style.</p>
 
-    <pre class="code twig">{{ '{{ knp_pagination_render(paginationPage1, "", {}, { "style": "pager" }) }} '}}</pre>
+    <pre><code class="twig">{{ '{{ knp_pagination_render(pagination, "", {}, { "style": "pager" }) }} '}}</code></pre>
 
     <div class="panel">
         <div class="panel-body disable-links">
@@ -38,7 +40,7 @@
 
     <p>Bootstrap also provides an aligned style where the links are displayed on the left and right instead of the middle.</p>
 
-    <pre><code class="twig">{{ '{{ knp_pagination_render(paginationPage2, "", {}, { "style": "pager", "aligned": true }) }}' }}</code></pre>
+    <pre><code class="twig">{{ '{{ knp_pagination_render(pagination, "", {}, { "style": "pager", "aligned": true }) }}' }}</code></pre>
 
     <div class="panel">
         <div class="panel-body disable-links">
@@ -49,7 +51,7 @@
 
     <p>You can also override the labels of the pager component</p>
 
-    <pre><code class="twig">{{ '{{ knp_pagination_render(paginationPage1, "", {}, { "style": "pager", "prev_label": "&amp;larr; Older", "next_label": "Newer &amp;rarr;" }) }}' }}</code></pre>
+    <pre><code class="twig">{{ '{{ knp_pagination_render(pagination, "", {}, { "style": "pager", "prev_label": "&amp;larr; Older", "next_label": "Newer &amp;rarr;" }) }}' }}</code></pre>
 
     <div class="panel">
         <div class="panel-body disable-links">
