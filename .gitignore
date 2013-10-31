@@ -12,6 +12,7 @@ web/uploads/*
 web/bundles/*
 web/css/*
 web/js/*
+web/fonts/*
 
 # Configuration files
 app/config/parameters.yml

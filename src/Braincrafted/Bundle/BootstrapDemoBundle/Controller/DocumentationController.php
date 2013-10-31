@@ -181,6 +181,12 @@ class DocumentationController extends Controller
         $paginationPage1 = $paginator->paginate(range(1, 30), 1/*page*/, 10/*limit*/);
         $paginationPage2 = $paginator->paginate(range(1, 30), 2/*page*/, 10/*limit*/);
 
+        $flash = $this->get('braincrafted_bootstrap.flash');
+        $flash->alert('This is an alert flash message.');
+        $flash->error('This is an error flash message.');
+        $flash->info('This is an info flash message.');
+        $flash->success('This is an success flash message.');
+
         return $this->render(
             'BraincraftedBootstrapDemoBundle:Documentation:components.html.twig',
             [
