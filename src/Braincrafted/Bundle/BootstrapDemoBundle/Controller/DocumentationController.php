@@ -9,6 +9,7 @@ namespace Braincrafted\Bundle\BootstrapDemoBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Braincrafted\Bundle\BootstrapDemoBundle\Entity\DemoUser;
+use Braincrafted\Bundle\BootstrapDemoBundle\Entity\DemoUser2;
 
 /**
  * DocumentationController
@@ -93,12 +94,29 @@ class DocumentationController extends Controller
             ->add('reset', 'reset')
             ->getForm();
 
+        $basicForm = $this->createFormBuilder([])
+            ->add('basic_email', 'email', [ 'label' => 'Email' ])
+            ->add('basic_password', 'password', [ 'label' => 'Password' ])
+            ->add('basic_file', 'file', [ 'label' => 'File input' ])
+            ->add('basic_checkbox', 'checkbox', [ 'label' => 'Check me out' ])
+            ->add('basic_submit', 'submit', [ 'label' => 'Submit' ])
+            ->getForm();
+
+        $inlineForm = $this->createFormBuilder([])
+            ->add('inline_email', 'email', [ 'label' => 'Email' ])
+            ->add('inline_password', 'password', [ 'label' => 'Password' ])
+            ->add('inline_remember_me', 'checkbox', [ 'label' => 'Remember me' ])
+            ->add('inline_sign_in', 'submit', [ 'label' => 'Sign in' ])
+            ->getForm();
+
         $form = $this->createFormBuilder([])
             ->add('firstName', 'text')
             ->getForm();
 
         $demoUser = new DemoUser;
         $demoUser->setFavoriteHobbits(['', '']);
+        $demoUser2 = new DemoUser2;
+
         $errorForm = $this->createFormBuilder($demoUser, [ 'csrf_protection' => false ])
             ->add('username', 'text', [ 'required' => true ])
             ->add('favoriteHobbits', 'braincrafted_collection', [ 'required' => true ])
@@ -111,6 +129,30 @@ class DocumentationController extends Controller
             ->add('username', 'text', [ 'required' => true ])
             ->getForm();
         $error2Form->submit([]);
+
+        $basicErrorForm = $this->createFormBuilder($demoUser, [ 'csrf_protection' => false ])
+            ->add('username', 'text', [ 'required' => true ])
+            ->add('favoriteHobbits', 'braincrafted_collection', [ 'required' => true ])
+            ->add('birthday', 'birthday', [ 'required' => true ])
+            ->add('gender', 'choice', [ 'choices' => [ 'female', 'male' ], 'expanded' => true, 'multiple' => true, 'required' => true ])
+            ->getForm();
+        $basicErrorForm->submit([]);
+
+        $basicError2Form = $this->createFormBuilder([])
+            ->add('username', 'text', [ 'required' => true ])
+            ->getForm();
+        $basicError2Form->submit([]);
+
+        $inlineErrorForm = $this->createFormBuilder($demoUser2, [ 'csrf_protection' => false ])
+            ->add('email', 'email', [ 'label' => 'Email', 'required' => true ])
+            ->add('password', 'password', [ 'label' => 'Password', 'required' => true ])
+            ->getForm();
+        $inlineErrorForm->submit([]);
+
+        $inlineError2Form = $this->createFormBuilder([])
+            ->add('username', 'text', [ 'required' => true ])
+            ->getForm();
+        $inlineError2Form->submit([]);
 
         $bcCollectionForm = $this->createFormBuilder([])
             ->add(
@@ -191,10 +233,16 @@ class DocumentationController extends Controller
             'BraincraftedBootstrapDemoBundle:Documentation:components.html.twig',
             [
                 'horizontalForm'    => $horizontalForm->createView(),
+                'basicForm'         => $basicForm->createView(),
+                'inlineForm'        => $inlineForm->createView(),
                 'form'              => $form->createView(),
                 'bcCollectionForm'  => $bcCollectionForm->createView(),
                 'errorForm'         => $errorForm->createView(),
                 'error2Form'        => $error2Form->createView(),
+                'basicErrorForm'    => $basicErrorForm->createView(),
+                'basicError2Form'   => $basicError2Form->createView(),
+                'inlineErrorForm'   => $inlineErrorForm->createView(),
+                'inlineError2Form'  => $inlineError2Form->createView(),
                 'tabsMenu'          => $tabsMenu,
                 'justifiedTabsMenu' => $justifiedTabsMenu,
                 'pillsMenu'         => $pillsMenu,

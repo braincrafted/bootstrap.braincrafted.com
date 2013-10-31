@@ -36,10 +36,10 @@
 
     <h4>Examples</h4>
 
-    <p>The following example shows the styles of all widgets provided by Symfony2 by default.</p>
+    <p>The following examples shows the styles of all widgets provided by Symfony2 by default.</p>
 
     <div class="panel">
-        {{ form(horizontalForm, { 'style': 'horizontal' }) }}
+        <div class="panel-body">{{ form(horizontalForm, { 'style': 'horizontal' }) }}</div>
         <div class="panel-footer">Example of horizontal form</div>
     </div>
 
@@ -52,6 +52,31 @@
     </form>
 
     <p>There is also an option <code>simple_col</code> which wraps the input field in a <code>&lt;div&gt;</code> with the given size. This is useful when creating compound types and is used, for example, in the date widget provided by BraincraftedBootstrapBundle.</p>
+
+    <h4>Basic Form</h4>
+
+    <p>The default Bootstrap style is also included in this bundle.</p>
+
+    <div class="panel">
+        <div class="panel-body">{{ form(basicForm, { 'style': 'basic' }) }}</div>
+        <div class="panel-footer">Example of basic form</div>
+    </div>
+
+    <h4>Inline Form</h4>
+
+    <p>Bootstrap also contains an <code>inline</code> style.</p>
+
+    <div class="alert alert-danger">
+        <strong>Requires custom widths</strong>
+        <p>Inputs, selects, and textareas are 100% wide by default in Bootstrap. To use the inline form, you'll have to set a width on the form controls used within.</p>
+    </div>
+
+    <pre><code class="twig">{{ "{{ form(inlineForm, { 'style': 'inline' }) }}" }}</code></pre>
+
+    <div class="panel">
+        <div class="panel-body">{{ form(inlineForm, { 'style': 'inline' }) }}</div>
+        <div class="panel-footer">Example of inline form</div>
+    </div>
 
     <h4>Checkbox and Radio Widgets</h4>
 
@@ -112,14 +137,40 @@
 
     <p>BraincraftedBootstrapBundle automatically styles error messages in forms.</p>
 
+    <h4>Horizontal Form</h4>
+
     <div class="panel">
-        {{ form(errorForm, { 'style': 'horizontal' }) }}
+        <div class="panel-body">{{ form(errorForm, { 'style': 'horizontal' }) }}</div>
         <div class="panel-footer">Example of horizontal form with errors</div>
     </div>
 
     <div class="panel">
-        {{ form(error2Form, { 'style': 'horizontal' }) }}
+        <div class="panel-body">{{ form(error2Form, { 'style': 'horizontal' }) }}</div>
         <div class="panel-footer">Example of horizontal form with global errors</div>
+    </div>
+
+    <h4>Basic Form</h4>
+
+    <div class="panel">
+        <div class="panel-body">{{ form(basicErrorForm, { 'style': 'basic' }) }}</div>
+        <div class="panel-footer">Example of basic form with errors</div>
+    </div>
+
+    <div class="panel">
+        <div class="panel-body">{{ form(basicError2Form, { 'style': 'basic' }) }}</div>
+        <div class="panel-footer">Example of basic form with global errors</div>
+    </div>
+
+    <h4>Inline Form</h4>
+
+    <div class="panel">
+        <div class="panel-body">{{ form(inlineErrorForm, { 'style': 'inline' }) }}</div>
+        <div class="panel-footer">Example of inline form with errors</div>
+    </div>
+
+    <div class="panel">
+        <div class="panel-body">{{ form(inlineError2Form, { 'style': 'inline' }) }}</div>
+        <div class="panel-footer">Example of inline form with global errors</div>
     </div>
 
 </section>
