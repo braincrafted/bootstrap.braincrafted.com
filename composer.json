@@ -30,15 +30,15 @@
         "sensio/framework-extra-bundle":        "~2.3",
         "sensio/generator-bundle":              "~2.3",
         "incenteev/composer-parameter-handler": "~2.0",
-        "knplabs/knp-menu":                     "dev-master",
-        "knplabs/knp-menu-bundle":              "dev-master",
+        "knplabs/knp-menu":                     "~1.1",
+        "knplabs/knp-menu-bundle":              "~1.1",
         "knplabs/knp-markdown-bundle":          "dev-master",
-        "knplabs/knp-paginator-bundle":         "dev-master",
+        "knplabs/knp-paginator-bundle":         "~2.3",
         "twbs/bootstrap":                       "3.0.*",
         "jquery/jquery":                        "1.10.*"
     },
     "require-dev": {
-        "leafo/lessphp":                   "dev-master",
+        "leafo/lessphp":                   "~0.4",
         "braincrafted/static-site-bundle": "dev-master@dev"
     },
     "scripts": {
