@@ -47,4 +47,33 @@ assetic:
                 - less
                 - cssrewrite
             output: css/bootstrap.css</code></pre>
+
+    <h3>Custom Form Widgets</h3>
+
+    <p>If you want to overwrite only part of the form template provided by BraincraftedBootstrapBundle you can use the template inheritance of Twig do achieve this without duplicating code from the bundle.</p>
+
+    <pre><code class="yaml"># app/config/config.yml
+
+braincrafted_bootstrap:
+    auto_configure:
+        twig: false
+
+twig:
+    form:
+        resources:
+            - AcmeDemoBundle:Form:form_div_layout.html.twig
+</code></pre>
+
+    <pre><code class="twig">&lt;!-- src/Acme/DemoBundle/Resources/views/Form/form_div_layout.html.twig --&gt;
+
+{{ "{% extends 'BraincraftedBootstrapBundle:Form:form_div_layout.html.twig' %}" }}
+
+&lt;!-- Custom code for the URL widget --&gt;
+{{ "{% block url_widget %}" }}
+{{ "{% spaceless %}" }}
+    {{ "{% set type = type|default('url') %}" }}
+    {{ "{{ block('form_widget_simple') }}" }}
+{{ "{% endspaceless %}" }}
+{{ "{% endblock url_widget %}" }}</code></pre>
+
 </section>
