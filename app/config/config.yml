@@ -52,3 +52,7 @@ assetic:
             filters:
                 - cssrewrite
             output: css/documentation.css
+        documentation_js:
+            inputs:
+                - %kernel.root_dir%/../src/Braincrafted/Bundle/BootstrapDemoBundle/Resources/public/js/documentation.js
+            output: js/documentation.js
