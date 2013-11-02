@@ -1,6 +1,9 @@
 # Bootstrap
 app/bootstrap*
 
+# Documentation
+gh-pages/*
+
 # Symfony directories
 vendor/*
 */logs/*
@@ -9,9 +12,9 @@ web/uploads/*
 web/bundles/*
 web/css/*
 web/js/*
+web/fonts/*
 
 # Configuration files
-app/config/parameters.ini
 app/config/parameters.yml
 
 .tags

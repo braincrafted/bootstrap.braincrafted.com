@@ -1,23 +1,33 @@
 imports:
+    - { resource: parameters.yml }
     - { resource: security.yml }
 
 framework:
     #esi:             ~
     #translator:      { fallback: %locale% }
-    secret:          detfarcniarb
+    secret:          %secret%
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
-        strict_requirements: %kernel.debug%
-    form:            true
-    csrf_protection: true
+        strict_requirements: ~
+    form:            ~
+    csrf_protection: ~
     validation:      { enable_annotations: true }
-    templating:      { engines: ['twig'] } #assets_version: SomeVersionScheme
-    default_locale:  en
-    trust_proxy_headers: false # Should Request object should trust proxy headers (X_FORWARDED_FOR/HTTP_CLIENT_IP)
+    templating:
+        engines: ['twig']
+        #assets_version: SomeVersionScheme
+    default_locale:  "%locale%"
+    trusted_proxies: ~
     session:         ~
+    fragments:       ~
+    http_method_override: true
 
-bc_bootstrap:
+braincrafted_static_site:
+    build_directory: %kernel.root_dir%/../gh-pages
+
+braincrafted_bootstrap:
     less_filter: less
+    customize_variables:
+        variables_file: %kernel.root_dir%/Resources/less/variables.less
     auto_configure:
         assetic:       true # Automatically configure Assetic for BcBootstrap
         twig:          true # Automatically configure Twig for BcBootstrap
@@ -35,3 +45,14 @@ assetic:
             node_paths: [/usr/local/lib/node_modules]
             apply_to:   "\.less$"
         cssrewrite: ~
+    assets:
+        documentation_css:
+            inputs:
+                - %kernel.root_dir%/../src/Braincrafted/Bundle/BootstrapDemoBundle/Resources/public/css/documentation.css
+            filters:
+                - cssrewrite
+            output: css/documentation.css
+        documentation_js:
+            inputs:
+                - %kernel.root_dir%/../src/Braincrafted/Bundle/BootstrapDemoBundle/Resources/public/js/documentation.js
+            output: js/documentation.js

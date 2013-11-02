@@ -1,0 +1,11 @@
+braincrafted_bootstrap_index:
+    pattern:  /
+    defaults: { _controller: BraincraftedBootstrapDemoBundle:Documentation:index }
+
+braincrafted_bootstrap_getting_started:
+    pattern:  /getting-started.html
+    defaults: { _controller: BraincraftedBootstrapDemoBundle:Documentation:gettingStarted }
+
+braincrafted_bootstrap_components:
+    pattern:  /components.html
+    defaults: { _controller: BraincraftedBootstrapDemoBundle:Documentation:components }

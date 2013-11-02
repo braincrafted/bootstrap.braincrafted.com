@@ -1,0 +1,65 @@
+<section>
+    <div class="page-header">
+        <h2 id="menus">Menus</h2>
+    </div>
+
+    <p>BraincraftedBootstrapBundle includes styles for KnpMenuBundle. Since Bootstrap contains a bunch of different styles you have provide the <code>knp_menu_render</code> with the <code>style</code> option.</p>
+
+    <h3 id="menus-tabs">Tabs</h3>
+
+    <p>Renders a menu in the <strong>tabs</strong> style of Bootstrap.</p>
+
+    <pre class="code twig">{{ "{{ knp_menu_render(menu, { 'style': 'tabs' }) }}" }}</pre>
+
+    <div class="panel">
+        <div class="panel-body disable-links">
+            {{ knp_menu_render(tabsMenu, { 'style': 'tabs' }) }}
+        </div>
+        <div class="panel-footer">Menu in the tabs style</div>
+    </div>
+
+    <p>Tabs can be justified to span the whole width of the parent container.</p>
+
+    <pre class="code twig">{{ "{{ knp_menu_render(menu, { 'style': 'justified-tabs' }) }}" }}</pre>
+
+    <div class="panel">
+        <div class="panel-body disable-links">
+            {{ knp_menu_render(justifiedTabsMenu, { 'style': 'justified-tabs' }) }}
+        </div>
+        <div class="panel-footer">Menu in the justified tabs style</div>
+    </div>
+
+    <h3 id="menus-pills">Pills</h3>
+
+    <pre><code class="twig">{{ "{{ knp_menu_render(menu, { 'style': 'pills' }) }}" }}</code></pre>
+
+    <div class="panel">
+        <div class="panel-body disable-links">
+            {{ knp_menu_render(pillsMenu, { 'style': 'pills' }) }}
+        </div>
+        <div class="panel-footer">Menu in the pills style</div>
+    </div>
+
+    <p>Pills can also be stacked:</p>
+
+    <pre><code class="twig">{{ "{{ knp_menu_render(menu, { 'style': 'stacked-pills' }) }}" }}</code></pre>
+
+    <div class="panel">
+        <div class="panel-body disable-links">
+            {{ knp_menu_render(stackedPillsMenu, { 'style': 'stacked-pills' }) }}
+        </div>
+        <div class="panel-footer">Menu in the stacked pills style</div>
+    </div>
+
+    <p>Just like tabs, pills can also be justified.</p>
+
+    <pre><code class="twig">{{ "{{ knp_menu_render(menu, { 'style': 'justified-pills' }) }}" }}</code></pre>
+
+    <div class="panel">
+        <div class="panel-body disable-links">
+            {{ knp_menu_render(pillsMenu, { 'style': 'justified-pills' }) }}
+        </div>
+        <div class="panel-footer">Menu in the justified pills style</div>
+    </div>
+
+</section>

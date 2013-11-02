@@ -1,0 +1,31 @@
+<section>
+    <div class="page-header">
+        <h2 id="icons">Icons</h2>
+    </div>
+
+    <p>BraincraftedBootstrapBundle provides a function to include Glyphicons in templates.</p>
+
+    <pre><code class="twig">{{ "&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-lg&quot;&gt;{{ icon('camera') }} Camera&lt;/button&gt;" }}</code></pre>
+
+    <div class="panel">
+        <div class="panel-body disable-links">
+            <button type="button" class="btn btn-default btn-lg">{{ icon('camera') }} Camera</button>
+        </div>
+        <div class="panel-footer">Button with icon</div>
+    </div>
+
+    <p>There is also a filter to parse icons in a string of text. Just use <code>.icon-NAME</code> anywhere in the string and the filter will replace it with the HTML code.</p>
+
+    <pre><code class="twig">{{ "{{ 'This is the story of a .icon-paperclip that travled the .icon-globe with his .icon-headphones on.'|parse_icons }}" }}</code></pre>
+
+    <div class="panel">
+        <div class="panel-body disable-links">
+            {{ 'This is the story of a .icon-paperclip that travled the .icon-globe with his .icon-headphones on.'|parse_icons }}
+        </div>
+        <div class="panel-footer">Icons defined inside a string</div>
+    </div>
+
+    <p>{{ label_info('Info') }} You need to install the Glyphicon icon font before this will work. More information are in the <a href="{{ path('braincrafted_bootstrap_getting_started') }}#installing-glyphicons">installation instructions</a>.</p>
+
+
+</section>

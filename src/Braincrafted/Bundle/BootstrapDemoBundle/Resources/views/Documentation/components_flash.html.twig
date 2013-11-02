@@ -1,0 +1,30 @@
+<section>
+    <div class="page-header">
+        <h2 id="flash">Flash Messages</h2>
+    </div>
+
+    <p>BraincraftedBootstrapBundle provides a helper class to easily create flash messages with Bootstrap alert styles. It is configured as a service with the ID <code>braincrafted_bootstrap.flash</code>. In a controller it would work like this:</p>
+
+    <pre><code class="php">$flash = $this->get('braincrafted_bootstrap.flash');
+$flash->alert('This is an alert flash message.');
+$flash->error('This is an error flash message.');
+$flash->info('This is an info flash message.');
+$flash->success('This is an success flash message.');</code></pre>
+
+    <p>In a template you can use the <code>flash.html.twig</code> to quickly display all flash messages.</p>
+
+    <pre><code class="twig">{{ "{% include 'BraincraftedBootstrapBundle::flash.html.twig' %}" }}</code></pre>
+
+    <div class="panel">
+        <div class="panel-body disable-links">
+            {% include 'BraincraftedBootstrapBundle::flash.html.twig' %}
+        </div>
+        <div class="panel-footer">Flash messages in all four different styles</div>
+    </div>
+
+    <p>Since the bundle utilizes the <code>FlashBag</code> of Symfony2 you also just use the service or just the template.</p>
+
+    <p>You can allow users to dismiss the messages by sending the <code>close</code> with value <code>TRUE</code> to the template.</p>
+
+    <pre><code class="twig">{{ "{% include 'BraincraftedBootstrapBundle::flash.html.twig' with { 'close': true } %}" }}</code></pre>
+</section>

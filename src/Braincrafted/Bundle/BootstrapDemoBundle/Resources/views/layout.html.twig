@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>{% block title %}BraincraftedBootstrapBundle by Florian Eckerstorfer{% endblock title %}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Bootstrap -->
+<link href="{{ asset('/css/bootstrap.css') }}" rel="stylesheet" media="screen">
+<link href="{{ asset('/css/documentation.css') }}" rel="stylesheet" media="screen">
+<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css">
+
+{% include 'BraincraftedBootstrapBundle::ie8-support.html.twig' %}
+
+</head>
+
+<body>
+
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="{{ path('braincrafted_bootstrap_index') }}">BraincraftedBootstrapBundle</a>
+        {{ knp_menu_render('BraincraftedBootstrapDemoBundle:Builder:navbar', { 'style': 'navbar' }) }}
+    </div>
+</header>
+
+{% block body %}{% endblock body %}
+
+<footer id="footer" class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <p>BraincraftedBootstrapBundle is handcrafted by <a href="http://florian.ec">Florian Eckerstorfer</a> in Vienna.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript plugins (requires jQuery) -->
+<script src="//code.jquery.com/jquery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{{ asset('/js/bootstrap.js') }}"></script>
+<script src="{{ asset('/js/documentation.js') }}"></script>
+
+<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

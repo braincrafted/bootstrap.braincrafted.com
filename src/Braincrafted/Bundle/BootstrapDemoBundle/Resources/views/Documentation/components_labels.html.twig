@@ -1,0 +1,36 @@
+<section>
+    <div class="page-header">
+        <h2 id="labels">Labels</h2>
+    </div>
+
+    <p>The bundle comes with Twig extensions to help you use Bootstraps labels in your templates.</p>
+
+    <pre><code class="twig">{{ "{{ label('Default') }} Labels are great" }}</code></pre>
+
+    <div class="panel">
+        <div class="panel-body disable-links">
+            {{ label('Default') }} Labels are great
+        </div>
+        <div class="panel-footer">Label in the default style</div>
+    </div>
+
+    <p>Additionally BraincraftedBootstrapBundle comes with functions for different types of lables.</p>
+
+    <pre><code class="twig">{{ "{{ label_success('Success') }}" }}
+{{ "{{ label_primary('Primary') }}" }}
+{{ "{{ label_info('Info') }}" }}
+{{ "{{ label_warning('Warning') }}" }}
+{{ "{{ label_danger('danger') }}" }}</code></pre>
+
+    <div class="panel">
+        <div class="panel-body disable-links">
+            {{ label_success('Success') }}
+            {{ label_primary('Primary') }}
+            {{ label_info('Info') }}
+            {{ label_warning('Warning') }}
+            {{ label_danger('danger') }}
+        </div>
+        <div class="panel-footer">Additional label styles</div>
+    </div>
+
+</section>

@@ -1,0 +1,43 @@
+{% extends 'BraincraftedBootstrapDemoBundle::layout.html.twig' %}
+
+{% block title %}Components &mdash; BraincraftedBootstrapBundle{% endblock title %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Components</h1>
+            <p class="lead">BraincraftedBootstrapBundle bundle makes it easy to style forms and components provided by third party bundles with Bootstraps styles and still gives you the power to customize every aspect.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <nav class="sidebar" data-spy="affix" data-offset-top="130">
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="#forms">Forms</a></li>
+                    <li><a href="#menus">Menus</a></li>
+                    <li><a href="#navbars">Navbars</a></li>
+                    <li><a href="#pagination">Pagination</a></li>
+                    <li><a href="#flash">Flash Messages</a></li>
+                    <li><a href="#labels">Labels</a></li>
+                    <li><a href="#badges">Badges</a></li>
+                    <li><a href="#icons">Icons</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-lg-9">
+            {% include 'BraincraftedBootstrapDemoBundle:Documentation:components_forms.html.twig' %}
+            {% include 'BraincraftedBootstrapDemoBundle:Documentation:components_menus.html.twig' %}
+            {% include 'BraincraftedBootstrapDemoBundle:Documentation:components_navbars.html.twig' %}
+            {% include 'BraincraftedBootstrapDemoBundle:Documentation:components_pagination.html.twig' %}
+            {% include 'BraincraftedBootstrapDemoBundle:Documentation:components_flash.html.twig' %}
+            {% include 'BraincraftedBootstrapDemoBundle:Documentation:components_labels.html.twig' %}
+            {% include 'BraincraftedBootstrapDemoBundle:Documentation:components_badges.html.twig' %}
+            {% include 'BraincraftedBootstrapDemoBundle:Documentation:components_icons.html.twig' %}
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
