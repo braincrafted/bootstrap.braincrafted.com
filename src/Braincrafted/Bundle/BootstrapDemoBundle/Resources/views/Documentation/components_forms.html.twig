@@ -92,6 +92,40 @@
 
     <hr>
 
+    <h3>Help text</h3>
+
+    <p>You can add help texts either when building the form or directly in the template.</p>
+
+    <div class="panel">
+        <div class="panel-body">{{ form_row(form.username, { 'help_text': 'Letters, numbers and underscores are allowed.' }) }}</div>
+        <div class="panel-footer">Form row in basic style with help text.</div>
+    </div>
+
+    <pre><code class="php">$builder->add('username', 'text', [ 'attr' => [ 'help_text' => 'Letters, numbers and underscores are allowed.' ] ]);</code></pre>
+
+    <pre><code class="twig">{{ "{{ form_row(form.username, { 'help_text': 'Letters, numbers and underscores are allowed.' }) }}" }}</code></pre>
+
+    <hr>
+
+    <h3>Input groups</h3>
+
+    <p>Input groups can also be added using the form builder or the template. Currently you can prepend and append text and control the size.</p>
+
+    <div class="panel">
+        <div class="panel-body">
+            {{ form_row(form.twitterScreenname, { 'input_group': { 'prepend': '@', 'size': 'large' } }) }}
+            {{ form_row(form.price, { 'input_group': { 'append': '.00' } }) }}
+            {{ form_row(form.price2, { 'input_group': { 'prepend': '$', 'append': '.00', 'size': 'small' } }) }}
+        </div>
+        <div class="panel-footer">Basic form with input groups in different sizes.</div>
+    </div>
+
+    <pre><code class="twig">{{ "{{ form_row(form.twitterScreenname, { 'input_group': { 'prepend': '@', 'size': 'large' } }) }}" }}
+{{ "{{ form_row(form.price, { 'input_group': { 'append': '.00' } }) }}" }}
+{{ "{{ form_row(form.price2, { 'input_group': { 'prepend': '$', 'append': '.00', 'size': 'small' } }) }}" }}</code></pre>
+
+    <hr>
+
     <h3>Additional Form Types</h3>
 
     <p>BraincraftedBootstrapBundle does not only provides styles for the existing form types of Symfony2 but also provides you with addional types. In some cases this is due to technical limitations of the implementation of Twig and/or Symfony2.</p>

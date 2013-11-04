@@ -111,6 +111,10 @@ class DocumentationController extends Controller
 
         $form = $this->createFormBuilder([])
             ->add('firstName', 'text')
+            ->add('username', 'text')
+            ->add('twitterScreenname', 'text')
+            ->add('price', 'text')
+            ->add('price2', 'text')
             ->getForm();
 
         $demoUser = new DemoUser;
