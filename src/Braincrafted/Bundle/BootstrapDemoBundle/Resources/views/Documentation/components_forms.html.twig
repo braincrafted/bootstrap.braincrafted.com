@@ -120,6 +120,22 @@
         <div class="panel-footer">Basic form with input groups in different sizes.</div>
     </div>
 
+    <pre><code class="php">$builder->add(
+    'twitterScreenName',
+    'text',
+    array('attr' => array('input_group' => array('prepend': '@', 'size': 'large')))
+);
+$builder->add(
+    'price1',
+    'text',
+    array('attr' => array('input_group' => array('append': '.00')))
+);
+$builder->add(
+    'price2',
+    'text',
+    array('attr' => array('input_group' => array('prepend': '$', 'append': '.00', 'size': 'small')))
+);</code></pre>
+
     <pre><code class="twig">{{ "{{ form_row(form.twitterScreenname, { 'input_group': { 'prepend': '@', 'size': 'large' } }) }}" }}
 {{ "{{ form_row(form.price, { 'input_group': { 'append': '.00' } }) }}" }}
 {{ "{{ form_row(form.price2, { 'input_group': { 'prepend': '$', 'append': '.00', 'size': 'small' } }) }}" }}</code></pre>
