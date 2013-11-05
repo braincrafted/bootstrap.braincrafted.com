@@ -3,9 +3,9 @@
         <h2 id="configuration">Configuration</h2>
     </div>
 
-    <p>BraincraftedBootstrapBundle can be configured using your projects <code>config.yml</code>. The following snippet shows all possible configuration options and their default values.</p>
+    <p>BraincraftedBootstrapBundle can be configured using your project's <code>config.yml</code>. The following snippet shows all possible configuration options and their default values.</p>
 
-    <p>The options under <code>auto_configure</code> are used to disable the auto configuration functionality of BraincraftedBootstrapBundle. For example, if you want to override the default Assetic configuration of the bundle you need to set the value to <code>false</code>.</p>
+    <p>The options under <code>auto_configure</code> are used to disable the auto configuration functionality of BraincraftedBootstrapBundle. For example, if you want to override the default Assetic configuration of the bundle, you need to set the value to <code>false</code>.</p>
 
     <pre><code class="yaml"># app/config/config.yml
 braincrafted_bootstrap:
@@ -67,7 +67,7 @@ assetic:
 
     <h3>Twig Configuration</h3>
 
-    <p>The option <code>braincrafted_bootstrap.auto_configure.twig</code> set to <code>TRUE</code> (the default value) will automatically configure Symfony to use the template provided with BraincraftedBootstrapBundle to render forms. You can turn auto configuration off and manually configure Twig if you want more control.</p>
+    <p>If the option <code>braincrafted_bootstrap.auto_configure.twig</code> is set to <code>true</code> (the default value), your project will automatically use the form theme provided with BraincraftedBootstrapBundle. You can turn auto configuration off and manually configure Twig if you want to have more control.</p>
 
     <pre><code class="yaml"># app/config/config.yml
 
@@ -83,7 +83,7 @@ twig:
 
     <h3>KnpMenuBundle Configuration</h3>
 
-    <p>If the option <code>braincrafted_bootstrap.auto_configure.knp_menu</code> is set to <code>TRUE</code> (the default value) BraincraftedBootstrapBundle will automatically configure KnpMenuBundle to use Bootstrap. However, if you want more control you can manually configure KnpMenuBundle.</p>
+    <p>If the option <code>braincrafted_bootstrap.auto_configure.knp_menu</code> is set to <code>true</code> (the default value) BraincraftedBootstrapBundle will automatically configure KnpMenuBundle to use Bootstrap. However, if you want more control you can manually configure KnpMenuBundle.</p>
 
     <pre><code class="yaml"># app/config/config.yml
 
@@ -98,7 +98,7 @@ knp_menu:
 
     <h3>KnpPaginatorBundle Configuration</h3>
 
-    <p>Once again, if the option <code>braincrafted_bootstrap.auto_configure.knp_paginator</code> is set to <code>TRUE</code> (the default value), the bundle will be configured automatically. You can set the value to <code>false</code> to manually configure KnpPaginatorBundle.</p>
+    <p>Once again, if the option <code>braincrafted_bootstrap.auto_configure.knp_paginator</code> is set to <code>true</code> (the default value), the bundle will be configured automatically. You can set the value to <code>false</code> to manually configure KnpPaginatorBundle.</p>
 
     <pre><code class="yaml"># app/config/config.yml
 
