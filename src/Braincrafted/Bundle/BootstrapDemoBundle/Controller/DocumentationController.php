@@ -123,7 +123,7 @@ class DocumentationController extends Controller
 
         $errorForm = $this->createFormBuilder($demoUser, [ 'csrf_protection' => false ])
             ->add('username', 'text', [ 'required' => true ])
-            ->add('favoriteHobbits', 'braincrafted_collection', [ 'required' => true ])
+            ->add('favoriteHobbits', 'bootstrap_collection', [ 'required' => true ])
             ->add('birthday', 'birthday', [ 'required' => true ])
             ->add('gender', 'choice', [ 'choices' => [ 'female', 'male' ], 'expanded' => true, 'multiple' => true, 'required' => true ])
             ->getForm();
@@ -136,7 +136,7 @@ class DocumentationController extends Controller
 
         $basicErrorForm = $this->createFormBuilder($demoUser, [ 'csrf_protection' => false ])
             ->add('username', 'text', [ 'required' => true ])
-            ->add('favoriteHobbits', 'braincrafted_collection', [ 'required' => true ])
+            ->add('favoriteHobbits', 'bootstrap_collection', [ 'required' => true ])
             ->add('birthday', 'birthday', [ 'required' => true ])
             ->add('gender', 'choice', [ 'choices' => [ 'female', 'male' ], 'expanded' => true, 'multiple' => true, 'required' => true ])
             ->getForm();
@@ -161,7 +161,7 @@ class DocumentationController extends Controller
         $bcCollectionForm = $this->createFormBuilder([])
             ->add(
                 'hobbits',
-                'braincrafted_collection',
+                'bootstrap_collection',
                 [
                     'allow_add'             => true,
                     'allow_delete'          => true,
