@@ -122,7 +122,7 @@
         <div class="panel-body">
             {{ form_row(form.twitterScreenname, { 'input_group': { 'prepend': '@', 'size': 'large' } }) }}
             {{ form_row(form.price, { 'input_group': { 'append': '.00' } }) }}
-            {{ form_row(form.price2, { 'input_group': { 'prepend': '$', 'append': '.00', 'size': 'small' } }) }}
+            {{ form_row(form.price2) }}
         </div>
         <div class="panel-footer">Basic form with input groups in different sizes.</div>
     </div>

@@ -114,7 +114,11 @@ class DocumentationController extends Controller
             ->add('username', 'text')
             ->add('twitterScreenname', 'text')
             ->add('price', 'text')
-            ->add('price2', 'text')
+            ->add(
+                'price2',
+                'text',
+                array('attr' => array('input_group' => array('prepend' => '$', 'append' => '.00', 'size' => 'small')))
+            )
             ->getForm();
 
         $demoUser = new DemoUser;
