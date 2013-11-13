@@ -19,6 +19,9 @@ class DemoUser
     /** @var integer */
     private $gender;
 
+    /** @var boolean */
+    private $acceptTerms;
+
     public function setUsername($username)
     {
         $this->username = $username;
@@ -63,6 +66,16 @@ class DemoUser
         return $this->gender;
     }
 
+    public function setAcceptTerms($acceptTerms)
+    {
+        $this->acceptTerms = $acceptTerms;
+    }
+
+    public function hasAcceptTerms()
+    {
+        return $this->acceptTerms;
+    }
+
     public static function loadValidatorMetadata(ClassMetadata $metadata)
     {
         $metadata->addPropertyConstraint('username', new Assert\NotBlank());
@@ -77,5 +90,7 @@ class DemoUser
         $metadata->addPropertyConstraint('birthday', new Assert\NotBlank());
 
         $metadata->addPropertyConstraint('gender', new Assert\NotBlank());
+
+        $metadata->addPropertyConstraint('acceptTerms', new Assert\True());
     }
 }

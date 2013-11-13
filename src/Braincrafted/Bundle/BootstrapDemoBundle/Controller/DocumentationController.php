@@ -130,6 +130,7 @@ class DocumentationController extends Controller
             ->add('favoriteHobbits', 'bootstrap_collection', [ 'required' => true ])
             ->add('birthday', 'birthday', [ 'required' => true ])
             ->add('gender', 'choice', [ 'choices' => [ 'female', 'male' ], 'expanded' => true, 'multiple' => true, 'required' => true ])
+            ->add('acceptTerms', 'checkbox')
             ->getForm();
         $errorForm->submit([]);
 
