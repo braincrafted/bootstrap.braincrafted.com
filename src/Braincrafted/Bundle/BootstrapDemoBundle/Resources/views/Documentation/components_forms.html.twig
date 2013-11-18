@@ -49,12 +49,19 @@
         <div class="panel-body">
             <form action="" class="form-horizontal">
                 {{ form_row(form.firstName, { 'label_col': 4, 'widget_col': 8, 'style': 'horizontal'}) }}
+                <div class="form-group row">
+                    {{ form_label(form.lastName, '', { 'label_col': 6, 'style': 'horizontal' }) }}
+                    <div class="col-lg-6">
+                        {{ form_widget(form.lastName) }}
+                    </div>
+                </div>
             </form>
         </div>
         <div class="panel-footer">Form row with custom columns</div>
     </div>
 
-    <pre><code class="twig">{{ "{{ form_row(form.firstName, { 'label_col': 4, 'widget_col': 8}) }}" }}</code></pre>
+    <pre><code class="twig">{{ "{{ form_row(form.firstName, { 'label_col': 4, 'widget_col': 8}) }}" }}
+{{ "{{ form_label(form.lastName, '', { 'label_col': 6, 'style': 'horizontal' }) }}" }}</code></pre>
 
     <pre><code class="php">$builder->add('firstName', 'text', array('attr' => array('label_col' => 4, 'widget_col' => 8)));</code></pre>
 
