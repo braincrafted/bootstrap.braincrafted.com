@@ -65,7 +65,19 @@
 
     <pre><code class="php">$builder->add('firstName', 'text', array('attr' => array('label_col' => 4, 'widget_col' => 8)));</code></pre>
 
-    <p>There is also an option <code>simple_col</code> which wraps the input field in a <code>&lt;div&gt;</code> with the given size. This is useful when creating compound types and is used, for example, in the date widget provided by BraincraftedBootstrapBundle.</p>
+    <p>There is also an option <code>simple_col</code> which wraps the input field (i.e., the widget) in a <code>&lt;div&gt;</code> with the given size. This is useful when creating compound types and is used, for example, in the date widget provided by BraincraftedBootstrapBundle. If you render the form row instead of the widget use `label_col` and `widget_col` instead.</p>
+
+    <pre><code class="twig">{{ "{{ form_widget(form.firstName, { 'simple_col': 4 }) }}" }}</code></pre>
+
+    <pre><code class="php">$builder->add('firstName', 'text', array('attr' => array('simple_col' => 4)));</code></pre>
+
+    <p>Bootstrap includes multiple sizes of columns that behave differently depending on the device size. You can set the column size using the <code>col_size</code> option. This option can be set in the template, the form builder or using the Twig helper <code>bootstrap_set_col_size</code>.</p>
+
+    <pre><code class="twig">{{ "{{ form_row(form.firstName, { 'col_size': 'xs' }) }}" }}
+{{ "{{ form_label(form.lastName, '', { 'col_size': 'md' }) }}" }}
+{{ "{{ bootstrap_set_col_size('md') }}" }}</code></pre>
+
+    <pre><code class="php">$builder->add('firstName', 'text', array('attr' => array('col_size' => 'xs')));</code></pre>
 
     <h4>Basic Form</h4>
 

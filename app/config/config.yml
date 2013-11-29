@@ -26,7 +26,7 @@ braincrafted_static_site:
 
 braincrafted_bootstrap:
     less_filter: less
-    customize_variables:
+    customize:
         variables_file: %kernel.root_dir%/Resources/less/variables.less
     auto_configure:
         assetic:       true # Automatically configure Assetic for BcBootstrap
