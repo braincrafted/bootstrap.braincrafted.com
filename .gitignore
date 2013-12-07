@@ -2,23 +2,23 @@
 app/bootstrap*
 
 # Documentation
-gh-pages/*
+/gh-pages/
+
+# BootstrapBundle
+/src/Braincrafted/Bundle/BootstrapBundle/
 
 # Symfony directories
-vendor/*
-*/logs/*
-*/cache/*
-web/uploads/*
-web/bundles/*
-web/css/*
-web/js/*
-web/fonts/*
+/vendor/
+/app/logs/*
+/app/cache/*
+/web/uploads/*
+/web/bundles/*
+/web/css/*
+/web/js/*
+/web/fonts/*
 
 # Configuration files
 app/config/parameters.yml
-
-.tags
-.tags_sorted_by_file
 
 # Composer
 composer.phar

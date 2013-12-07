@@ -79,6 +79,12 @@
 
     <pre><code class="php">$builder->add('firstName', 'text', array('attr' => array('col_size' => 'xs')));</code></pre>
 
+    <p>By default BootstrapBundle will use columns of size <code>lg</code> to render the form grid; you can change that by calling <code>form</code> or <code>form_start</code> with the <code>col_size</code> option or to use the Twig helper <code>bootstrap_set_col_style</code>.</p>
+
+    <pre><code>{{ "{{ form(form, { 'style': 'horizontal', 'col_size': 'xs' }) }}" }}
+{{ "{{ form_start(form, { 'style': 'horizontal', 'col_size': 'xs' }) }}" }}
+{{ "{{ bootstrap_set_col_size('xs') }}" }}</code></pre>
+
     <h4>Basic Form</h4>
 
     <p>The default Bootstrap style is also included in this bundle.</p>
