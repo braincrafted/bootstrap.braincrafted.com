@@ -21,25 +21,15 @@ framework:
     fragments:       ~
     http_method_override: true
 
-braincrafted_static_site:
+braincrafted_cocur:
     build_directory: %kernel.root_dir%/../gh-pages
 
 braincrafted_bootstrap:
     less_filter: less
-    customize:
-        variables_file: %kernel.root_dir%/Resources/less/variables.less
-    auto_configure:
-        assetic:       true # Automatically configure Assetic for BcBootstrap
-        twig:          true # Automatically configure Twig for BcBootstrap
-        knp_menu:      true # Automatically configure KnpMenuBundle for BcBootstrap
-        knp_paginator: true # Automatically configure KnpPaginatorBundle for BcBootstap
 
 # Assetic Configuration
 assetic:
     filters:
-        # lessphp:
-        #     file: %kernel.root_dir%/../vendor/leafo/lessphp/lessc.inc.php
-        #     apply_to:   "\.less$"
         less:
             node:       /usr/local/bin/node
             node_paths: [/usr/local/lib/node_modules]
