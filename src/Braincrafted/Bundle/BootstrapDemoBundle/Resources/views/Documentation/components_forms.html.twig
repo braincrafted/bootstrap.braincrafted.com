@@ -231,6 +231,10 @@ $builder->add(
         <div class="panel-footer">Example of horizontal form with global errors</div>
     </div>
 
+    <p>If you want to explicit show the global form errors, you need to pass <code>global_errors</code> to <code>form_errors</code>.</p>
+
+    <pre><code class="php">{{ "{{ form_errors(form, { 'global_errors': true }) }}" }}</code></pre>
+
     <h4>Basic Form</h4>
 
     <div class="panel">
