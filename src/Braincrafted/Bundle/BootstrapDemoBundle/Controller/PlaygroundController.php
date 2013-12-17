@@ -67,7 +67,7 @@ class PlaygroundController extends Controller
             'BraincraftedBootstrapDemoBundle:Playground:forms.html.twig',
             array(
                 'bcCollectionForm' => $bcCollectionForm->createView(),
-                'sidebysideForm'      => $sidebysideForm->createView()
+                'sidebysideForm'   => $sidebysideForm->createView()
             )
         );
     }

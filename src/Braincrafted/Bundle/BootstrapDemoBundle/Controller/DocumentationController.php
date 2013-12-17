@@ -8,6 +8,7 @@ namespace Braincrafted\Bundle\BootstrapDemoBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+use Braincrafted\Bundle\BootstrapDemoBundle\Entity\DemoSimpleUser;
 use Braincrafted\Bundle\BootstrapDemoBundle\Entity\DemoUser;
 use Braincrafted\Bundle\BootstrapDemoBundle\Entity\DemoUser2;
 
@@ -124,9 +125,10 @@ class DocumentationController extends Controller
 
         $demoUser = new DemoUser;
         $demoUser->setFavoriteHobbits(['', '']);
+        $demoSimpleUser = new DemoSimpleUser();
         $demoUser2 = new DemoUser2;
 
-        $errorForm = $this->createFormBuilder($demoUser, [ 'csrf_protection' => false ])
+        $errorForm = $this->createFormBuilder($demoUser)
             ->add('username', 'text', [ 'required' => true ])
             ->add('favoriteHobbits', 'bootstrap_collection', [ 'required' => true ])
             ->add('birthday', 'birthday', [ 'required' => true ])
@@ -135,12 +137,12 @@ class DocumentationController extends Controller
             ->getForm();
         $errorForm->submit([]);
 
-        $error2Form = $this->createFormBuilder([])
-            ->add('username', 'text', [ 'required' => true ])
+        $error2Form = $this->createFormBuilder($demoSimpleUser)
+            ->add('username', 'text', [ 'required' => true, 'error_bubbling' => true ])
             ->getForm();
         $error2Form->submit([]);
 
-        $basicErrorForm = $this->createFormBuilder($demoUser, [ 'csrf_protection' => false ])
+        $basicErrorForm = $this->createFormBuilder($demoUser)
             ->add('username', 'text', [ 'required' => true ])
             ->add('favoriteHobbits', 'bootstrap_collection', [ 'required' => true ])
             ->add('birthday', 'birthday', [ 'required' => true ])
@@ -148,12 +150,12 @@ class DocumentationController extends Controller
             ->getForm();
         $basicErrorForm->submit([]);
 
-        $basicError2Form = $this->createFormBuilder([])
-            ->add('username', 'text', [ 'required' => true ])
+        $basicError2Form = $this->createFormBuilder($demoSimpleUser)
+            ->add('username', 'text', [ 'required' => true, 'error_bubbling' => true ])
             ->getForm();
         $basicError2Form->submit([]);
 
-        $inlineErrorForm = $this->createFormBuilder($demoUser2, [ 'csrf_protection' => false ])
+        $inlineErrorForm = $this->createFormBuilder($demoUser2)
             ->add('email', 'email', [ 'label' => 'Email', 'required' => true ])
             ->add('password', 'password', [ 'label' => 'Password', 'required' => true ])
             ->getForm();
