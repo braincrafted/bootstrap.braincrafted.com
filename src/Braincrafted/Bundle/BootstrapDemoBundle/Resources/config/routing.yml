@@ -9,3 +9,7 @@ braincrafted_bootstrap_getting_started:
 braincrafted_bootstrap_components:
     pattern:  /components.html
     defaults: { _controller: BraincraftedBootstrapDemoBundle:Documentation:components }
+
+braincrafted_bootstrap_playground_forms:
+    pattern:  /playground/forms.html
+    defaults: { _controller: BraincraftedBootstrapDemoBundle:Playground:forms }

@@ -85,6 +85,10 @@
 {{ "{{ form_start(form, { 'style': 'horizontal', 'col_size': 'xs' }) }}" }}
 {{ "{{ bootstrap_set_col_size('xs') }}" }}</code></pre>
 
+    <p>If you don't want to add the <code>row</code> class to form groups you can set the <code>row</code> option to <code>false</code>. The default value is <code>true</code></p>
+
+    <pre><code class="twig">{{ "{{ form_row(form.firstName, { 'row': false }) }}" }}</code></pre>
+
     <h4>Basic Form</h4>
 
     <p>The default Bootstrap style is also included in this bundle.</p>

@@ -1,0 +1,31 @@
+{% extends 'BraincraftedBootstrapDemoBundle::layout.html.twig' %}
+
+{% block title %}Forms Playground &mdash; BraincraftedBootstrapBundle{% endblock title %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Forms Playground</h1>
+            <p class="lead">BootstrapBundle is capable of rendering complex forms. Some of them are introduced on this page.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <nav class="sidebar" data-spy="affix" data-offset-top="130">
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="#bootstrap-collection">Bootstrap Collection</a></li>
+                    <li><a href="#sidebyside">Side-by-side Form</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-lg-9">
+            {% include 'BraincraftedBootstrapDemoBundle:Playground:forms_bootstrap_collection.html.twig' %}
+            {% include 'BraincraftedBootstrapDemoBundle:Playground:forms_sidebyside.html.twig' %}
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

@@ -35,6 +35,8 @@ class Builder extends ContainerAware
 
         $menu->addChild('Getting started', array('route' => 'braincrafted_bootstrap_getting_started'));
         $menu->addChild('Components', array('route' => 'braincrafted_bootstrap_components'));
+        $playground = $menu->addChild('Playground');
+        $playground->addChild('Forms', array('route' => 'braincrafted_bootstrap_playground_forms'));
 
         return $menu;
     }

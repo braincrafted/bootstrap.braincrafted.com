@@ -1,0 +1,32 @@
+
+<section>
+    <div class="page-header">
+        <h2 id="sidebyside">Side-by-side Forms</h2>
+    </div>
+
+    <p>You can mix the HTML and CSS structures provided by Bootstrap anytime with widgets and extensions provided by BootstrapBundle. For example, you can display two widgets side-by-side.</p>
+
+    <pre><code class="twig">&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-lg-6&quot;&gt;
+        {{ "{{ form_row(sidebysideForm.firstName, { 'style': 'horizontal', 'label_col': 4, 'widget_col': 8 }) }}" }}
+    &lt;/div&gt;
+    &lt;div class=&quot;col-lg-6&quot;&gt;
+        {{ "{{ form_row(sidebysideForm.lastName, { 'style': 'horizontal', 'label_col': 4, 'widget_col': 8 }) }}" }}
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+    <div class="panel">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    {{ form_row(sidebysideForm.firstName, { 'style': 'horizontal', 'label_col': 4, 'widget_col': 8 }) }}
+                </div>
+                <div class="col-lg-6">
+                    {{ form_row(sidebysideForm.lastName, { 'style': 'horizontal', 'label_col': 4, 'widget_col': 8 }) }}
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">Form with two widgets displayed in the same row.</div>
+    </div>
+
+</section>
