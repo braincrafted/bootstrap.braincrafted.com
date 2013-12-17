@@ -151,18 +151,18 @@ class DocumentationController extends Controller
         $basicErrorForm->submit([]);
 
         $basicError2Form = $this->createFormBuilder($demoSimpleUser)
-            ->add('username', 'text', [ 'required' => true, 'error_bubbling' => true ])
+            ->add('username', 'text', array('required' => true, 'error_bubbling' => true))
             ->getForm();
         $basicError2Form->submit([]);
 
         $inlineErrorForm = $this->createFormBuilder($demoUser2)
-            ->add('email', 'email', [ 'label' => 'Email', 'required' => true ])
-            ->add('password', 'password', [ 'label' => 'Password', 'required' => true ])
+            ->add('email', 'email', array('label' => 'Email', 'required' => true))
+            ->add('password', 'password', array('label' => 'Password', 'required' => true))
             ->getForm();
         $inlineErrorForm->submit([]);
 
-        $inlineError2Form = $this->createFormBuilder([])
-            ->add('username', 'text', [ 'required' => true ])
+        $inlineError2Form = $this->createFormBuilder($demoSimpleUser)
+            ->add('username', 'text', array('required' => true, 'error_bubbling' => true))
             ->getForm();
         $inlineError2Form->submit([]);
 

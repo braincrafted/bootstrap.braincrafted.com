@@ -20,9 +20,20 @@
 
     <div class="panel">
         <div class="panel-body disable-links">
-            {{ knp_pagination_render(paginationPage2, "", {}, { "prev_label": "Previous", "next_label": "Next", "first_label": "First", "last_label": "Last"}) }}
+            {{ knp_pagination_render(paginationPage2, "", {}, { "prev_label": "Previous", "next_label": "Next", "first_label": "First", "last_label": "Last", "class": "my_pagination" }) }}
         </div>
         <div class="panel-footer">Pagination with custom labels</div>
+    </div>
+
+    <p>You can also add a custom CSS class to the wrapping <code>ul</code>-element.</p>
+
+    <pre><code class="twig">{{ '{{ knp_pagination_render(pagination, "", {}, { "class": "my_pagination" }) }}' }}</code></pre>
+
+    <div class="panel">
+        <div class="panel-body disable-links">
+            {{ knp_pagination_render(paginationPage2, "", {}, { "class": "my_pagination" }) }}
+        </div>
+        <div class="panel-footer">Pagination with custom class</div>
     </div>
 
     <h3>Pager</h3>
