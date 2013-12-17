@@ -1,0 +1,44 @@
+<section>
+    <div class="page-header">
+        <h2 id="bootstrap-collection">Bootstrap Collection</h2>
+    </div>
+
+    <p>Bootstrap collections are an extension of Symfonys default collection form type and add the JavaScript to make the form dynamic. They can be nested.</p>
+
+    <p>{{ label_warning('Warning') }} The <code>prototype_name</code> of the subcollection must be different from the name of the parent collection.</p>
+
+    <pre><code class="php">$bcCollectionForm = $this->createFormBuilder([])
+    ->add('subcol', 'bootstrap_collection', array(
+        'type'               => 'bootstrap_collection',
+        'allow_add'          => true,
+        'allow_delete'       => true,
+        'add_button_text'    => 'Add Level 1',
+        'delete_button_text' => 'Delete Level 1',
+        'sub_widget_col'     => 9,
+        'button_col'         => 3,
+        'options'            => array(
+            'type'               => 'text',
+            'allow_add'          => true,
+            'allow_delete'       => true,
+            'add_button_text'    => 'Add Level 2',
+            'delete_button_text' => 'Delete Level 2',
+            'prototype_name'     => '__subname__',
+            'sub_widget_col'     => 8,
+            'button_col'         => 4
+        )
+    ))
+    ->setData(array(
+        'subcol' => array(
+            array('Answer 1a', 'Answer 1b'),
+            array('Answer 2a', 'Answer 2b')
+        )
+    ))
+    ->getForm();</code></pre>
+
+    <div class="panel">
+        <div class="panel-body">
+            {{ form(bcCollectionForm, { 'style': 'horizontal' }) }}</div>
+        <div class="panel-footer">Nested Bootstrap Collection</div>
+    </div>
+
+</section>
