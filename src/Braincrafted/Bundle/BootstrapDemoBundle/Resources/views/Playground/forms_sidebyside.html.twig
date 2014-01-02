@@ -17,14 +17,16 @@
 
     <div class="panel">
         <div class="panel-body">
-            <div class="row">
-                <div class="col-lg-6">
-                    {{ form_row(sidebysideForm.firstName, { 'style': 'horizontal', 'label_col': 4, 'widget_col': 8 }) }}
+            <form class="form-horizontal">
+                <div class="row">
+                    <div class="col-lg-6">
+                        {{ form_row(sidebysideForm.firstName, { 'style': 'horizontal', 'label_col': 4, 'widget_col': 8 }) }}
+                    </div>
+                    <div class="col-lg-6">
+                        {{ form_row(sidebysideForm.lastName, { 'style': 'horizontal', 'label_col': 4, 'widget_col': 8 }) }}
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                    {{ form_row(sidebysideForm.lastName, { 'style': 'horizontal', 'label_col': 4, 'widget_col': 8 }) }}
-                </div>
-            </div>
+            </form>
         </div>
         <div class="panel-footer">Form with two widgets displayed in the same row.</div>
     </div>

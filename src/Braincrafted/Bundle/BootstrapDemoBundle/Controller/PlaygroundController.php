@@ -63,11 +63,37 @@ class PlaygroundController extends Controller
             ->setData(array('firstName' => 'Florian', 'lastName' => 'Eckerstorfer'))
             ->getForm();
 
+        $inlineSubForm = $this->createFormBuilder(array())
+            ->add('repcol', 'bootstrap_collection', array(
+                'type'               => 'repeated',
+                'allow_add'          => true,
+                'allow_delete'       => true,
+                'add_button_text'    => 'Add',
+                'delete_button_text' => 'Delete',
+                'sub_widget_col'     => 9,
+                'button_col'         => 3,
+                'prototype_name'     => 'inlinep',
+                'options'            => array(
+                    'type'               => 'text',
+                    'attr'               => array(
+                        'style' => 'inline'
+                    )
+                )
+            ))
+            ->setData(array(
+                'repcol' => array(
+                    'Hello',
+                    'Hola'
+                )
+            ))
+            ->getForm();
+
         return $this->render(
             'BraincraftedBootstrapDemoBundle:Playground:forms.html.twig',
             array(
                 'bcCollectionForm' => $bcCollectionForm->createView(),
-                'sidebysideForm'   => $sidebysideForm->createView()
+                'sidebysideForm'   => $sidebysideForm->createView(),
+                'inlineSubForm'    => $inlineSubForm->createView()
             )
         );
     }
