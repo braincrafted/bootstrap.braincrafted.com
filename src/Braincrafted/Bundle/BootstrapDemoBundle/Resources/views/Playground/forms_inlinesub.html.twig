@@ -1,0 +1,29 @@
+<section>
+    <div class="page-header">
+        <h2 id="inlinesub">Inline Subform</h2>
+    </div>
+
+    <p>The style of a subform can be different than the style of the parent form. This is most likely online useful if the parent form is <code>horizontal</code> and the subform is <code>inline</code> and not the other way around and only for simple subforms. You can always create custom complex form layouts by using Bootstrap HTML and CSS classes directly and by extending and overwriting the form blocks.</p>
+
+    <pre><code class="php">$this->createFormBuilder(array())
+    ->add('repcol', 'bootstrap_collection', array(
+        'type'               => 'repeated',
+        'allow_add'          => true,
+        'allow_delete'       => true,
+        'sub_widget_col'     => 9,
+        'button_col'         => 3,
+        'prototype_name'     => 'inlinep',
+        'options'            => array(
+            'type' => 'text',
+            'attr' => array('style' => 'inline')
+        )
+    ))
+    ->getForm();</code></pre>
+
+    <div class="panel">
+        <div class="panel-body">
+            {{ form(inlineSubForm, { 'style': 'horizontal' }) }}</div>
+        <div class="panel-footer">Nested Bootstrap Collection</div>
+    </div>
+
+</section>
