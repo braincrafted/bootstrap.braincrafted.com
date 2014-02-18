@@ -222,6 +222,30 @@ $builder->add(
         <div class="panel-footer">Example</div>
     </div>
 
+    <h4>Form Actions</h4>
+
+    <p>By default buttons will be printed each in the own <code>form_group</code>, this means they will show up one per line. In order to get all the buttons to show up in the same line you can use the <code>form_actions</code> type.</p>
+
+    <p>It takes two syntaxes, you can either add buttons using the <code>buttons</code> option, or by adding the buttons as children of the <code>form_actions</code> type, see the examples below:</p>
+
+    <pre><code class="php">$form = $this->createFormBuilder(array())
+    ->add('actions', 'form_actions', [
+        'buttons' => [
+            'save' => ['type' => 'submit', 'options' => ['label' => 'button.save']],
+            'cancel' => ['type' => 'button', 'options' => ['label' => 'button.cancel']],
+        ]
+    ])
+    ->getForm();</code></pre>
+
+    <p>or</p>
+    
+    <pre><code class="php">$form = $this->createFormBuilder(array())
+        ->add('actions', 'form_actions');
+
+    $form->get('actions')->add('save', 'submit', ['label' => 'button.save']);
+    $form->get('actions')->add('cancel', 'button', ['label' => 'button.cancel']);
+    $form->getForm();</code></pre>
+
     <h3>Form errors</h3>
 
     <p>BraincraftedBootstrapBundle automatically styles error messages in forms.</p>

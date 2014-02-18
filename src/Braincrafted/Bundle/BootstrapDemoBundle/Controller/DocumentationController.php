@@ -90,6 +90,7 @@ class DocumentationController extends Controller
             ->add('checkbox', 'checkbox')
             ->add('radio', 'radio')
             ->add('repeated', 'repeated', [ 'type' => 'email' ])
+            ->add('actions', 'form_actions', ['buttons' => ['button' => ['type' => 'button'], 'submit' => ['type' => 'submit'], 'reset' => ['type' => 'reset']]])
             ->add('button', 'button')
             ->add('submit', 'submit')
             ->add('reset', 'reset')
