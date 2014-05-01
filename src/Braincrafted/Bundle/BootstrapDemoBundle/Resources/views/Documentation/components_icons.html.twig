@@ -27,7 +27,20 @@
 
     <p>{{ label_info('Info') }} You need to install the Glyphicon icon font before this will work. More information are in the <a href="{{ path('braincrafted_bootstrap_getting_started') }}#installing-glyphicons">installation instructions</a>.</p>
 
-    <p>{{ label_info('Info') }} You can use a different icon set with BootstrapBundle. Include the other icon set in your stylesheets and change the value of `braincrafted_bootstrap.icon_prefix` to the appropriate prefix.</p>
+    <p>{{ label_info('Info') }} You can use a different icon set with BootstrapBundle. Include the other icon set in your stylesheets and change the value of <code>braincrafted_bootstrap.icon_prefix</code> to the appropriate prefix.</p>
+
+    <h3>Font Awesome</h3>
+
+    <p>BootstrapBundle works with Font Awesome. First you need to add Font Awesome to your project. For example, you can use Composer and add the official package to your <code>composer.json</code>:</p>
+
+    <pre><code class="shell">$ composer require fortawesome/font-awesome:~4.0</code></pre>
+
+    <p>Next you need to change the icon prefix to <code>fa</code>:</p>
+
+    <pre><code class="yaml">braincrafted_bootstrap:
+  icon_prefix: fa</code></pre>
+
+    <p>{{ label_info('Info') }} If you used another method to install Font Awesome (e.g., Bower or direct download) you probably need to change the <code>braincrafted_bootstrap.fontawesome_dir</code> option to point to the directory where the Font Awesome files are located.</p>
 
 
 </section>

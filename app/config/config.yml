@@ -26,6 +26,7 @@ braincrafted_cocur:
 
 braincrafted_bootstrap:
     less_filter: less
+    # icon_prefix: fa
 
 # Assetic Configuration
 assetic:

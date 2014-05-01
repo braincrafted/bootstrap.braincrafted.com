@@ -22,6 +22,8 @@ braincrafted_bootstrap:
         variables_file: ~
         bootstrap_output: %kernel.root_dir%/Resources/less/bootstrap.less
         bootstrap_template: BraincraftedBootstrapBundle:Bootstrap:bootstrap.less.twig</code></pre>
+    icon_prefix: glyphicon
+    fontawesome_dir: %kernel.root_dir%/../vendor/fortawesome/font-awesome
 
     <p>The option <code>braincrafted_bootstrap.output_dir</code> defines the directory where BootstrapBundle puts the Bootstrap asset files. This directory has to be relative to the Assetic output directory (configured with the <code>assetic.write_to</code> option). For example, if you want to have the Bootstrap assets in <code>web/bootstrap/(css|js)</code> set <code>braincrafted_bootstrap.output_dir</code> to <code>bootstrap</code>.</p>
 
