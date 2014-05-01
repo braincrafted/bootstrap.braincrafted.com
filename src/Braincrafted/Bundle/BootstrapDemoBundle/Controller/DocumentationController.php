@@ -122,6 +122,16 @@ class DocumentationController extends Controller
                 'text',
                 array('attr' => array('input_group' => array('prepend' => '$', 'append' => '.00', 'size' => 'small')))
             )
+            ->add('value1', 'text', array('label' => 'Value'))
+            ->add('value2', 'text', array('label' => 'Value'))
+            ->add(
+                'value3',
+                'text',
+                array(
+                    'label' => 'Value',
+                    'attr' => array('input_group' => array('prepend' => '.icon-cloud', 'append' => '.icon-off', 'size' => 'small'))
+                )
+            )
             ->getForm();
 
         $demoUser = new DemoUser;
