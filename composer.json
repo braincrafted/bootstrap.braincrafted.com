@@ -35,12 +35,13 @@
         "knplabs/knp-components":               "dev-master@dev",
         "knplabs/knp-paginator-bundle":         "dev-master@dev",
         "twbs/bootstrap":                       "3.1.*",
-        "jquery/jquery":                        "1.11.*",
+        "jquery/jquery":                        "1.11.*"
     },
     "require-dev": {
         "leafo/lessphp":                   "~0.4",
         "braincrafted/static-site-bundle": "dev-master@dev",
-        "fortawesome/font-awesome":        "~4.0"
+        "fortawesome/font-awesome":        "~4.0",
+        "twbs/bootstrap-sass":             "~3.1"
     },
     "scripts": {
         "post-install-cmd": [

@@ -96,7 +96,7 @@ braincrafted_bootstrap:
 
     <p>And add the following section to your config.</p>
 
-    <pre><code class="yamnl"># app/config/config.yml
+    <pre><code class="yaml"># app/config/config.yml
 assetic:
     filters:
         lessphp:
@@ -107,6 +107,23 @@ braincrafted_bootstrap:
     less_filter: lessphp</code></pre>
 
     <p><span class="label label-info">Hint</span> If a new version of Bootstrap no longer compiles with lessphp, check the <a href="http://leafo.net/lessphp/">lessphp website</a> whether a new version has been released.</p>
+
+    <h3 id="installing-sass-compiler">Installing a Sass compiler</h3>
+
+    <p>Starting with Version 2.1 BootstrapBundle supports <a href="https://github.com/twbs/bootstrap-sass">bootstrap-sass</a>, the official Sass port of Bootstrap.</p>
+
+    <p>If you change the config value of <code>less_filter</code> to <code>sass</code> BootstrapBundle will automatically use the appropriate default values for the other configuration options.</p>
+
+    <pre><code class="yaml"># app/config/config.yml
+assetic:
+    filters:
+        sass:
+            bin: /usr/local/bin/sass
+            apply_to: "\.scss$"
+braincrafted_bootstrap:
+    less_filter: sass</code></pre>
+
+    <p><span class="info">The name of the configuration value <code>less_filter</code> will be changed in Version 3.0 of BootstrapBundle.</span></p>
 
     <h3 id="installing-glyphicons">Installing Glyphicons</h3>
 

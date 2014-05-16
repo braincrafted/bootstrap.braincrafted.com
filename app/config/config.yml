@@ -25,7 +25,7 @@ braincrafted_cocur:
     build_directory: %kernel.root_dir%/../gh-pages
 
 braincrafted_bootstrap:
-    less_filter: less
+    less_filter: sass
     # icon_prefix: fa
 
 # Assetic Configuration
@@ -35,6 +35,9 @@ assetic:
             node:       /usr/local/bin/node
             node_paths: [/usr/local/lib/node_modules]
             apply_to:   "\.less$"
+        sass:
+            bin: /usr/local/Cellar/ruby/2.1.0/bin/sass
+            apply_to: "\.scss$"
         cssrewrite: ~
     assets:
         documentation_css:

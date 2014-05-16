@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "16e5e1f1bd82301f9787c1a335186303",
+    "hash": "f80fad992ee9e36d8379d778cd4b41f0",
     "packages": [
         {
             "name": "doctrine/common",
@@ -261,54 +261,6 @@
             "time": "2012-07-29 11:22:34"
         },
         {
-            "name": "fortawesome/font-awesome",
-            "version": "v4.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/FortAwesome/Font-Awesome.git",
-                "reference": "0373b63c16d7aa31b6715c3f81a98a2ffb9f40a6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/0373b63c16d7aa31b6715c3f81a98a2ffb9f40a6",
-                "reference": "0373b63c16d7aa31b6715c3f81a98a2ffb9f40a6",
-                "shasum": ""
-            },
-            "require-dev": {
-                "jekyll": "1.0.2",
-                "lessc": "1.4.2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.0.x-dev"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "OFL-1.1",
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dave Gandy",
-                    "email": "dave@fontawesome.io",
-                    "homepage": "http://twitter.com/davegandy",
-                    "role": "Developer"
-                }
-            ],
-            "description": "The iconic font designed for Bootstrap",
-            "homepage": "http://fontawesome.io/",
-            "keywords": [
-                "FontAwesome",
-                "awesome",
-                "bootstrap",
-                "font",
-                "icon"
-            ],
-            "time": "2013-11-05 12:35:21"
-        },
-        {
             "name": "incenteev/composer-parameter-handler",
             "version": "v2.1.0",
             "target-dir": "Incenteev/ParameterHandler",
@@ -488,12 +440,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpMenu.git",
-                "reference": "7d9bcdc29b49c3fc671a9c22885176f0ffe034c5"
+                "reference": "de645e813ddca4a1243db48bce5eaee8adb346a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpMenu/zipball/7d9bcdc29b49c3fc671a9c22885176f0ffe034c5",
-                "reference": "7d9bcdc29b49c3fc671a9c22885176f0ffe034c5",
+                "url": "https://api.github.com/repos/KnpLabs/KnpMenu/zipball/de645e813ddca4a1243db48bce5eaee8adb346a2",
+                "reference": "de645e813ddca4a1243db48bce5eaee8adb346a2",
                 "shasum": ""
             },
             "require": {
@@ -544,7 +496,7 @@
                 "menu",
                 "tree"
             ],
-            "time": "2014-04-08 20:25:33"
+            "time": "2014-05-01 19:50:28"
         },
         {
             "name": "knplabs/knp-menu-bundle",
@@ -607,12 +559,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpPaginatorBundle.git",
-                "reference": "55d38f204b8c994ddf7e9aa3207c23d2b7ff429b"
+                "reference": "8067a1b46260c619ae8f3ffa3c32a612ff04924c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpPaginatorBundle/zipball/55d38f204b8c994ddf7e9aa3207c23d2b7ff429b",
-                "reference": "55d38f204b8c994ddf7e9aa3207c23d2b7ff429b",
+                "url": "https://api.github.com/repos/KnpLabs/KnpPaginatorBundle/zipball/8067a1b46260c619ae8f3ffa3c32a612ff04924c",
+                "reference": "8067a1b46260c619ae8f3ffa3c32a612ff04924c",
                 "shasum": ""
             },
             "require": {
@@ -657,7 +609,7 @@
                 "pagination",
                 "paginator"
             ],
-            "time": "2014-04-26 09:18:07"
+            "time": "2014-05-13 07:26:35"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -985,25 +937,28 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.1.0",
+            "version": "v5.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "748c01c1144713ac0118396935d10b6ceec91b68"
+                "reference": "043e336b871f17a117f76ef8e190eddfc04c8d48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/748c01c1144713ac0118396935d10b6ceec91b68",
-                "reference": "748c01c1144713ac0118396935d10b6ceec91b68",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/043e336b871f17a117f76ef8e190eddfc04c8d48",
+                "reference": "043e336b871f17a117f76ef8e190eddfc04c8d48",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
+            "require-dev": {
+                "mockery/mockery": "~0.9.1"
+            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.1-dev"
+                    "dev-master": "5.2-dev"
                 }
             },
             "autoload": {
@@ -1032,7 +987,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2014-03-18 09:03:27"
+            "time": "2014-05-08 08:11:19"
         },
         {
             "name": "symfony/assetic-bundle",
@@ -1610,6 +1565,54 @@
             "time": "2013-12-06 23:28:08"
         },
         {
+            "name": "fortawesome/font-awesome",
+            "version": "4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FortAwesome/Font-Awesome.git",
+                "reference": "2649d91d18629bab071449b3bc4cb02761037a57"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/2649d91d18629bab071449b3bc4cb02761037a57",
+                "reference": "2649d91d18629bab071449b3bc4cb02761037a57",
+                "shasum": ""
+            },
+            "require-dev": {
+                "jekyll": "1.0.2",
+                "lessc": "1.4.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OFL-1.1",
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dave Gandy",
+                    "email": "dave@fontawesome.io",
+                    "homepage": "http://twitter.com/davegandy",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The iconic font and CSS framework",
+            "homepage": "http://fontawesome.io/",
+            "keywords": [
+                "FontAwesome",
+                "awesome",
+                "bootstrap",
+                "font",
+                "icon"
+            ],
+            "time": "2014-05-14 20:37:30"
+        },
+        {
             "name": "leafo/lessphp",
             "version": "v0.4.0",
             "source": {
@@ -1649,6 +1652,59 @@
             "description": "lessphp is a compiler for LESS written in PHP.",
             "homepage": "http://leafo.net/lessphp/",
             "time": "2013-08-09 17:09:19"
+        },
+        {
+            "name": "twbs/bootstrap-sass",
+            "version": "v3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/bootstrap-sass.git",
+                "reference": "fff045652ac80fef9d8768b75e62606b092a4d8b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/bootstrap-sass/zipball/fff045652ac80fef9d8768b75e62606b092a4d8b",
+                "reference": "fff045652ac80fef9d8768b75e62606b092a4d8b",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas McDonald"
+                },
+                {
+                    "name": "Tristan Harward"
+                },
+                {
+                    "name": "Peter Gumeson"
+                },
+                {
+                    "name": "Gleb Mazovetskiy"
+                },
+                {
+                    "name": "Mark Otto"
+                },
+                {
+                    "name": "Jacob Thornton"
+                }
+            ],
+            "description": "bootstrap-sass is a Sass-powered version of Bootstrap, ready to drop right into your Sass powered applications.",
+            "homepage": "http://github.com/twbs/bootstrap-sass",
+            "keywords": [
+                "bootstrap",
+                "css",
+                "sass"
+            ],
+            "time": "2014-02-13 17:19:54"
         }
     ],
     "aliases": [
