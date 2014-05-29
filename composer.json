@@ -38,7 +38,7 @@
         "jquery/jquery":                        "1.11.*"
     },
     "require-dev": {
-        "leafo/lessphp":                   "~0.4",
+        "oyejorge/less.php":               "~1.5",
         "braincrafted/static-site-bundle": "dev-master@dev",
         "fortawesome/font-awesome":        "~4.0",
         "twbs/bootstrap-sass":             "~3.1"

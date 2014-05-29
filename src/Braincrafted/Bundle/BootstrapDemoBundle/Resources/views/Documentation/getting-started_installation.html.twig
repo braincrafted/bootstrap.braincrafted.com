@@ -84,9 +84,13 @@ assetic:
 braincrafted_bootstrap:
     less_filter: less</code></pre>
 
-    <h4>lessphp</h4>
+    <h4>lessphp {{ label_danger('Deprecated') }}</h4>
 
-    <p>Although it is not recommended to use lessphp, you can use it and install it via Composer.</p>
+    <div class="alert alert-danger">
+        lessphp does no longer compile recent versions of Bootstrap. If you absolutely don't want to use the Less compiler written in Node.js (or the Sass port of Bootstrap) you should use less.php (see below).
+    </div>
+
+    <p>Although it is not recommended to use <code>leafo/lessphp</code>, you can use it and install it via Composer.</p>
 
     <pre><code class="json">{
   "require": {
@@ -107,6 +111,30 @@ braincrafted_bootstrap:
     less_filter: lessphp</code></pre>
 
     <p><span class="label label-info">Hint</span> If a new version of Bootstrap no longer compiles with lessphp, check the <a href="http://leafo.net/lessphp/">lessphp website</a> whether a new version has been released.</p>
+
+    <h4>less.php</h4>
+
+    <p>Although it is not recommended to use <code>oyejorge/less.php</code>, you can use it and install it via Composer.</p>
+
+    <pre><code class="json">{
+  "require": {
+    "oyejorge/less.php": "~1.5",
+  }
+}</code></pre>
+
+    <p>And add the following section to your config.</p>
+
+    <pre><code class="yaml"># app/config/config.yml
+assetic:
+    filters:
+        lessphp:
+             file: %kernel.root_dir%/../vendor/oyejorge/less.php/lessc.inc.php
+             apply_to: "\.less$"
+        cssrewrite: ~
+braincrafted_bootstrap:
+    less_filter: lessphp</code></pre>
+
+    <p><span class="label label-info">Hint</span> If a new version of Bootstrap no longer compiles with lessphp, check the <a href="http://lessphp.gpeasy.com">less.php website</a> whether a new version has been released.</p>
 
     <h3 id="installing-sass-compiler">Installing a Sass compiler</h3>
 

@@ -35,6 +35,9 @@ assetic:
             node:       /usr/local/bin/node
             node_paths: [/usr/local/lib/node_modules]
             apply_to:   "\.less$"
+        lessphp:
+             file: %kernel.root_dir%/../vendor/oyejorge/less.php/lessc.inc.php
+             apply_to: "\.less$"
         sass:
             bin: /usr/local/Cellar/ruby/2.1.0/bin/sass
             apply_to: "\.scss$"
