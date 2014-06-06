@@ -13,6 +13,7 @@ braincrafted_bootstrap:
     assets_dir: %kernel.root_dir%/../vendor/twbs/bootstrap
     jquery_path: %kernel.root_dir%/../vendor/jquery/jquery/jquery-1.10.2.js
     less_filter: less # "less", "lessphp", "sass" or "none"
+    fonts_dir: %kernel.root_dir%/../web/fonts
     auto_configure:
         assetic: true
         twig: true
@@ -26,6 +27,8 @@ braincrafted_bootstrap:
     fontawesome_dir: %kernel.root_dir%/../vendor/fortawesome/font-awesome
 
     <p>The option <code>braincrafted_bootstrap.output_dir</code> defines the directory where BootstrapBundle puts the Bootstrap asset files. This directory has to be relative to the Assetic output directory (configured with the <code>assetic.write_to</code> option). For example, if you want to have the Bootstrap assets in <code>web/bootstrap/(css|js)</code> set <code>braincrafted_bootstrap.output_dir</code> to <code>bootstrap</code>.</p>
+
+    <p>The option <code>braincrafted_bootstrap.fonts_dir</code> sets the directory where the <code>install</code> command places the font files. The default value is the <code>web</code> directory. This option has been added in BootstrapBundle v2.1.</p>
 
     <h3>Assetic Configuration</h3>
 
