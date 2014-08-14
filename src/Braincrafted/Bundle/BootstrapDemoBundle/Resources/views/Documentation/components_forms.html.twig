@@ -224,6 +224,27 @@ $builder->add(
     <pre><code class="twig">{{ "{{ form_row(form.value1, { 'input_group': { 'prepend': '.icon-cloud', 'size': 'large' } }) }}" }}
 {{ "{{ form_row(form.value2, { 'input_group': { 'append': '.icon-off' } }) }}" }}</code></pre>
 
+    <h4>Buttons</h4>
+
+    <p>You can also make use of buttons to attach them to fields, use the below syntax</p>
+
+
+    <div class="panel">
+        <div class="panel-body">
+            {{ form_row(form.value1, { 'input_group': { 'btn-prepend': { 'name': 'Search', 'type': 'submit'} } }) }}
+        </div>
+        <div class="panel-footer">Basic form with input groups that contain buttons.</div>
+    </div>
+
+    <pre><code class="php">$builder
+    ->add('keywords', 'text', array(
+        'attr' => array(
+            'input_group' => array(
+            'btn_append' => array('name' => 'search', 'type' => 'submit')
+        )
+    )
+));</code></pre>
+
     <hr>
 
     <h3>Additional Form Types</h3>
