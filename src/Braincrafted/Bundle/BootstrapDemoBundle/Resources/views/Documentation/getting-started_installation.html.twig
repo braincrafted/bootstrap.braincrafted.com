@@ -136,26 +136,6 @@ braincrafted_bootstrap:
 
     <p><span class="label label-info">Hint</span> If a new version of Bootstrap no longer compiles with lessphp, check the <a href="http://lessphp.gpeasy.com">less.php website</a> whether a new version has been released.</p>
 
-    <h4>scssphp</h4>
-
-    <p>Use it and install it via Composer.</p>
-
-    <pre><code class="json">{
-  "require": {
-    "leafo/scssphp": "~1.1",
-  }
-}</code></pre>
-
-    <p>And add the following section to your config.</p>
-
-    <pre><code class="yaml"># app/config/config.yml
-assetic:
-    filters:
-        scssphp: ~
-        cssrewrite: ~
-braincrafted_bootstrap:
-    less_filter: scssphp</code></pre>
-
     <h3 id="installing-sass-compiler">Installing a Sass compiler</h3>
 
     <p>Starting with Version 2.1 BootstrapBundle supports <a href="https://github.com/twbs/bootstrap-sass">bootstrap-sass</a>, the official Sass port of Bootstrap.</p>
@@ -171,7 +151,30 @@ assetic:
 braincrafted_bootstrap:
     less_filter: sass</code></pre>
 
-    <p><span class="info">The name of the configuration value <code>less_filter</code> will be changed in Version 3.0 of BootstrapBundle.</span></p>
+    <p><span class="info">The name of the configuration value <code>less_filter</code> will be changed in Version 3.0 of
+        BootstrapBundle.</span></p>
+
+    <h4>scssphp</h4>
+
+    <p>BootstrapBundle also supports <code>leafo/scssphp</code> to compile Sass. Just like the PHP port of LESS please
+        be aware that newer versions of Bootstrap can not be compiled with <code>scssphp</code>. If you still want to
+        use it you can install it with Composer:</p>
+
+    <pre><code class="json">{
+    "require": {
+        "leafo/scssphp": "~1.1",
+    }
+}</code></pre>
+
+    <p>And add the following section to your config.</p>
+
+    <pre><code class="yaml"># app/config/config.yml
+assetic:
+    filters:
+        scssphp: ~
+            cssrewrite: ~
+braincrafted_bootstrap:
+    less_filter: scssphp</code></pre>
 
     <h3 id="installing-glyphicons">Installing Glyphicons</h3>
 
@@ -179,7 +182,7 @@ braincrafted_bootstrap:
 
     <pre><code class="bash">php app/console braincrafted:bootstrap:install</code></pre>
 
-    <p>Since you need to do this everytime the font changes in Bootstrap, you can also configure a <code>ScriptHandler</code> in your <code>composer.json</code>. Now the icon fonts are copied into the web directory after Composer updates the packages.</p>
+    <p>Since you need to do this every time the font changes in Bootstrap, you can also configure a <code>ScriptHandler</code> in your <code>composer.json</code>. Now the icon fonts are copied into the web directory after Composer updates the packages.</p>
 
     <pre><code class="json">{
     ...
