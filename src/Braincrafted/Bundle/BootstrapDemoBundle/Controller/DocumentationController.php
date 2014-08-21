@@ -27,7 +27,7 @@ class DocumentationController extends Controller
     /**
      * Root action, redirects the user to {@see indexAction()}.
      *
-     * @return Symfony\Component\HttpFoundation\Response
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function rootAction()
     {
@@ -37,7 +37,7 @@ class DocumentationController extends Controller
     /**
      * Index action, renders the homepage.
      *
-     * @return Symfony\Component\HttpFoundation\Response
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function indexAction()
     {
@@ -47,7 +47,7 @@ class DocumentationController extends Controller
     /**
      * Renders the installation guide.
      *
-     * @return Symfony\Component\HttpFoundation\Response
+     * @return \Symfony\Component\HttpFoundation\Response
      *
      */
     public function gettingStartedAction()
@@ -58,7 +58,7 @@ class DocumentationController extends Controller
     /**
      * Renders information about the components included in BraincraftedBootstrapBundle.
      *
-     * @return Symfony\Component\HttpFoundation\Response
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function componentsAction()
     {
