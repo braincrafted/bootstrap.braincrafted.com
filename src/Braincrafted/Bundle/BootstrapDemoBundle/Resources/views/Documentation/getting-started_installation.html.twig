@@ -136,6 +136,26 @@ braincrafted_bootstrap:
 
     <p><span class="label label-info">Hint</span> If a new version of Bootstrap no longer compiles with lessphp, check the <a href="http://lessphp.gpeasy.com">less.php website</a> whether a new version has been released.</p>
 
+    <h4>scssphp</h4>
+
+    <p>Use it and install it via Composer.</p>
+
+    <pre><code class="json">{
+  "require": {
+    "leafo/scssphp": "~1.1",
+  }
+}</code></pre>
+
+    <p>And add the following section to your config.</p>
+
+    <pre><code class="yaml"># app/config/config.yml
+assetic:
+    filters:
+        scssphp: ~
+        cssrewrite: ~
+braincrafted_bootstrap:
+    less_filter: scssphp</code></pre>
+
     <h3 id="installing-sass-compiler">Installing a Sass compiler</h3>
 
     <p>Starting with Version 2.1 BootstrapBundle supports <a href="https://github.com/twbs/bootstrap-sass">bootstrap-sass</a>, the official Sass port of Bootstrap.</p>
