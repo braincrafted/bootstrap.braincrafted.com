@@ -117,21 +117,19 @@ class DocumentationController extends Controller
             ->add('username', 'text')
             ->add('twitterScreenname', 'text')
             ->add('price', 'text')
-            ->add(
-                'price2',
-                'text',
-                array('attr' => array('input_group' => array('prepend' => '$', 'append' => '.00', 'size' => 'small')))
-            )
-            ->add('value1', 'text', array('label' => 'Value'))
-            ->add('value2', 'text', array('label' => 'Value'))
-            ->add(
-                'value3',
-                'text',
-                array(
-                    'label' => 'Value',
-                    'attr' => array('input_group' => array('prepend' => '.icon-cloud', 'append' => '.icon-off', 'size' => 'small'))
-                )
-            )
+            ->add('price2', 'text', [
+                'bootstrap' => [
+                    'input_group' => ['prepend' => '$', 'append' => '.00', 'size' => 'small']
+                ]
+            ])
+            ->add('value1', 'text', ['label' => 'Value'])
+            ->add('value2', 'text', ['label' => 'Value'])
+            ->add('value3', 'text', [
+                'label' => 'Value',
+                'bootstrap' => [
+                    'input_group' => ['prepend' => '.icon-cloud', 'append' => '.icon-off', 'size' => 'small']
+                ]
+            ])
             ->getForm();
 
         $demoUser = new DemoUser;
