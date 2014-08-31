@@ -21,7 +21,7 @@ framework:
     fragments:       ~
     http_method_override: true
 
-braincrafted_cocur:
+cocur_build:
     build_directory: %kernel.root_dir%/../gh-pages
 
 braincrafted_bootstrap:
@@ -39,7 +39,7 @@ assetic:
              file: %kernel.root_dir%/../vendor/oyejorge/less.php/lessc.inc.php
              apply_to: "\.less$"
         sass:
-            bin: /usr/local/Cellar/ruby/2.1.0/bin/sass
+            bin: /usr/bin/sass
             apply_to: "\.scss$"
         cssrewrite: ~
     assets:

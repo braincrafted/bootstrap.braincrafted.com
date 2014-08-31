@@ -20,7 +20,7 @@ class AppKernel extends Kernel
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
             new Braincrafted\Bundle\BootstrapDemoBundle\BraincraftedBootstrapDemoBundle(),
-            new Braincrafted\Bundle\CocurBundle\BraincraftedCocurBundle(),
+            new Cocur\Bundle\BuildBundle\CocurBuildBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
