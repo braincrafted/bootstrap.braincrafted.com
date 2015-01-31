@@ -26,6 +26,7 @@ cocur_build:
 
 braincrafted_bootstrap:
     less_filter: sass
+    fonts_dir: %kernel.root_dir%/../web/fonts/bootstrap
     # icon_prefix: fa
 
 # Assetic Configuration
