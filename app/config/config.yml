@@ -25,9 +25,9 @@ cocur_build:
     build_directory: %kernel.root_dir%/../gh-pages
 
 braincrafted_bootstrap:
-    less_filter: sass
+    css_preprocessor: sass
     fonts_dir: %kernel.root_dir%/../web/fonts/bootstrap
-    # icon_prefix: fa
+    icon_prefix: fa
 
 # Assetic Configuration
 assetic:
@@ -40,7 +40,7 @@ assetic:
              file: %kernel.root_dir%/../vendor/oyejorge/less.php/lessc.inc.php
              apply_to: "\.less$"
         sass:
-            bin: /usr/bin/sass
+            bin: /usr/local/bin/sass
             apply_to: "\.scss$"
         cssrewrite: ~
     assets:
