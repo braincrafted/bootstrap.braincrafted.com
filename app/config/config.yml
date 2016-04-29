@@ -23,6 +23,7 @@ framework:
 
 cocur_build:
     build_directory: %kernel.root_dir%/../gh-pages
+    enable_assetic: true
 
 braincrafted_bootstrap:
     css_preprocessor: sass
@@ -31,6 +32,7 @@ braincrafted_bootstrap:
 
 # Assetic Configuration
 assetic:
+    sass: /usr/local/bin/sass
     filters:
         less:
             node:       /usr/local/bin/node

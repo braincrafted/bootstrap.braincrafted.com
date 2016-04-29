@@ -28,6 +28,7 @@ $ git clone git@github.com:braincrafted/bootstrap-bundle.git gh-pages
 $ cd gh-pages
 $ git checkout gh-pages
 $ cd ..
+$ php app/console cache:clear -e prod
 $ php app/console cocur:build -e prod
 ```
 
