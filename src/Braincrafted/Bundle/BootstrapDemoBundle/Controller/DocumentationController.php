@@ -76,7 +76,11 @@ class DocumentationController extends Controller
             ->add('choice', 'choice', [ 'choices' => [ 'male', 'female', 'undecided' ]])
             ->add('choiceMultiple', 'choice', [ 'choices' => [ 'male', 'female', 'undecided' ], 'multiple' => true ])
             ->add('choiceExpanded', 'choice', [ 'choices' => [ 'male', 'female', 'undecided' ], 'expanded' => true ])
-            ->add('choiceExpandedMultiple', 'choice', [ 'choices' => [ 'male', 'female', 'undecided' ], 'expanded' => true, 'multiple' => true ])
+            ->add('choiceExpandedMultiple', 'choice', [
+                'choices'  => ['male', 'female', 'undecided'],
+                'expanded' => true,
+                'multiple' => true
+            ])
             ->add('country', 'country')
             ->add('language', 'language')
             ->add('locale', 'locale')
@@ -90,7 +94,11 @@ class DocumentationController extends Controller
             ->add('checkbox', 'checkbox')
             ->add('radio', 'radio')
             ->add('repeated', 'repeated', [ 'type' => 'email' ])
-            ->add('actions', 'form_actions', ['buttons' => ['button' => ['type' => 'button'], 'submit' => ['type' => 'submit'], 'reset' => ['type' => 'reset']]])
+            ->add('actions', 'form_actions', ['buttons' => [
+                'button' => ['type' => 'button'],
+                'submit' => ['type' => 'submit'],
+                'reset'  => ['type' => 'reset']
+            ]])
             ->add('button', 'button')
             ->add('submit', 'submit')
             ->add('reset', 'reset')
@@ -117,21 +125,15 @@ class DocumentationController extends Controller
             ->add('username', 'text')
             ->add('twitterScreenname', 'text')
             ->add('price', 'text')
-            ->add(
-                'price2',
-                'text',
-                array('attr' => array('input_group' => array('prepend' => '$', 'append' => '.00', 'size' => 'small')))
+            ->add('price2', 'text', [
+                    'attr' => ['input_group' => ['prepend' => '$', 'append' => '.00', 'size' => 'small']]]
             )
             ->add('value1', 'text', array('label' => 'Value'))
             ->add('value2', 'text', array('label' => 'Value'))
-            ->add(
-                'value3',
-                'text',
-                array(
-                    'label' => 'Value',
-                    'attr' => array('input_group' => array('prepend' => '.icon-cloud', 'append' => '.icon-off', 'size' => 'small'))
-                )
-            )
+            ->add('value3', 'text', [
+                'label' => 'Value',
+                'attr' => ['input_group' => ['prepend' => '.icon-cloud', 'append' => '.icon-off', 'size' => 'small']]
+            ])
             ->getForm();
 
         $demoUser = new DemoUser;
@@ -143,7 +145,12 @@ class DocumentationController extends Controller
             ->add('username', 'text', [ 'required' => true ])
             ->add('favoriteHobbits', 'bootstrap_collection', [ 'required' => true ])
             ->add('birthday', 'birthday', [ 'required' => true ])
-            ->add('gender', 'choice', [ 'choices' => [ 'female', 'male' ], 'expanded' => true, 'multiple' => true, 'required' => true ])
+            ->add('gender', 'choice', [
+                'choices'  => [ 'female', 'male' ],
+                'expanded' => true,
+                'multiple' => true,
+                'required' => true
+            ])
             ->add('acceptTerms', 'checkbox')
             ->getForm();
         $errorForm->submit([]);
@@ -157,7 +164,12 @@ class DocumentationController extends Controller
             ->add('username', 'text', [ 'required' => true ])
             ->add('favoriteHobbits', 'bootstrap_collection', [ 'required' => true ])
             ->add('birthday', 'birthday', [ 'required' => true ])
-            ->add('gender', 'choice', [ 'choices' => [ 'female', 'male' ], 'expanded' => true, 'multiple' => true, 'required' => true ])
+            ->add('gender', 'choice', [
+                'choices'  => [ 'female', 'male' ],
+                'expanded' => true,
+                'multiple' => true,
+                'required' => true
+            ])
             ->getForm();
         $basicErrorForm->submit([]);
 
